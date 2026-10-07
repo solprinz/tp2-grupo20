@@ -1,0 +1,418 @@
+/* ==========================================================================
+   1. FUENTES Y RECURSOS
+   ========================================================================== */
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&display=swap");
+
+@font-face {
+  font-family: "Lumos";
+  src: url("/fonts/LUMOS.TTF") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ==========================================================================
+   2. CONFIGURACIÓN GLOBAL Y VARIABLES
+   ========================================================================== */
+:root {
+  /* Paleta General Hallows Code */
+  --hallows-bg-dark: #18100c; /* Sidebar oscura por defecto */
+  --hallows-bg-light: #dcd8d3; /* Fondo pergamino principal */
+  --hallows-bg-selected: #2d1d15; /* Fondo link activo por defecto */
+  --hallows-gold-text: #e2c992; /* Dorado principal textos */
+  --hallows-gold-muted: #aa9368; /* Dorado suave subtítulos */
+  --hallows-gold-border: #b89552; /* Bordes dorados */
+  --hallows-text-dark: #2b2621; /* Texto oscuro para modo claro */
+
+  /* Casas de Hogwarts */
+  --gryffindor1: #740001;
+  --gryffindor2: #d3a625;
+  --gryffindor3: #000000;
+
+  --slytherin1: #1a472a;
+  --slytherin2: #aaaaaa;
+  --slytherin3: #000000;
+
+  --ravenclaw1: #0e1a40;
+  --ravenclaw2: #946b2d;
+  --ravenclaw3: #5d5d5d;
+
+  --hufflepuff1: #ecb939;
+  --hufflepuff2: #372e29;
+  --hufflepuff3: #726255;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Noto Sans", sans-serif;
+}
+
+/* Clases tipográficas mágicas */
+.font-lumos,
+h1,
+h2,
+h3,
+.sidebar-hallows .h4,
+.sidebar-hallows .text-muted {
+  font-family: "Lumos", serif !important;
+  letter-spacing: 1.5px;
+}
+
+/* ==========================================================================
+   3. ESTRUCTURA Y LAYOUT PRINCIPAL
+   ========================================================================== */
+.layout-hallows {
+  min-height: 100vh;
+  width: 100%;
+}
+
+.main-content {
+  background-color: var(--hallows-bg-light) !important;
+  color: var(--hallows-text-dark);
+  min-height: 100vh;
+}
+
+.main-content h1,
+.main-content h2 {
+  color: #18100c !important;
+  text-align: center;
+}
+
+/* ==========================================================================
+   4. SIDEBAR Y NAVEGACIÓN
+   ========================================================================== */
+.sidebar-hallows {
+  background-color: var(--hallows-bg-dark) !important;
+  color: var(--hallows-gold-text);
+  border-right: 1px solid #38251b;
+  min-width: 250px;
+}
+
+/* Logo */
+.sidebar-hallows .h4 {
+  color: var(--hallows-gold-text) !important;
+}
+
+.sidebar-hallows .text-muted {
+  color: var(--hallows-gold-muted) !important;
+  letter-spacing: 1.5px;
+  font-size: 0.85rem;
+}
+
+/* Enlaces de navegación */
+.sidebar-hallows .nav-link {
+  font-family: "Cinzel", serif !important;
+  font-weight: 700;
+  color: var(--hallows-gold-text) !important;
+  opacity: 0.85;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
+}
+
+.sidebar-hallows .nav-link:hover {
+  opacity: 1;
+  background-color: rgba(226, 201, 146, 0.1);
+}
+
+.sidebar-hallows .nav-link.active-link {
+  opacity: 1 !important;
+  background-color: var(--hallows-bg-selected) !important;
+  color: var(--hallows-gold-text) !important;
+  border: 1px solid var(--hallows-gold-border) !important;
+  border-bottom: 2px solid var(--hallows-gold-text) !important;
+  font-weight: bold;
+}
+
+/* Botón Lumos / Nox */
+.sidebar-hallows .btn-outline-warning {
+  font-family: "Cinzel", serif !important;
+  font-weight: 700 !important;
+  letter-spacing: 1.5px !important;
+  text-transform: uppercase !important;
+}
+
+/* ==========================================================================
+   5. TEMAS POR CASAS (SIDEBAR & FOOTER UNIFICADOS)
+   ========================================================================== */
+
+/* 🦁 Gryffindor */
+.sidebar-hallows.house-gryffindor,
+.footer-hallows.house-gryffindor {
+  background-color: var(--gryffindor1) !important;
+  border-color: var(--gryffindor2) !important;
+  color: var(--gryffindor2) !important;
+}
+
+.sidebar-hallows.house-gryffindor .nav-link.active-link {
+  background-color: rgba(211, 166, 37, 0.2) !important;
+  border-left: 4px solid var(--gryffindor2) !important;
+  color: var(--gryffindor2) !important;
+}
+
+/* 🐍 Slytherin */
+.sidebar-hallows.house-slytherin,
+.footer-hallows.house-slytherin {
+  background-color: var(--slytherin1) !important;
+  border-color: var(--slytherin2) !important;
+  color: #ffffff !important;
+}
+
+.sidebar-hallows.house-slytherin .nav-link.active-link {
+  background-color: rgba(170, 170, 170, 0.2) !important;
+  border-left: 4px solid var(--slytherin2) !important;
+  color: #ffffff !important;
+}
+
+/* 🦅 Ravenclaw */
+.sidebar-hallows.house-ravenclaw,
+.footer-hallows.house-ravenclaw {
+  background-color: var(--ravenclaw1) !important;
+  border-color: var(--ravenclaw2) !important;
+  color: var(--ravenclaw2) !important;
+}
+
+.sidebar-hallows.house-ravenclaw .nav-link.active-link {
+  background-color: rgba(148, 107, 45, 0.25) !important;
+  border-left: 4px solid var(--ravenclaw2) !important;
+  color: #e0e0e0 !important;
+}
+
+/* 🦡 Hufflepuff */
+.sidebar-hallows.house-hufflepuff,
+.footer-hallows.house-hufflepuff {
+  background-color: var(--hufflepuff1) !important;
+  border-color: var(--hufflepuff2) !important;
+  color: var(--hufflepuff2) !important;
+}
+
+.sidebar-hallows.house-hufflepuff .font-lumos,
+.sidebar-hallows.house-hufflepuff .h4,
+.sidebar-hallows.house-hufflepuff i,
+.sidebar-hallows.house-hufflepuff .text-muted,
+.footer-hallows.house-hufflepuff .hallows-titulo-footer,
+.footer-hallows.house-hufflepuff .footer-link-hallows,
+.footer-hallows.house-hufflepuff .copyright-texto {
+  color: var(--hufflepuff2) !important;
+}
+
+.sidebar-hallows.house-hufflepuff .nav-link {
+  color: var(--hufflepuff2) !important;
+  opacity: 0.85;
+}
+
+.sidebar-hallows.house-hufflepuff .nav-link:hover {
+  background-color: rgba(55, 46, 41, 0.1) !important;
+  opacity: 1;
+}
+
+.sidebar-hallows.house-hufflepuff .nav-link.active-link {
+  background-color: var(--hufflepuff2) !important;
+  color: var(--hufflepuff1) !important;
+  border-left: 4px solid var(--hufflepuff3) !important;
+  opacity: 1 !important;
+}
+
+/* ==========================================================================
+   6. MODOS DE COLOR Y ESTADOS (NOX)
+   ========================================================================== */
+body.nox-mode .main-content {
+  background-color: #120b08 !important;
+  color: #e0e0e0 !important;
+}
+
+body.nox-mode .main-content h1,
+body.nox-mode .main-content h2 {
+  color: var(--hallows-gold-text) !important;
+}
+
+/* ==========================================================================
+   7. ESTILOS DE CARDS TIPO CROMO (HOME)
+   ========================================================================== */
+
+.card-cromo {
+  border-radius: 12px;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.card-cromo:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.35);
+}
+
+/* Marco blanco/claro interno de la imagen */
+.cromo-img-container {
+  width: 100%;
+  height: 320px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 3px solid #ffffff;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.cromo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 🦁 Gryffindor Cromo */
+.card-gryffindor {
+  background-color: var(--gryffindor1) !important;
+  border: 3px solid var(--gryffindor2) !important;
+  color: #ffffff !important;
+}
+
+.card-gryffindor .cromo-img-container {
+  border-color: var(--gryffindor2);
+}
+
+.card-gryffindor .nombre-integrante {
+  color: var(--gryffindor2) !important;
+}
+
+.card-gryffindor .btn-ver-mas {
+  background-color: var(--gryffindor1);
+  color: var(--gryffindor2);
+  border: 1px solid var(--gryffindor2);
+  font-family: "Cinzel", serif;
+  font-weight: bold;
+}
+
+.card-gryffindor .btn-ver-mas:hover {
+  background-color: var(--gryffindor2);
+  color: var(--gryffindor3);
+}
+
+/* 🐍 Slytherin Cromo */
+.card-slytherin {
+  background-color: var(--slytherin1) !important;
+  border: 3px solid #082413 !important;
+  color: #ffffff !important;
+}
+
+.card-slytherin .cromo-img-container {
+  border-color: #e0e0e0;
+}
+
+.card-slytherin .nombre-integrante {
+  color: #ffffff !important;
+  letter-spacing: 2px;
+}
+
+.card-slytherin .btn-ver-mas {
+  background-color: #bdc3c7;
+  color: #1a472a;
+  border: 1px solid #ffffff;
+  font-family: "Cinzel", serif;
+  font-weight: bold;
+}
+
+.card-slytherin .btn-ver-mas:hover {
+  background-color: #ffffff;
+  color: #0d261a;
+}
+
+/* 🦅 Ravenclaw Cromo */
+.card-ravenclaw {
+  background-color: var(--ravenclaw1) !important;
+  border: 3px solid var(--ravenclaw2) !important;
+  color: #ffffff !important;
+}
+
+.card-ravenclaw .cromo-img-container {
+  border-color: var(--ravenclaw2);
+}
+
+.card-ravenclaw .nombre-integrante {
+  color: var(--ravenclaw2) !important;
+}
+
+.card-ravenclaw .btn-ver-mas {
+  background-color: var(--ravenclaw1);
+  color: var(--ravenclaw2);
+  border: 1px solid var(--ravenclaw2);
+  font-family: "Cinzel", serif;
+  font-weight: bold;
+}
+
+.card-ravenclaw .btn-ver-mas:hover {
+  background-color: var(--ravenclaw2);
+  color: #ffffff;
+}
+
+/* 🦡 Hufflepuff Cromo */
+.card-hufflepuff {
+  background-color: var(--hufflepuff1) !important;
+  border: 3px solid var(--hufflepuff2) !important;
+  color: var(--hufflepuff2) !important;
+}
+
+.card-hufflepuff .cromo-img-container {
+  border-color: var(--hufflepuff2);
+}
+
+.card-hufflepuff .nombre-integrante {
+  color: var(--hufflepuff2) !important;
+}
+
+.card-hufflepuff .btn-ver-mas {
+  background-color: var(--hufflepuff2);
+  color: var(--hufflepuff1);
+  border: 1px solid var(--hufflepuff3);
+  font-family: "Cinzel", serif;
+  font-weight: bold;
+}
+
+.card-hufflepuff .btn-ver-mas:hover {
+  background-color: var(--hufflepuff3);
+  color: var(--hufflepuff1);
+}
+
+/* Nota de Revelio */
+.nota-hechizo {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-left: 4px solid var(--hallows-gold-border);
+}
+
+/* ==========================================================================
+   8. FOOTER BASE GLOBAL
+   ========================================================================== */
+.footer-hallows {
+  width: 100%;
+  margin: 0 !important;
+  background-color: var(--hallows-bg-dark) !important;
+  color: var(--hallows-gold-text) !important;
+  border-top: 2px solid var(--hallows-gold-border) !important;
+}
+
+.footer-hallows .hallows-titulo-footer,
+.footer-hallows .footer-link-hallows,
+.footer-hallows .copyright-texto {
+  color: var(--hallows-gold-text) !important;
+}
+
+.footer-hallows .footer-link-hallows:hover {
+  opacity: 0.8;
+}
