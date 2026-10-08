@@ -1,0 +1,371 @@
+/* ==========================================================================
+   FavoritesMap — Mapa del Merodeador
+   Enfoque mobile-first: los estilos base son para 320px+ y se amplían con
+   min-width en tablet (768px) y desktop (1024px).
+
+   Nota sobre los selectores: index.css fuerza (con !important) la fuente
+   Lumos y el color de h1/h2/h3, y además cambia el color en modo Nox. Por
+   eso los títulos usan 3 clases de especificidad + !important: es la forma
+   más corta de que el pergamino conserve su tinta sin tocar el CSS global.
+   ========================================================================== */
+
+.mapa {
+  /* Colores: leen el tema del perfil (--tema-*, ver MemberProfile.module.css)
+     y, si no hay tema, usan el pergamino de siempre. */
+  --mapa-tinta: var(--tema-tinta, #583b29);
+  --mapa-papel: var(--tema-panel, #ead6ae);
+  --mapa-ficha: var(--tema-panel, #fff1d2);
+
+  padding: 2.5rem 1rem 3rem;
+  color: var(--mapa-tinta);
+  background: var(
+    --tema-fondo,
+    radial-gradient(ellipse at center, transparent 45%, #6c422b30),
+    repeating-linear-gradient(95deg, #6c422b05 0 1px, transparent 1px 6px),
+    var(--mapa-papel)
+  );
+  border-top: 1px solid var(--tema-borde, #583b2940);
+}
+
+/* ---------- Cabecera ---------- */
+.cabecera {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.leyenda {
+  margin: 0 0 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.mapa .cabecera .titulo {
+  margin: 0;
+  color: var(--mapa-tinta) !important;
+  font-family: "Cinzel", serif !important;
+  font-size: clamp(1.6rem, 6vw, 2.8rem);
+  letter-spacing: normal;
+  text-align: center;
+}
+
+.subtitulo {
+  margin: 0 0 1rem;
+  font-family: "Caveat", cursive;
+  font-size: 1.6rem;
+}
+
+/* ---------- Botones ---------- */
+.boton {
+  padding: 0.65rem 0.85rem;
+  color: var(--tema-boton-texto, var(--mapa-tinta));
+  font-weight: 600;
+  background: var(--tema-boton, #fff4d970);
+  border: 1px solid var(--tema-borde, var(--mapa-tinta));
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.boton:hover {
+  background: var(--tema-boton-hover, var(--mapa-ficha));
+}
+
+.mapa :focus-visible {
+  outline: 3px solid var(--mapa-tinta);
+  outline-offset: 4px;
+}
+
+/* ---------- Distribución plano + ficha ---------- */
+.distribucion {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.plano {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr; /* mobile: un lugar por fila */
+  gap: 3rem;
+  padding: 2.5rem 1rem 3rem;
+  border: 4px double var(--mapa-tinta);
+}
+
+.brujula {
+  position: absolute;
+  top: 0.3rem;
+  right: 1rem;
+  line-height: 1;
+  text-align: center;
+}
+
+.camino {
+  position: absolute;
+  inset: 2rem 9% 1rem;
+  border: 2px dashed var(--mapa-tinta);
+  border-radius: 40% 10% 30% 5%;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.abierto .camino {
+  opacity: 0.65;
+}
+
+/* ---------- Lugares ---------- */
+.lugar {
+  position: relative;
+  min-width: 0;
+  padding: 0.75rem;
+  text-align: center;
+  background: var(--mapa-papel);
+  border: 1px solid var(--tema-borde, #583b2950);
+}
+
+.edificio {
+  display: block;
+  width: 100%;
+  height: 56px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+}
+
+.portada {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 260px;
+  aspect-ratio: 3 / 4;
+  margin-bottom: 0.75rem;
+  object-fit: cover;
+  border: 3px double var(--mapa-tinta);
+  filter: var(--tema-filtro, sepia(0.35));
+}
+
+.album {
+  aspect-ratio: 1;
+}
+
+.mapa .nombreLugar {
+  margin: 0 0 0.25rem;
+  color: var(--mapa-tinta);
+  font-family: "Cinzel", serif !important;
+  font-size: 1rem;
+  letter-spacing: normal;
+  overflow-wrap: anywhere;
+}
+
+.subtituloLugar {
+  margin: 0 0 0.75rem;
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+/* Botón "Escuchar" (abre la Vitriola). */
+.escuchar {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0.5rem 0 0 0.25rem;
+  padding: 0.5rem 0.85rem;
+  color: var(--mapa-papel);
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: var(--mapa-tinta);
+  border: 1px solid var(--mapa-tinta);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.escuchar:hover {
+  opacity: 0.85;
+}
+
+.seleccionado {
+  box-shadow: 0 0 0 2px var(--mapa-tinta);
+}
+
+.huellas {
+  position: absolute;
+  right: 10%;
+  bottom: -2.2rem;
+  left: 10%;
+  display: flex;
+  justify-content: space-around;
+  pointer-events: none;
+  opacity: 0;
+  filter: grayscale(1) sepia(1);
+}
+
+.seleccionado .huellas {
+  opacity: 0.8;
+}
+
+/* ---------- Ficha ---------- */
+.ficha,
+.invitacion {
+  margin: 0;
+  padding: 1.25rem;
+  background: var(--mapa-ficha);
+  border: 4px double var(--tema-borde, #583b2980);
+  box-shadow: 4px 8px 16px #583b2918;
+}
+
+.mapa .tituloFicha {
+  margin: 0 0 1rem;
+  color: var(--mapa-tinta);
+  font-family: "Cinzel", serif !important;
+  font-size: 1.25rem;
+  letter-spacing: normal;
+  scroll-margin-top: 6rem;
+}
+
+.detalles dt {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.detalles dd {
+  margin: 0 0 0.75rem;
+  /* Respeta los saltos de línea de las letras de canciones ("\n"). */
+  white-space: pre-line;
+}
+
+/* ---------- Pie ---------- */
+.pie {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.estado {
+  margin: 0 0 0.75rem;
+  font-size: 0.9rem;
+}
+
+/* ---------- Animaciones (solo si el usuario no pidió menos movimiento) ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .camino {
+    transition: opacity 0.6s;
+  }
+
+  .abierto .camino {
+    animation: desplegar 0.7s ease-out;
+  }
+
+  .huellas {
+    transition: opacity 0.3s;
+  }
+
+  .seleccionado .huellas span {
+    animation: paso 0.8s both;
+  }
+
+  .seleccionado .huellas span:nth-child(2) {
+    animation-delay: 0.25s;
+  }
+
+  .seleccionado .huellas span:nth-child(3) {
+    animation-delay: 0.5s;
+  }
+}
+
+@keyframes paso {
+  from {
+    opacity: 0;
+    transform: translateX(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes desplegar {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0);
+  }
+}
+
+/* ==========================================================================
+   TABLET (768px+)
+   Con la sidebar fija de 250px, el contenido útil ronda los 518px: el plano
+   pasa a 3 columnas y se escalona el segundo y tercer lugar como en el TP1.
+   ========================================================================== */
+@media (min-width: 768px) {
+  .mapa {
+    padding: 3.5rem 2rem 4rem;
+  }
+
+  /* 2 columnas: 3 serían de ~110px con la sidebar abierta. Si la cantidad
+     de lugares es impar, el último se centra ocupando la fila completa. */
+  .plano {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 3rem 1.5rem;
+    padding: 3rem 1.5rem 4rem;
+  }
+
+  .lugar:last-of-type:nth-of-type(odd) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc(50% - 0.75rem);
+  }
+
+  .ficha,
+  .invitacion {
+    padding: 1.5rem;
+  }
+}
+
+/* ==========================================================================
+   DESKTOP (1024px+)
+   Más aire y tipografía algo mayor. La ficha sigue debajo del plano porque
+   el contenido útil (viewport − sidebar) todavía es angosto; recién a 1280px
+   hay lugar para ponerla al costado.
+   ========================================================================== */
+@media (min-width: 1024px) {
+  .mapa {
+    padding: 4rem 3rem 5rem;
+  }
+
+  .plano {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    padding: 3rem 1.5rem 4rem;
+  }
+
+  /* Vuelve el escalonado del TP1 y se anula el centrado de tablet. */
+  .lugar:last-of-type:nth-of-type(odd) {
+    grid-column: auto;
+    justify-self: stretch;
+    width: auto;
+  }
+
+  .lugar:nth-of-type(2) {
+    margin-top: 5rem;
+  }
+
+  .lugar:nth-of-type(3) {
+    margin-top: 2rem;
+  }
+
+  .subtitulo {
+    font-size: 2rem;
+  }
+
+  .mapa .nombreLugar {
+    font-size: 1.1rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .distribucion {
+    grid-template-columns: minmax(0, 2.3fr) minmax(260px, 1fr);
+    align-items: start;
+  }
+}

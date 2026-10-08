@@ -1,0 +1,227 @@
+/* ==========================================================================
+   SombreroQuiz — quiz de casas (perfil de Daniela)
+   Mobile-first: una columna de opciones desde 320px, dos desde 768px.
+   Los títulos usan 3 clases + !important para conservar su tinta frente a
+   las reglas globales de index.css (ver nota en MemberProfile.module.css).
+   ========================================================================== */
+
+.raiz {
+  --quiz-papel: #f4e9d0;
+  --quiz-tinta: #392c22;
+  --quiz-borde: #96784c;
+}
+
+.intro {
+  margin: 0 0 0.25rem;
+  color: var(--casa-tinta, var(--quiz-tinta));
+  font-family: "Cinzel", serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.raiz .titulo.titulo {
+  margin: 0 0 1.25rem;
+  color: var(--casa-tinta, var(--quiz-tinta)) !important;
+  font-family: "Cinzel", serif !important;
+  font-size: clamp(1.5rem, 6vw, 2.2rem);
+  letter-spacing: normal;
+  text-align: center;
+}
+
+.contenedor {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1.25rem 1rem;
+  color: var(--quiz-tinta);
+  text-align: center;
+  background: var(--quiz-papel);
+  border: 3px double var(--quiz-borde);
+  border-radius: 12px;
+  box-shadow:
+    0 8px 24px rgba(57, 44, 34, 0.15),
+    inset 0 0 0 1px rgba(214, 182, 109, 0.3);
+}
+
+.progreso {
+  margin: 0 0 0.75rem;
+  color: var(--quiz-borde);
+  font-family: "Cinzel", serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.raiz .pregunta {
+  margin: 0 0 1.5rem;
+  color: var(--quiz-tinta);
+  font-family: "Cinzel", serif !important;
+  font-size: clamp(1.15rem, 4.5vw, 1.8rem);
+  letter-spacing: normal;
+}
+
+/* El título recibe foco por código: se quita el marco para que no "pegue". */
+.pregunta:focus-visible,
+.casaResultado:focus-visible {
+  outline: none;
+}
+
+/* ---------- Opciones ---------- */
+.opciones {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+.boton {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  color: var(--quiz-tinta);
+  font-family: "Noto Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: left;
+  background: #faf3e0;
+  border: 2px solid var(--quiz-borde);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.boton:hover,
+.boton:focus-visible {
+  box-shadow: 0 8px 20px rgba(57, 44, 34, 0.25);
+  transform: translateY(-3px);
+}
+
+.boton:focus-visible {
+  outline: 3px solid var(--quiz-borde);
+  outline-offset: 3px;
+}
+
+.icono {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+/* Hover por casa (colores temáticos). */
+.boton[data-casa="gryffindor"]:hover,
+.boton[data-casa="gryffindor"]:focus-visible {
+  color: #ffffff;
+  background: linear-gradient(135deg, #740001, #d3a625);
+  border-color: #740001;
+}
+
+.boton[data-casa="slytherin"]:hover,
+.boton[data-casa="slytherin"]:focus-visible {
+  color: #ffffff;
+  background: linear-gradient(135deg, #1a472a, #aaaaaa);
+  border-color: #1a472a;
+}
+
+.boton[data-casa="ravenclaw"]:hover,
+.boton[data-casa="ravenclaw"]:focus-visible {
+  color: #ffffff;
+  background: linear-gradient(135deg, #0e1a40, #946b2d);
+  border-color: #0e1a40;
+}
+
+.boton[data-casa="hufflepuff"]:hover,
+.boton[data-casa="hufflepuff"]:focus-visible {
+  color: #ffffff;
+  background: linear-gradient(135deg, #ecb939, #372e29);
+  border-color: #ecb939;
+}
+
+/* ---------- Resultado ---------- */
+.resultado {
+  padding: 0.5rem 0;
+}
+
+.raiz .casaResultado {
+  margin: 1rem 0;
+  font-family: "Cinzel", serif !important;
+  /* A 320px el nombre más largo (¡HUFFLEPUFF!) debe entrar en ~226px. */
+  font-size: clamp(1.25rem, 6.5vw, 3rem);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  overflow-wrap: anywhere;
+}
+
+.casaResultado[data-casa="gryffindor"] {
+  color: #740001;
+  text-shadow: 0 0 15px rgba(211, 166, 37, 0.5);
+}
+
+.casaResultado[data-casa="slytherin"] {
+  color: #1a472a;
+  text-shadow: 0 0 15px rgba(170, 170, 170, 0.5);
+}
+
+.casaResultado[data-casa="ravenclaw"] {
+  color: #0e1a40;
+  text-shadow: 0 0 15px rgba(148, 107, 45, 0.5);
+}
+
+.casaResultado[data-casa="hufflepuff"] {
+  color: #372e29;
+  text-shadow: 0 0 15px rgba(236, 185, 57, 0.5);
+}
+
+.frase {
+  margin: 0 0 1.5rem;
+  color: var(--quiz-tinta);
+  font-family: "Caveat", cursive;
+  font-size: 1.5rem;
+}
+
+.reiniciar {
+  display: inline-flex;
+  justify-content: center;
+  width: auto;
+  margin-top: 0.5rem;
+  padding: 0.75rem 2rem;
+  color: #faf3e0;
+  background: var(--quiz-tinta);
+  border-color: var(--quiz-tinta);
+}
+
+.reiniciar:hover,
+.reiniciar:focus-visible {
+  color: #faf3e0;
+  background: #51412e;
+  border-color: #51412e;
+}
+
+/* ==========================================================================
+   TABLET (768px+): opciones en dos columnas
+   ========================================================================== */
+@media (min-width: 768px) {
+  .contenedor {
+    padding: 2rem;
+  }
+
+  .opciones {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+}
+
+/* ==========================================================================
+   DESKTOP (1024px+)
+   ========================================================================== */
+@media (min-width: 1024px) {
+  .contenedor {
+    padding: 2.5rem;
+  }
+
+  .frase {
+    font-size: 1.75rem;
+  }
+}

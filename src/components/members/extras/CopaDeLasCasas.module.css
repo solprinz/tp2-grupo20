@@ -1,0 +1,227 @@
+/* ==========================================================================
+   CopaDeLasCasas — torneo de puntos (perfil de Sol)
+   Mobile-first: marcadores en 2 columnas (320px+), 4 columnas desde 768px.
+   Los títulos usan 3 clases + !important para conservar su tinta frente a
+   las reglas globales de index.css.
+   ========================================================================== */
+
+.raiz {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.intro {
+  margin: 0 0 0.25rem;
+  color: var(--casa-tinta, #740001);
+  font-family: "Cinzel", serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.raiz .titulo.titulo {
+  margin: 0 0 1rem;
+  color: var(--casa-tinta, #740001) !important;
+  font-family: "Cinzel", serif !important;
+  font-size: clamp(1.5rem, 6vw, 2.2rem);
+  letter-spacing: normal;
+  text-align: center;
+}
+
+/* ---------- Marcadores ---------- */
+.marcadores {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 700px;
+  margin-bottom: 1rem;
+}
+
+.casa {
+  padding: 0.85rem 0.5rem;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  transition: transform 0.2s ease;
+}
+
+.casa:hover {
+  transform: translateY(-3px);
+}
+
+.gryffindor {
+  color: #d3a625;
+  background: #740001;
+  border-color: #740001;
+}
+
+.slytherin {
+  color: #aaaaaa;
+  background: #1a472a;
+  border-color: #aaaaaa;
+}
+
+.ravenclaw {
+  color: #946b2d;
+  background: #0e1a40;
+  border-color: #946b2d;
+}
+
+.hufflepuff {
+  color: #372e29;
+  background: #ecb939;
+  border-color: #372e29;
+}
+
+.raiz .nombreCasa {
+  margin: 0;
+  color: inherit;
+  font-family: "Cinzel", serif !important;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.puntos {
+  display: block;
+  margin: 0.25rem 0 0;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.pop {
+  animation: pop 0.3s ease-out;
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.4);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pop {
+    animation: none;
+  }
+}
+
+/* ---------- Botones ---------- */
+.boton {
+  margin: 0.75rem 0;
+  padding: 0.6rem 1.2rem;
+  color: #d3a625;
+  font-weight: 600;
+  background: #740001;
+  border: 1px solid #d3a625;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.boton:hover:not(:disabled),
+.boton:focus-visible {
+  color: #740001;
+  background: #d3a625;
+  transform: translateY(-2px);
+}
+
+.boton:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.reiniciar {
+  margin-top: 1rem;
+  padding: 0.4rem 0.9rem;
+  color: #740001;
+  font-size: 0.9rem;
+  background: transparent;
+  border: 1px solid #740001;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.reiniciar:hover,
+.reiniciar:focus-visible {
+  color: #d3a625;
+  background: #740001;
+}
+
+.raiz :focus-visible {
+  outline: 3px solid #392c22;
+  outline-offset: 3px;
+}
+
+/* ---------- Mensaje y cartel ---------- */
+.caja {
+  width: 100%;
+  max-width: 600px;
+  min-height: 70px;
+  margin: 0.5rem 0;
+  padding: 1rem;
+  background: rgba(201, 197, 197, 0.2);
+  border: 1px dashed #d3a625;
+  border-radius: 0.375rem;
+}
+
+.mensaje {
+  margin: 0;
+  font-style: italic;
+}
+
+.cartel {
+  width: 100%;
+  max-width: 700px;
+  margin-top: 1rem;
+  padding: 1rem;
+  color: #d3a625;
+  background: #740001;
+  border: 2px solid #d3a625;
+  border-radius: 0.375rem;
+  box-shadow: 0 0 20px rgba(211, 166, 37, 0.5);
+}
+
+.raiz .tituloCartel {
+  margin: 0;
+  color: inherit;
+  font-family: "Lumos", serif !important;
+  font-size: clamp(1.1rem, 4.5vw, 1.75rem);
+}
+
+.cartel p {
+  margin: 0.5rem 0 0;
+}
+
+/* ==========================================================================
+   TABLET (768px+): cuatro marcadores en una fila
+   ========================================================================== */
+@media (min-width: 768px) {
+  .marcadores {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .puntos {
+    font-size: 2.4rem;
+  }
+}
+
+/* ==========================================================================
+   DESKTOP (1024px+)
+   ========================================================================== */
+@media (min-width: 1024px) {
+  .casa {
+    padding: 1rem;
+  }
+}

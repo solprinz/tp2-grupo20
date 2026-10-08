@@ -1,0 +1,259 @@
+/* ==========================================================================
+   Vitrola — modal reproductor (migrado del TP1, perfil de Daniela)
+   Mobile-first. Se dibuja en un portal sobre <body>, por eso define su
+   propia paleta en lugar de heredar las variables de la casa.
+   ========================================================================== */
+
+.vitrola {
+  --v-primario: #1a110b;
+  --v-secundario: #d6b66d;
+
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(13, 13, 83, 0.85);
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+}
+
+.caja {
+  position: relative;
+  z-index: 1;
+  width: min(760px, 100%);
+  max-height: 90vh;
+  padding: 1rem;
+  overflow-y: auto;
+  color: var(--v-primario);
+  font-family: "Noto Sans", sans-serif;
+  background: linear-gradient(180deg, #f4e9d0 0%, #e8d9b5 100%);
+  border: 3px solid var(--v-secundario);
+  border-radius: 12px;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.6),
+    inset 0 0 0 1px rgba(214, 182, 109, 0.4);
+}
+
+/* ---------- Cabecera ---------- */
+.cabecera {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid rgba(156, 121, 62, 0.3);
+}
+
+.caja .cabecera .titulo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  color: var(--v-primario) !important;
+  font-family: "Cinzel", serif !important;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: normal;
+  text-align: left;
+}
+
+.cerrar {
+  display: grid;
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  color: var(--v-primario);
+  font-size: 1.1rem;
+  background: transparent;
+  border: 2px solid var(--v-primario);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cerrar:hover,
+.cerrar:focus-visible {
+  color: var(--v-secundario);
+  background: var(--v-primario);
+}
+
+/* ---------- Cuerpo: vinilo + reproductor ---------- */
+.cuerpo {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  justify-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.vinilo {
+  position: relative;
+  display: grid;
+  width: 100%;
+  max-width: 140px;
+  aspect-ratio: 1;
+  place-items: center;
+  overflow: hidden;
+  background: radial-gradient(
+    circle at center,
+    #2a2a2a 0%,
+    #1a1a1a 40%,
+    #0d0d0d 70%,
+    #1a1a1a 100%
+  );
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 3px #0d0d0d,
+    0 0 0 5px #2a2a2a,
+    0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.vinilo::before {
+  position: absolute;
+  inset: 8%;
+  content: "";
+  background: repeating-radial-gradient(
+    circle at center,
+    transparent 0,
+    transparent 3px,
+    rgba(255, 255, 255, 0.03) 4px
+  );
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.portada {
+  width: 55%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border: 2px solid var(--v-secundario);
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(214, 182, 109, 0.4);
+}
+
+.embed {
+  position: relative;
+  width: 100%;
+  min-height: 152px;
+}
+
+.embed iframe {
+  display: block;
+  width: 100%;
+  border: 0;
+  border-radius: 12px;
+}
+
+/* ---------- Info y pie ---------- */
+.info {
+  margin-bottom: 1rem;
+  padding-top: 1rem;
+  text-align: center;
+  border-top: 1px dashed rgba(156, 121, 62, 0.4);
+}
+
+.cancion {
+  margin: 0 0 0.25rem;
+  font-family: "Cinzel", serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.artista,
+.anio {
+  margin: 0;
+  color: #5a4a2a;
+  font-size: 0.95rem;
+}
+
+.artista {
+  font-weight: 600;
+}
+
+.pie {
+  display: flex;
+  justify-content: center;
+}
+
+.boton {
+  padding: 0.6rem 2rem;
+  color: var(--v-secundario);
+  font-family: "Cinzel", serif;
+  font-size: 1rem;
+  font-weight: 600;
+  background: var(--v-primario);
+  border: 2px solid var(--v-primario);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.boton:hover,
+.boton:focus-visible {
+  color: var(--v-primario);
+  background: var(--v-secundario);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.vitrola :focus-visible {
+  outline: 3px solid var(--v-primario);
+  outline-offset: 3px;
+}
+
+/* ---------- Animación (solo si no se pidió menos movimiento) ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .portada {
+    animation: girar 8s linear infinite;
+  }
+}
+
+@keyframes girar {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==========================================================================
+   TABLET (768px+)
+   ========================================================================== */
+@media (min-width: 768px) {
+  .vitrola {
+    padding: 1rem;
+  }
+
+  .caja {
+    padding: 1.5rem;
+  }
+
+  .caja .cabecera .titulo {
+    font-size: 1.5rem;
+  }
+
+  .cuerpo {
+    grid-template-columns: minmax(140px, 180px) 1fr;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .vinilo {
+    max-width: 180px;
+  }
+
+  .cancion {
+    font-size: 1.25rem;
+  }
+}
