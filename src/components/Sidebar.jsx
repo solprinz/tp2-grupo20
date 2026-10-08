@@ -1,14 +1,67 @@
 import { NavLink, useLocation } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
+
+/**
+ * Menú lateral compartido (NAV-2).
+ *
+ * Comportamiento responsive:
+ *  - Desktop/tablet (768px+): barra lateral fija de 250px que acompaña el
+ *    scroll (position: sticky). La barra superior y el fondo no se muestran.
+ *  - Mobile (<768px): una barra superior con el botón de menú; la sidebar
+ *    es un panel que se desliza desde la izquierda, con fondo oscuro.
+ *
+ * El panel móvil se cierra con: botón ✕, clic en el fondo, tecla Escape,
+ * elegir un enlace, cambiar de ruta o ensanchar la ventana a desktop.
+ * Mientras está abierto bloquea el scroll de la página, mueve el foco al
+ * botón de cierre y mantiene Tab dentro del panel.
+ *
+ * La sección activa la marca NavLink automáticamente (clase active-link y
+ * aria-current="page").
+ */
+
+// Enlaces de integrantes; los ids coinciden con /perfil/:id (membersData).
+const INTEGRANTES = [
+  { to: "/perfil/alejandro", label: "Alejandro" },
+  { to: "/perfil/daniela", label: "Daniela" },
+  { to: "/perfil/juanpablo", label: "Juan Pablo" },
+  { to: "/perfil/lucas", label: "Lucas" },
+  { to: "/perfil/sol", label: "Sol" },
+];
+
+const SECCIONES = [
+  { to: "/arbol", label: "Árbol de Componentes" },
+  { to: "/estudiantes", label: "Estudiantes" },
+  { to: "/hechizos", label: "Hechizos" },
+  { to: "/bitacora", label: "Bitácora" },
+];
+
+const claseEnlace = ({ isActive }) =>
+  `nav-link ${isActive ? "active-link" : ""}`;
 
 export function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const toggleRef = useRef(null);
+  const cerrarRef = useRef(null);
+  const asideRef = useRef(null);
+
+  // Cambiar de ruta (enlace, botón Atrás, etc.) cierra el panel. Se compara
+  // durante el render en lugar de usar un efecto: evita un render de más.
+  const [rutaPrevia, setRutaPrevia] = useState(location.pathname);
+  if (rutaPrevia !== location.pathname) {
+    setRutaPrevia(location.pathname);
+    setIsOpen(false);
+  }
+
+  const cerrar = (devolverFoco = false) => {
+    setIsOpen(false);
+    if (devolverFoco) toggleRef.current?.focus();
+  };
 
   const getHouseClass = () => {
     const path = location.pathname;
     if (path.includes("/perfil/sol")) return "house-gryffindor";
-    if (path.includes("/perfil/alejandro"));
+    // Alejandro: sin clase de casa a propósito (tema Azkaban, sidebar neutra).
     if (path.includes("/perfil/daniela")) return "house-slytherin";
     if (path.includes("/perfil/juanpablo")) return "house-slytherin";
     if (path.includes("/perfil/lucas")) return "house-hufflepuff";
@@ -29,19 +82,101 @@ export function Sidebar() {
     }
   }, [modoOscuro]);
 
+  // Panel móvil abierto: foco al botón de cierre, Escape cierra y se bloquea
+  // el scroll de la página. La limpieza lo deshace todo al cerrar.
+  useEffect(() => {
+    if (!isOpen) return;
+    const overflowPrevio = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    cerrarRef.current?.focus();
+
+    const alTeclear = (evento) => {
+      if (evento.key === "Escape") {
+        setIsOpen(false);
+        toggleRef.current?.focus();
+      }
+    };
+    document.addEventListener("keydown", alTeclear);
+
+    return () => {
+      document.body.style.overflow = overflowPrevio;
+      document.removeEventListener("keydown", alTeclear);
+    };
+  }, [isOpen]);
+
+  // Si la ventana se ensancha hasta desktop con el panel abierto, se cierra
+  // (en desktop la sidebar es fija y no hay panel que cerrar).
+  useEffect(() => {
+    const consulta = window.matchMedia("(min-width: 768px)");
+    const alCambiar = (evento) => {
+      if (evento.matches) setIsOpen(false);
+    };
+    consulta.addEventListener("change", alCambiar);
+    return () => consulta.removeEventListener("change", alCambiar);
+  }, []);
+
+  // Mantiene Tab dentro del panel mientras está abierto.
+  const atraparTab = (evento) => {
+    if (evento.key !== "Tab" || !isOpen) return;
+    const enfocables = asideRef.current.querySelectorAll("a[href], button");
+    if (!enfocables.length) return;
+    const primero = enfocables[0];
+    const ultimo = enfocables[enfocables.length - 1];
+    if (evento.shiftKey && document.activeElement === primero) {
+      evento.preventDefault();
+      ultimo.focus();
+    } else if (!evento.shiftKey && document.activeElement === ultimo) {
+      evento.preventDefault();
+      primero.focus();
+    }
+  };
+
+  const houseClass = getHouseClass();
+
   return (
     <>
-      <button
-        className="btn btn-dark d-md-none position-fixed top-0 start-0 m-3 z-3"
-        onClick={() => setIsOpen(!isOpen)}
-        aria-label="Abrir o cerrar menú"
-      >
-        <i className="fa-solid fa-bars"></i>
-      </button>
+      {/* Barra superior: solo en mobile (el CSS la oculta desde 768px). */}
+      <header className={`topbar-hallows ${houseClass}`}>
+        <button
+          ref={toggleRef}
+          type="button"
+          className="topbar-toggle"
+          aria-label="Abrir menú"
+          aria-expanded={isOpen}
+          aria-controls="menu-lateral"
+          onClick={() => setIsOpen(true)}
+        >
+          <i className="fa-solid fa-bars" aria-hidden="true"></i>
+        </button>
+        <span className="topbar-title font-lumos">Hallows Code</span>
+      </header>
+
+      {/* Fondo oscuro detrás del panel; un clic lo cierra. */}
+      {isOpen && (
+        <div
+          className="sidebar-backdrop"
+          aria-hidden="true"
+          onClick={() => cerrar(true)}
+        />
+      )}
 
       <aside
-        className={`sidebar-hallows p-3 ${getHouseClass()} ${isOpen ? "open" : ""}`}
+        id="menu-lateral"
+        ref={asideRef}
+        className={`sidebar-hallows p-3 ${houseClass} ${isOpen ? "open" : ""}`}
+        aria-label="Menú principal"
+        onKeyDown={atraparTab}
       >
+        <button
+          ref={cerrarRef}
+          type="button"
+          className="sidebar-cerrar"
+          aria-label="Cerrar menú"
+          onClick={() => cerrar(true)}
+        >
+          <i className="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+
         <div className="sidebar-header text-center mb-4">
           <img
             src="/img/hallows-logo.png"
@@ -54,101 +189,34 @@ export function Sidebar() {
         </div>
 
         <nav className="nav flex-column gap-2">
-          <NavLink
-            to="/"
-            onClick={() => setIsOpen(false)}
-            className={({ isActive }) =>
-              `nav-link ${isActive ? "active-link" : ""}`
-            }
-          >
+          <NavLink to="/" onClick={() => cerrar()} className={claseEnlace}>
             <i className="fa-solid fa-house me-2"></i>Inicio
           </NavLink>
 
           <div className="text-muted small fw-bold mt-3 mb-1 text-uppercase px-2">
             Integrantes
           </div>
-          <NavLink
-            to="/perfil/alejandro"
-            onClick={() => setIsOpen(false)}
-            className={({ isActive }) =>
-              `nav-link ${isActive ? "active-link" : ""}`
-            }
-          >
-            Alejandro
-          </NavLink>
-          <NavLink
-            to="/perfil/daniela"
-            onClick={() => setIsOpen(false)}
-            className={({ isActive }) =>
-              `nav-link ${isActive ? "active-link" : ""}`
-            }
-          >
-            Daniela
-          </NavLink>
-          <NavLink
-            to="/perfil/juanpablo"
-            onClick={() => setIsOpen(false)}
-            className={({ isActive }) =>
-              `nav-link ${isActive ? "active-link" : ""}`
-            }
-          >
-            Juan Pablo
-          </NavLink>
-          <NavLink
-            to="/perfil/lucas"
-            onClick={() => setIsOpen(false)}
-            className={({ isActive }) =>
-              `nav-link ${isActive ? "active-link" : ""}`
-            }
-          >
-            Lucas
-          </NavLink>
-          <NavLink
-            to="/perfil/sol"
-            onClick={() => setIsOpen(false)}
-            className={({ isActive }) =>
-              `nav-link ${isActive ? "active-link" : ""}`
-            }
-          >
-            Sol
-          </NavLink>
+          {INTEGRANTES.map(({ to, label }) => (
+            <NavLink
+              key={to}
+              to={to}
+              onClick={() => cerrar()}
+              className={claseEnlace}
+            >
+              {label}
+            </NavLink>
+          ))}
 
-          <NavLink
-            to="/arbol"
-            onClick={() => setIsOpen(false)}
-            className={({ isActive }) =>
-              `nav-link ${isActive ? "active-link" : ""}`
-            }
-          >
-            Árbol de Componentes
-          </NavLink>
-          <NavLink
-            to="/estudiantes"
-            onClick={() => setIsOpen(false)}
-            className={({ isActive }) =>
-              `nav-link ${isActive ? "active-link" : ""}`
-            }
-          >
-            Estudiantes
-          </NavLink>
-          <NavLink
-            to="/hechizos"
-            onClick={() => setIsOpen(false)}
-            className={({ isActive }) =>
-              `nav-link ${isActive ? "active-link" : ""}`
-            }
-          >
-            Hechizos
-          </NavLink>
-          <NavLink
-            to="/bitacora"
-            onClick={() => setIsOpen(false)}
-            className={({ isActive }) =>
-              `nav-link ${isActive ? "active-link" : ""}`
-            }
-          >
-            Bitácora
-          </NavLink>
+          {SECCIONES.map(({ to, label }) => (
+            <NavLink
+              key={to}
+              to={to}
+              onClick={() => cerrar()}
+              className={claseEnlace}
+            >
+              {label}
+            </NavLink>
+          ))}
         </nav>
 
         <div className="mt-auto pt-4 border-top border-secondary text-center">

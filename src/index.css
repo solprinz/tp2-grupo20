@@ -22,6 +22,7 @@
   --hallows-gold-muted: #aa9368; /* Dorado suave subtítulos */
   --hallows-gold-border: #b89552; /* Bordes dorados */
   --hallows-text-dark: #2b2621; /* Texto oscuro para modo claro */
+  --topbar-altura: 56px; /* Barra superior mobile (Sidebar) */
 
   /* Casas de Hogwarts */
   --gryffindor1: #740001;
@@ -83,6 +84,9 @@ h3,
   background-color: var(--hallows-bg-light) !important;
   color: var(--hallows-text-dark);
   min-height: 100vh;
+  /* Sin esto, un contenido ancho (min-content) empuja a <main> fuera de la
+     pantalla en lugar de dejar que se encoja junto a la sidebar fija. */
+  min-width: 0;
 }
 
 .main-content h1,
@@ -98,7 +102,7 @@ h3,
   background-color: var(--hallows-bg-dark) !important;
   color: var(--hallows-gold-text);
   border-right: 1px solid #38251b;
-  min-width: 250px;
+  /* Ancho y posición: ver "4b. SIDEBAR RESPONSIVE". */
 }
 
 /* Logo */
@@ -150,11 +154,151 @@ h3,
 }
 
 /* ==========================================================================
+   4b. SIDEBAR RESPONSIVE (NAV-2)
+   Mobile-first: el estilo base es el de pantalla chica y los breakpoints
+   agregan reglas con min-width.
+     - Mobile  (< 768px): barra superior fija + sidebar como panel que se
+       desliza desde la izquierda, con fondo oscuro.
+     - Tablet/desktop (768px+): sidebar fija de 250px que acompaña el scroll.
+   Z-index: barra superior 1030 < fondo 1040 < panel 1045 (sobre Bootstrap).
+   ========================================================================== */
+
+/* ---- Barra superior (solo mobile) ---- */
+.topbar-hallows {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  height: var(--topbar-altura);
+  padding: 0 0.75rem;
+  color: var(--hallows-gold-text);
+  background-color: var(--hallows-bg-dark);
+  border-bottom: 1px solid var(--hallows-gold-border);
+}
+
+.topbar-toggle {
+  display: grid;
+  width: 44px; /* objetivo táctil mínimo recomendado */
+  height: 44px;
+  place-items: center;
+  color: inherit;
+  font-size: 1.25rem;
+  background: transparent;
+  border: 1px solid currentColor;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.topbar-toggle:focus-visible,
+.sidebar-cerrar:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 2px;
+}
+
+.topbar-title {
+  font-size: 1.4rem;
+  letter-spacing: 1.5px;
+}
+
+/* La barra ocupa lugar arriba: el contenido baja su misma altura. */
+.main-content {
+  padding-top: var(--topbar-altura);
+}
+
+/* ---- Fondo oscuro detrás del panel ---- */
+.sidebar-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1040;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+/* ---- Sidebar como panel deslizable ---- */
+.sidebar-hallows {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1045;
+  display: flex;
+  flex-direction: column;
+  width: min(280px, 85vw);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  /* Cerrado: fuera de pantalla y fuera del orden de Tab (visibility). */
+  visibility: hidden;
+  transform: translateX(-100%);
+  transition:
+    transform 0.3s ease,
+    visibility 0s linear 0.3s;
+}
+
+.sidebar-hallows.open {
+  visibility: visible;
+  transform: translateX(0);
+  transition: transform 0.3s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sidebar-hallows,
+  .sidebar-hallows.open {
+    transition: none;
+  }
+}
+
+.sidebar-cerrar {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  color: inherit;
+  font-size: 1.25rem;
+  background: transparent;
+  border: 1px solid currentColor;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* ---- Tablet y desktop (768px+): sidebar fija ---- */
+@media (min-width: 768px) {
+  .topbar-hallows,
+  .sidebar-backdrop,
+  .sidebar-cerrar {
+    display: none;
+  }
+
+  .main-content {
+    padding-top: 0;
+  }
+
+  .sidebar-hallows {
+    position: sticky;
+    top: 0;
+    z-index: auto;
+    flex: 0 0 250px;
+    align-self: flex-start;
+    width: 250px;
+    height: 100vh;
+    visibility: visible;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ==========================================================================
    5. TEMAS POR CASAS (SIDEBAR & FOOTER UNIFICADOS)
    ========================================================================== */
 
 /* 🦁 Gryffindor */
 .sidebar-hallows.house-gryffindor,
+.topbar-hallows.house-gryffindor,
 .footer-hallows.house-gryffindor {
   background-color: var(--gryffindor1) !important;
   border-color: var(--gryffindor2) !important;
@@ -169,6 +313,7 @@ h3,
 
 /* 🐍 Slytherin */
 .sidebar-hallows.house-slytherin,
+.topbar-hallows.house-slytherin,
 .footer-hallows.house-slytherin {
   background-color: var(--slytherin1) !important;
   border-color: var(--slytherin2) !important;
@@ -183,6 +328,7 @@ h3,
 
 /* 🦅 Ravenclaw */
 .sidebar-hallows.house-ravenclaw,
+.topbar-hallows.house-ravenclaw,
 .footer-hallows.house-ravenclaw {
   background-color: var(--ravenclaw1) !important;
   border-color: var(--ravenclaw2) !important;
@@ -197,6 +343,7 @@ h3,
 
 /* 🦡 Hufflepuff */
 .sidebar-hallows.house-hufflepuff,
+.topbar-hallows.house-hufflepuff,
 .footer-hallows.house-hufflepuff {
   background-color: var(--hufflepuff1) !important;
   border-color: var(--hufflepuff2) !important;
@@ -207,6 +354,8 @@ h3,
 .sidebar-hallows.house-hufflepuff .h4,
 .sidebar-hallows.house-hufflepuff i,
 .sidebar-hallows.house-hufflepuff .text-muted,
+.topbar-hallows.house-hufflepuff .topbar-title,
+.topbar-hallows.house-hufflepuff .topbar-toggle,
 .footer-hallows.house-hufflepuff .hallows-titulo-footer,
 .footer-hallows.house-hufflepuff .footer-link-hallows,
 .footer-hallows.house-hufflepuff .copyright-texto {
@@ -228,6 +377,16 @@ h3,
   color: var(--hufflepuff1) !important;
   border-left: 4px solid var(--hufflepuff3) !important;
   opacity: 1 !important;
+}
+
+/* Botón Nox/Lumos: el amarillo de Bootstrap era invisible sobre el fondo
+   amarillo de Hufflepuff. */
+.sidebar-hallows.house-hufflepuff .btn-outline-warning {
+  --bs-btn-color: var(--hufflepuff2);
+  --bs-btn-border-color: var(--hufflepuff2);
+  --bs-btn-hover-color: var(--hufflepuff1);
+  --bs-btn-hover-bg: var(--hufflepuff2);
+  --bs-btn-hover-border-color: var(--hufflepuff2);
 }
 
 /* ==========================================================================
