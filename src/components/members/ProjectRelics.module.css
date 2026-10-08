@@ -1,0 +1,253 @@
+/* ==========================================================================
+   ProjectRelics — El relato de las creaciones
+   Mobile-first: base 320px+, ampliada en tablet (768px) y desktop (1024px).
+   Los títulos usan 3 clases + !important por el mismo motivo que en
+   FavoritesMap.module.css (index.css fuerza fuente y color de h1/h2/h3).
+   ========================================================================== */
+
+.reliquias {
+  /* Colores: leen el tema del perfil (--tema-*, ver MemberProfile.module.css)
+     y, si no hay tema, usan el pergamino de siempre. */
+  --rel-tinta: var(--tema-tinta, #29231d);
+  --rel-oro: var(--tema-acento, #886326);
+
+  padding: 2.5rem 1rem 3rem;
+  color: var(--rel-tinta);
+  background: var(
+    --tema-fondo,
+    radial-gradient(ellipse at center, transparent 35%, #62401c30),
+    repeating-linear-gradient(8deg, #80602b05 0 1px, transparent 1px 5px),
+    #e9dab9
+  );
+  border-top: 1px solid var(--tema-borde, #88632650);
+}
+
+.encabezado {
+  max-width: 680px;
+  margin: 0 auto 2rem;
+  text-align: center;
+}
+
+.capitulo {
+  margin: 0 0 0.25rem;
+  color: var(--rel-oro);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.reliquias .encabezado .titulo {
+  margin: 0 0 0.5rem;
+  color: var(--rel-tinta) !important;
+  font-family: "Cinzel", serif !important;
+  font-size: clamp(1.6rem, 6vw, 3rem);
+  letter-spacing: normal;
+  text-align: center;
+}
+
+/* ---------- Tarjetas ---------- */
+.tarjetas {
+  display: grid;
+  grid-template-columns: 1fr; /* mobile: una tarjeta por fila */
+  gap: 1.5rem;
+}
+
+.tarjeta {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--tema-panel, #f8ecd180);
+  border: 1px solid var(--tema-borde, #88632670);
+  box-shadow: 0 12px 24px #29231d12;
+}
+
+.activa {
+  border-color: var(--rel-oro);
+  box-shadow:
+    0 0 0 2px var(--rel-oro),
+    0 12px 24px #29231d20;
+}
+
+.ilustracion,
+.captura {
+  display: block;
+  width: 100%;
+  height: 200px;
+  background: var(--tema-ilustracion, radial-gradient(ellipse, #faf0d7, #c8b38b));
+  border-bottom: 1px solid var(--tema-borde, #88632670);
+}
+
+.ilustracion {
+  fill: var(--rel-tinta);
+  color: var(--rel-oro);
+}
+
+.captura {
+  padding: 1rem;
+  object-fit: contain;
+}
+
+.cuerpo {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 1.25rem;
+}
+
+.reliquias .nombreProyecto,
+.reliquias .tituloHistoria {
+  margin: 0 0 0.25rem;
+  color: var(--rel-tinta);
+  font-family: "Cinzel", serif !important;
+  letter-spacing: normal;
+}
+
+.reliquias .nombreProyecto {
+  font-size: 1.25rem;
+}
+
+.subtituloProyecto {
+  font-style: italic;
+}
+
+.boton {
+  align-self: flex-start;
+  margin-top: auto;
+  padding: 0.7rem 1rem;
+  color: var(--tema-boton-texto, #faefd8);
+  font-weight: 600;
+  background: var(--tema-boton, var(--rel-tinta));
+  border: 1px solid var(--tema-borde, var(--rel-tinta));
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.boton:hover {
+  background: var(--tema-boton-hover, #51412e);
+}
+
+.reliquias :focus-visible {
+  outline: 3px solid var(--rel-oro);
+  outline-offset: 5px;
+}
+
+/* ---------- Historia desplegada ---------- */
+.historia {
+  margin-top: 1.5rem;
+  padding: 1.25rem;
+  background: var(--tema-panel, #fff4d9);
+  border-block: 2px solid var(--rel-oro);
+  box-shadow: 0 12px 30px #29231d18;
+}
+
+.reliquias .tituloHistoria {
+  font-size: 1.4rem;
+  scroll-margin-top: 6rem;
+}
+
+.historia dt {
+  color: var(--rel-oro);
+}
+
+.historia dd {
+  margin-bottom: 1rem;
+}
+
+.historia a {
+  color: var(--rel-tinta);
+  font-weight: 700;
+}
+
+.progreso {
+  margin: 1.5rem 0 0;
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+.final {
+  margin-top: 1.5rem;
+  font-family: "Cinzel", serif;
+  text-align: center;
+}
+
+.final svg {
+  margin-bottom: 1rem;
+  fill: none;
+  stroke: var(--rel-oro);
+  stroke-width: 2;
+}
+
+/* ---------- Animaciones ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .historia,
+  .final {
+    animation: velo 0.8s ease-out;
+  }
+}
+
+@keyframes velo {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   TABLET (768px+)
+   Con la sidebar fija, el contenido útil ronda los 518px: se pasa a 2
+   columnas (3 sería demasiado angosto para texto + botón).
+   ========================================================================== */
+@media (min-width: 768px) {
+  .reliquias {
+    padding: 3.5rem 2rem 4rem;
+  }
+
+  .tarjetas {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* Con cantidad impar, la última tarjeta se centra en su propia fila. */
+  .tarjeta:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc(50% - 0.75rem);
+  }
+
+  .historia {
+    padding: 2rem;
+  }
+}
+
+/* ==========================================================================
+   DESKTOP (1024px+)
+   Las tres reliquias en una sola fila, como en el TP1.
+   ========================================================================== */
+@media (min-width: 1024px) {
+  .reliquias {
+    padding: 4rem 3rem 5rem;
+  }
+
+  .tarjetas {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .tarjeta:last-child:nth-child(odd) {
+    grid-column: auto;
+    justify-self: stretch;
+    width: auto;
+  }
+
+  .ilustracion,
+  .captura {
+    height: 240px;
+  }
+
+  .historia {
+    padding: 2.5rem 3rem;
+  }
+}

@@ -1,0 +1,404 @@
+/* ==========================================================================
+   MemberProfile — plantilla base de los perfiles
+
+   Decisiones:
+   - CSS Modules: los nombres de clase quedan aislados por componente y no
+     chocan con el CSS global ni con Bootstrap.
+   - Paleta por casa: [data-casa] define 4 variables y todo el perfil (y los
+     componentes hijos) las hereda. Para sumar una casa o retocar colores
+     se edita solo el bloque de variables.
+   - Mobile-first: los estilos base son para 320px+; tablet (768px+) y
+     desktop (1024px+) agregan reglas con min-width.
+   - index.css fuerza fuente y color de h1/h2 (y color Nox) con !important.
+     Los títulos usan 3 clases de especificidad + !important para conservar
+     la tinta del pergamino sin modificar el CSS global del equipo.
+   ========================================================================== */
+
+/* ---------- Paleta por casa ---------- */
+.perfil[data-casa="gryffindor"] {
+  --casa-fondo: #740001; /* color principal de la casa */
+  --casa-acento: #d3a625; /* dorado */
+  --casa-tinta: #740001; /* títulos sobre pergamino */
+  --casa-sobre: #ffffff; /* texto sobre --casa-fondo */
+}
+
+.perfil[data-casa="slytherin"] {
+  --casa-fondo: #1a472a;
+  --casa-acento: #aaaaaa;
+  --casa-tinta: #1a472a;
+  --casa-sobre: #ffffff;
+}
+
+.perfil[data-casa="ravenclaw"] {
+  --casa-fondo: #0e1a40;
+  --casa-acento: #946b2d;
+  --casa-tinta: #0e1a40;
+  --casa-sobre: #ffffff;
+}
+
+.perfil[data-casa="hufflepuff"] {
+  --casa-fondo: #ecb939;
+  --casa-acento: #372e29;
+  --casa-tinta: #372e29;
+  --casa-sobre: #372e29;
+}
+
+/* ---------- Contenedor ---------- */
+.perfil {
+  --pergamino: #ecdfc4;
+  --pergamino-claro: #fff4df;
+  --tinta: #392c22;
+  --borde: #96784c;
+
+  max-width: 1100px;
+  margin-inline: auto;
+  color: var(--tinta);
+  box-shadow: 0 12px 30px #0000001f;
+}
+
+/* ---------- Temas especiales (opcional: campo `tema` del integrante) ----------
+   Un tema redefine la paleta completa del perfil. Las variables `--tema-*`
+   también las leen FavoritesMap y ProjectRelics, que las usan con un valor de
+   respaldo: sin tema, todo conserva los colores de pergamino de siempre.
+
+   Azkaban (perfil de Alejandro, TP1): expediente de prisión, tonos fríos. */
+.perfil[data-tema="azkaban"] {
+  --pergamino: #202b30;
+  --pergamino-claro: #1c2529;
+  --tinta: #dce3e3;
+  --borde: #697b80;
+  --casa-tinta: #dce3e3; /* los títulos pasan a tinta clara sobre fondo oscuro */
+
+  --tema-tinta: #dce3e3;
+  --tema-acento: #aebfb8;
+  --tema-panel: #1c2529;
+  --tema-borde: #697b80;
+  --tema-boton: #29383e;
+  --tema-boton-texto: #dce3e3;
+  --tema-boton-hover: #3c5057;
+  --tema-filtro: saturate(0.65);
+  --tema-ilustracion: radial-gradient(ellipse, #405058, #141c20);
+  --tema-placa: #141c20;
+  --tema-fondo:
+    radial-gradient(ellipse at 15% 0, #58727825, transparent 60%),
+    repeating-linear-gradient(0deg, transparent 0 119px, #00000020 120px 122px),
+    linear-gradient(110deg, #11181c, #202b30 50%, #11181c);
+
+  background: #11181c;
+  box-shadow: 0 12px 30px #0009;
+}
+
+/* ---------- Secciones genéricas ---------- */
+.seccion {
+  padding: 2.5rem 1rem;
+  background: var(
+    --tema-fondo,
+    radial-gradient(ellipse at top left, #fff9ea70, transparent 65%),
+    repeating-linear-gradient(3deg, #80602b04 0 1px, transparent 1px 5px),
+    var(--pergamino)
+  );
+  border-top: 1px solid var(--borde);
+}
+
+.intro {
+  margin: 0 0 0.25rem;
+  color: var(--casa-tinta);
+  font-family: "Cinzel", serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.perfil .seccion .titulo,
+.perfil .pergamino .titulo {
+  margin: 0 0 1rem;
+  color: var(--casa-tinta) !important;
+  font-family: "Cinzel", serif !important;
+  font-size: clamp(1.6rem, 6vw, 2.4rem);
+  letter-spacing: normal;
+  text-align: left;
+}
+
+.vacio {
+  margin: 0;
+  font-style: italic;
+}
+
+/* ---------- 1. Cabecera ---------- */
+.cabecera {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem 1rem 2.5rem;
+  text-align: center;
+  background: var(
+    --tema-fondo,
+    radial-gradient(ellipse at top left, #fff9ea70, transparent 65%),
+    repeating-linear-gradient(3deg, #80602b04 0 1px, transparent 1px 5px),
+    var(--pergamino)
+  );
+  border-bottom: 4px solid var(--casa-fondo);
+}
+
+/* Retrato: avatar + placa opcional. Fija el ancho del conjunto. */
+.retrato {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: min(100%, 240px);
+}
+
+/* Marco en arco, como en los perfiles del TP1. */
+.foto {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  padding: 0.6rem;
+  object-fit: cover;
+  background: linear-gradient(
+    135deg,
+    #fff4df,
+    #b49460 40%,
+    #f4e2b8 65%,
+    #85643c
+  );
+  border: 10px double #73562f;
+  border-radius: 50% 50% 6px 6px / 37.5% 37.5% 6px 6px;
+  box-shadow:
+    inset 0 0 0 2px #f8e7c0,
+    inset 0 0 0 5px #73562f,
+    0 5px 0 #73562f,
+    0 18px 30px #392c2235;
+}
+
+/* Azkaban: foto en grises, marco metálico (como el expediente del TP1). */
+.perfil[data-tema="azkaban"] .foto {
+  background: linear-gradient(135deg, #8a989b, #252f34 45%, #67777b 70%, #172025);
+  border-color: #718084;
+  filter: grayscale(0.85) contrast(1.12);
+  box-shadow:
+    inset 0 0 0 2px #b3bcb9,
+    inset 0 0 0 5px #273238,
+    0 10px 0 -2px #273238,
+    0 22px 35px #0009;
+}
+
+/* Placa bajo el retrato (p. ej. "Azkaban · Expediente 020"). */
+.placa {
+  position: relative;
+  width: fit-content;
+  max-width: 100%;
+  margin: -1rem auto 0;
+  padding: 0.7rem 1.1rem;
+  color: var(--tinta);
+  font-family: "Cinzel", serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  background: var(--tema-placa, var(--pergamino-claro));
+  border: 3px double var(--borde);
+  box-shadow: 0 8px 20px #0006;
+}
+
+.placa span {
+  font-family: "Caveat", cursive;
+  font-size: 1.3rem;
+  letter-spacing: 0.03em;
+}
+
+.presentacion {
+  width: 100%;
+}
+
+.perfil .cabecera .nombre {
+  margin: 0 0 0.5rem;
+  color: var(--casa-tinta) !important;
+  font-family: "Cinzel", serif !important;
+  font-size: clamp(1.8rem, 8vw, 3rem);
+  letter-spacing: normal;
+  text-align: center;
+}
+
+.rol {
+  margin: 0 0 0.75rem;
+  font-size: 1.05rem;
+}
+
+.casa {
+  display: inline-block;
+  margin: 0 0 1.25rem;
+  padding: 0.3rem 0.9rem;
+  color: var(--casa-sobre);
+  font-family: "Cinzel", serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: var(--casa-fondo);
+  border: 2px solid var(--casa-acento);
+}
+
+.datos {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-left: 3px solid var(--borde);
+}
+
+.datos dt {
+  color: var(--casa-tinta);
+  font-family: "Cinzel", serif;
+  font-size: 0.85rem;
+}
+
+.datos dd {
+  margin: 0;
+}
+
+/* ---------- 2. Sobre mí ---------- */
+.pergamino {
+  max-width: 760px;
+  padding: 1.5rem;
+  background: var(--pergamino-claro);
+  border: 1px solid var(--borde);
+  box-shadow: 0 12px 30px #0000001a;
+}
+
+.pergamino p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- 3. Interacción propia ---------- */
+.extra {
+  padding: 2rem 1rem;
+  text-align: center;
+  background: var(--pergamino);
+  border-top: 1px solid var(--borde);
+}
+
+/* ---------- 4. Habilidades ---------- */
+.habilidades {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.habilidad {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.9rem 1.1rem;
+  background: var(--pergamino-claro);
+  border-left: 3px solid var(--casa-fondo);
+  box-shadow: 0 5px 12px #00000014;
+}
+
+.numero {
+  color: var(--tema-acento, #73562f);
+  font-family: "Cinzel", serif;
+  font-size: 1.4rem;
+}
+
+.perfil .nombreHabilidad {
+  margin: 0;
+  color: var(--tinta);
+  font-family: "Cinzel", serif !important;
+  font-size: 1rem;
+  letter-spacing: normal;
+  line-height: 1.4;
+}
+
+/* ==========================================================================
+   TABLET (768px+)
+   En este ancho ya hay sidebar fija: el hamburguesa desaparece (se quita el
+   padding superior) y las secciones ganan aire. Habilidades y datos pasan a
+   dos columnas.
+   ========================================================================== */
+@media (min-width: 768px) {
+  .seccion,
+  .extra {
+    padding: 3rem 2rem;
+  }
+
+  .cabecera {
+    padding: 2.5rem 2rem 3rem;
+  }
+
+  .retrato {
+    width: min(100%, 300px);
+  }
+
+  .datos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .pergamino {
+    padding: 2rem;
+  }
+
+  .habilidades {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+}
+
+/* ==========================================================================
+   DESKTOP (1024px+)
+   La cabecera pasa a dos columnas: avatar a la izquierda, texto alineado
+   a la izquierda a la derecha.
+   ========================================================================== */
+@media (min-width: 1024px) {
+  .seccion,
+  .extra {
+    padding: 4rem 3rem;
+  }
+
+  .cabecera {
+    flex-direction: row;
+    align-items: center;
+    gap: 3rem;
+    padding: 3rem;
+    text-align: left;
+  }
+
+  /* Entre 1024 y 1279px la sidebar (250px) deja ~710px de contenido: el
+     avatar y el nombre se mantienen más chicos para que quepan lado a
+     lado sin provocar scroll horizontal. */
+  .retrato {
+    flex: 0 0 280px;
+    width: 280px;
+  }
+
+  .presentacion {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .perfil .cabecera .nombre {
+    font-size: 2.6rem;
+    text-align: left;
+    overflow-wrap: anywhere;
+  }
+
+  .rol {
+    font-size: 1.15rem;
+  }
+}
+
+/* Pantallas anchas: avatar y título a tamaño completo. */
+@media (min-width: 1280px) {
+  .retrato {
+    flex-basis: 320px;
+    width: 320px;
+  }
+
+  .perfil .cabecera .nombre {
+    font-size: 3rem;
+  }
+}

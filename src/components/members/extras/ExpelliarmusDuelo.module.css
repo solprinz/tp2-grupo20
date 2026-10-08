@@ -1,0 +1,210 @@
+/* ==========================================================================
+   ExpelliarmusDuelo — duelo y cursor-varita (perfil de Lucas)
+   Mobile-first. Usa las variables de la casa que define MemberProfile
+   (--casa-fondo / --casa-acento / --casa-tinta) con Hufflepuff de respaldo.
+   ========================================================================== */
+
+.raiz {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.pregunta {
+  margin: 0 0 0.75rem;
+  color: var(--casa-tinta, #372e29);
+  font-family: "Caveat", cursive;
+  font-size: clamp(2rem, 9vw, 3.8rem);
+  line-height: 1.1;
+}
+
+/* Zona reservada para el botón: la frase de victoria se superpone aquí. */
+.zonaBoton {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 4.5rem;
+}
+
+.boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.5rem;
+  color: var(--casa-acento, #372e29);
+  font-family: "Lumos", serif;
+  font-size: 1.3rem;
+  background: var(--casa-fondo, #ecb939);
+  border: 2px solid var(--casa-acento, #372e29);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.boton:hover:not(:disabled),
+.boton:focus-visible {
+  color: var(--casa-fondo, #ecb939);
+  background: var(--casa-acento, #372e29);
+  border-color: var(--casa-fondo, #ecb939);
+  box-shadow: 0 0 15px var(--casa-acento, #372e29);
+}
+
+.boton:disabled {
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.boton:focus-visible {
+  outline: 3px solid var(--casa-acento, #372e29);
+  outline-offset: 4px;
+}
+
+/* Frase de victoria: contorno oscuro sobre relleno de la casa. */
+.resultado {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  color: var(--casa-fondo, #ecb939);
+  font-family: "Caveat", cursive;
+  font-size: clamp(2.2rem, 11vw, 4.5rem);
+  line-height: 1;
+  pointer-events: none;
+  -webkit-text-stroke: 5px var(--casa-acento, #372e29);
+  paint-order: stroke fill;
+}
+
+/* ---------- Cursor-varita ---------- */
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 45px;
+  height: 45px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Cae al suelo con suavidad al perder el duelo. */
+.caida {
+  transition:
+    top 0.6s ease-in,
+    left 0.6s ease-out,
+    opacity 0.3s ease;
+}
+
+.varita {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-image: url("/img/varita.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform-origin: top right;
+  transition: transform 0.05s linear;
+}
+
+/* Destello en la punta al pasar sobre links y botones. */
+.varita::after {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 12px;
+  height: 12px;
+  content: "";
+  background-color: white;
+  border-radius: 50%;
+  box-shadow:
+    0 0 10px white,
+    0 0 20px rgba(255, 255, 255, 0.8);
+  opacity: 0;
+  transform: scale(0);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+  pointer-events: none;
+}
+
+.punta::after {
+  opacity: 1;
+  animation:
+    entradaBrillo 0.3s ease-out forwards,
+    latido 0.8s ease-in-out 0.3s infinite alternate;
+}
+
+@keyframes entradaBrillo {
+  0% {
+    transform: scale(0);
+    box-shadow:
+      0 0 0 white,
+      0 0 0 rgba(255, 255, 255, 0);
+  }
+  100% {
+    transform: scale(1.5);
+    box-shadow:
+      0 0 15px white,
+      0 0 30px rgba(255, 255, 255, 1);
+  }
+}
+
+@keyframes latido {
+  0% {
+    transform: scale(1.5);
+    box-shadow:
+      0 0 15px white,
+      0 0 30px rgba(255, 255, 255, 1);
+  }
+  100% {
+    transform: scale(1.05);
+    box-shadow:
+      0 0 8px white,
+      0 0 15px rgba(255, 255, 255, 0.7);
+  }
+}
+
+/* ---------- Clases globales sobre <body> (las agrega el componente) ----------
+   Mientras el perfil de Lucas está montado se oculta el cursor del sistema:
+   la varita lo reemplaza. Al perder el duelo, la varita desaparece y vuelve
+   el cursor normal. Al salir de la página el componente quita las clases. */
+:global(body.cursor-varita-activo) * {
+  cursor: none !important;
+}
+
+:global(body.duelo-varita-perdido) * {
+  cursor: auto !important;
+}
+
+:global(body.duelo-varita-perdido) a,
+:global(body.duelo-varita-perdido) button:not(:disabled),
+:global(body.duelo-varita-perdido) input {
+  cursor: pointer !important;
+}
+
+:global(body.duelo-varita-perdido) .cursor {
+  display: none !important;
+}
+
+/* ==========================================================================
+   TABLET (768px+) y DESKTOP (1024px+): el texto escala con clamp(); solo
+   se amplía la zona del botón.
+   ========================================================================== */
+@media (min-width: 768px) {
+  .zonaBoton {
+    min-height: 5.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .pregunta {
+    margin-bottom: 1rem;
+  }
+}
