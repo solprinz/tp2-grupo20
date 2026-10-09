@@ -150,7 +150,7 @@ Prioridad: 🔴 bloquea a otros o a la entrega · 🟠 importante · 🟢 mejora
 - [ ] **T-09 Pasar mis entradas de bitácora** (sección 5) y mi texto de README (sección 6) al Integrante 4 y al 5.
 
 ### 🟢 Mejoras
-- [x] **T-10 Migrar mi interacción del TP1** (duelo "Expelliarmus" y cursor-varita): HECHO como `ExpelliarmusDuelo`. La varita solo existe en el perfil de Lucas; si el equipo la quiere global, hay que moverla al layout (decisión con Sol).
+- [x] **T-10 Migrar mi interacción del TP1** (duelo "Expelliarmus" y cursor-varita): HECHO como `ExpelliarmusDuelo`. La varita-cursor ahora es **global** (`src/components/wand/`, montada en `App.jsx`): está en todas las páginas y no se reinicia al navegar. El duelo la "desarma" con `useWand()` y la varita vuelve en cuanto se sale del perfil de Lucas. Se desactiva con `prefers-reduced-motion` y en dispositivos sin puntero fino. Limitación: sobre el reproductor de Spotify (iframe) vuelve a verse el cursor del sistema, porque el navegador no pasa los eventos del mouse del iframe a la página.
 - [ ] **T-14 Comprimir `public/img/patronus-ciervo.png`** (2,1 MB, es la imagen de Sol que se carga al pulsar "Revelio").
 - [ ] **T-15 Avisar a Daniela, Sol, Juan Pablo y Alejandro** de que sus interacciones ya están migradas y dónde viven (`extras/` y `membersData.js`), para que las revisen y las ajusten a su gusto.
 - [ ] **T-11 Accesibilidad**: pasada con teclado (Tab, Escape) y lector de pantalla en mapa y reliquias; revisar jerarquía de títulos.
