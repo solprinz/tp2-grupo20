@@ -21,18 +21,30 @@ import { useEffect, useRef, useState } from "react";
 
 // Enlaces de integrantes; los ids coinciden con /perfil/:id (membersData).
 const INTEGRANTES = [
-  { to: "/perfil/alejandro", label: "Alejandro" },
-  { to: "/perfil/daniela", label: "Daniela" },
-  { to: "/perfil/juanpablo", label: "Juan Pablo" },
-  { to: "/perfil/lucas", label: "Lucas" },
-  { to: "/perfil/sol", label: "Sol" },
-];
+  {
+    to: "/perfil/alejandro",
+    label: "Alejandro",
+    icon: "fa-solid fa-wand-sparkles",
+  },
+  { to: "/perfil/daniela", label: "Daniela", icon: "fa-solid fa-hat-wizard" },
+  {
+    to: "/perfil/juanpablo",
+    label: "Juan Pablo",
+    icon: "fa-solid fa-feather-pointed",
+  },
+  { to: "/perfil/lucas", label: "Lucas", icon: "fa-solid fa-code" },
+  { to: "/perfil/sol", label: "Sol", icon: "fa-solid fa-cat" },
+]; //le agregue iconitos a todos
 
 const SECCIONES = [
-  { to: "/arbol", label: "Árbol de Componentes" },
-  { to: "/estudiantes", label: "Estudiantes" },
-  { to: "/hechizos", label: "Hechizos" },
-  { to: "/bitacora", label: "Bitácora" },
+  { to: "/arbol", label: "Árbol de Componentes", icon: "fa-solid fa-sitemap" },
+  {
+    to: "/estudiantes",
+    label: "Estudiantes",
+    icon: "fa-solid fa-user-graduate",
+  },
+  { to: "/hechizos", label: "Hechizos", icon: "fa-solid fa-bolt" },
+  { to: "/bitacora", label: "Bitácora", icon: "fa-solid fa-book-bookmark" },
 ];
 
 const claseEnlace = ({ isActive }) =>
@@ -196,30 +208,34 @@ export function Sidebar() {
           <div className="text-muted small fw-bold mt-3 mb-1 text-uppercase px-2">
             Integrantes
           </div>
-          {INTEGRANTES.map(({ to, label }) => (
+          {INTEGRANTES.map(({ to, label, icon }) => (
             <NavLink
               key={to}
               to={to}
               onClick={() => cerrar()}
               className={claseEnlace}
             >
+              <i className={`${icon} me-2`}></i>
               {label}
             </NavLink>
           ))}
 
-          {SECCIONES.map(({ to, label }) => (
+          <div className="mt-2 pt-2 border-top border-warning opacity-25"></div>
+
+          {SECCIONES.map(({ to, label, icon }) => (
             <NavLink
               key={to}
               to={to}
               onClick={() => cerrar()}
               className={claseEnlace}
             >
+              <i className={`${icon} me-2`}></i>
               {label}
             </NavLink>
           ))}
         </nav>
 
-        <div className="mt-auto pt-4 border-top border-secondary text-center">
+        <div className="mt-auto pt-4text-center">
           <button
             className="btn btn-outline-warning btn-sm w-100"
             onClick={() => setModoOscuro(!modoOscuro)}

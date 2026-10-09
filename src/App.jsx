@@ -10,13 +10,20 @@ const Hechizos = () => <h2>Hechizos (API Externa)</h2>;
 const ArbolComponentes = () => <h2>Árbol de Componentes</h2>;
 const Bitacora = () => <h2>Bitácora de Desarrollo</h2>;
 
+const NotFound = () => (
+  <div className="text-center py-5">
+    <h2>404 - Hechizo no encontrado</h2>
+    <p>El Mapa del Merodeador no encuentra la página que intentás visitar.</p>
+  </div>
+);
+
 export default function App() {
   return (
     <BrowserRouter>
       <div className="layout-hallows d-flex">
         <Sidebar />
         <main className="main-content flex-grow-1 d-flex flex-column min-vh-100">
-          <div className="flex-grow-1 p-4">
+          <div className="flex-grow-1 p-2 p-md-3">
             <Routes>
               {/* Ruta principal mapeada a la vista Home */}
               <Route path="/" element={<Home />} />
@@ -29,6 +36,9 @@ export default function App() {
               <Route path="/estudiantes" element={<Estudiantes />} />
               <Route path="/hechizos" element={<Hechizos />} />
               <Route path="/bitacora" element={<Bitacora />} />
+
+              {/*  Ruta 404 Global para URLs inexistentes */}
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </div>
           <Footer />
