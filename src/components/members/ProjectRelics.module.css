@@ -74,7 +74,10 @@
   display: block;
   width: 100%;
   height: 200px;
-  background: var(--tema-ilustracion, radial-gradient(ellipse, #faf0d7, #c8b38b));
+  background: var(
+    --tema-ilustracion,
+    radial-gradient(ellipse, #faf0d7, #c8b38b)
+  );
   border-bottom: 1px solid var(--tema-borde, #88632670);
 }
 
@@ -250,4 +253,110 @@
   .historia {
     padding: 2.5rem 3rem;
   }
+}
+
+/* ==========================================================================
+   CONFIGURACIÓN COMPLETA MODO NOX (OSCURO) — PROJECT RELICS
+   ========================================================================== */
+
+/* 1. Contenedor general de la sección y títulos principales */
+:global(body.nox-mode) .reliquias,
+:global(body.nox-mode) [class*="reliquias"],
+:global(body.nox-mode) [class*="contenedor"] {
+  background-color: #120e0d !important;
+  color: #e2d7be !important;
+}
+
+:global(body.nox-mode) [class*="reliquias"] h2,
+:global(body.nox-mode) [class*="reliquias"] [class*="titulo"],
+:global(body.nox-mode) .seccion h2 {
+  color: #e2c992 !important; /* Dorado claro radiante */
+  text-shadow: 0 0 10px rgba(226, 201, 146, 0.25);
+}
+
+:global(body.nox-mode) [class*="reliquias"] [class*="intro"],
+:global(body.nox-mode) [class*="reliquias"] p {
+  color: #dcd0b9 !important;
+}
+
+/* 2. Tarjetas de cada reliquia (cerradas) */
+:global(body.nox-mode) [class*="tarjeta"],
+:global(body.nox-mode) [class*="reliquiaCard"] {
+  background-color: #1c1815 !important;
+  border-color: #8a6f3d !important;
+  color: #e2d7be !important;
+}
+
+:global(body.nox-mode) [class*="tarjeta"] h3,
+:global(body.nox-mode) [class*="tarjeta"] [class*="nombre"] {
+  color: #d3a625 !important;
+}
+
+/* 3. Cuadro de Ilustración / Dibujos SVG (Varita, Piedra, Capa) */
+:global(body.nox-mode) [class*="ilustracion"],
+:global(body.nox-mode) [class*="marco"],
+:global(body.nox-mode) [class*="lienzo"] {
+  background: radial-gradient(
+    circle at center,
+    #3a2e22 0%,
+    #1a1411 100%
+  ) !important;
+  border-bottom: 1px solid #8a6f3d !important;
+}
+
+:global(body.nox-mode) [class*="ilustracion"] svg,
+:global(body.nox-mode) [class*="ilustracion"] path,
+:global(body.nox-mode) [class*="ilustracion"] circle,
+:global(body.nox-mode) [class*="ilustracion"] line {
+  stroke: #e2c992 !important;
+  filter: drop-shadow(0 0 3px rgba(226, 201, 146, 0.5));
+}
+
+:global(body.nox-mode) [class*="ilustracion"] [class*="silueta"],
+:global(body.nox-mode) [class*="ilustracion"] [class*="sombra"] {
+  fill: #2d231a !important;
+  opacity: 0.9 !important;
+}
+
+/* 4. Panel desplegable ("Revelar historia / Detalles y Experiencia") */
+:global(body.nox-mode) [class*="historia"],
+:global(body.nox-mode) [class*="detalles"],
+:global(body.nox-mode) [class*="desplegable"],
+:global(body.nox-mode) [class*="acordion"] {
+  background-color: #1a1614 !important;
+  color: #e2d7be !important;
+  border: 1px solid #8a6f3d !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+:global(body.nox-mode) [class*="historia"] h3,
+:global(body.nox-mode) [class*="historia"] h4,
+:global(body.nox-mode) [class*="detalles"] h3,
+:global(body.nox-mode) [class*="detalles"] h4,
+:global(body.nox-mode) [class*="detalles"] dt,
+:global(body.nox-mode) [class*="historia"] [class*="titulo"] {
+  color: #e2c992 !important; /* Dorado claro legible */
+}
+
+:global(body.nox-mode) [class*="historia"] p,
+:global(body.nox-mode) [class*="detalles"] p,
+:global(body.nox-mode) [class*="detalles"] dd,
+:global(body.nox-mode) [class*="historia"] li {
+  color: #dcd0b9 !important; /* Texto del cuerpo bien contrastado */
+}
+
+/* 5. Botones "Revelar historia" y "Cerrar historia" */
+:global(body.nox-mode) button[class*="revelar"],
+:global(body.nox-mode) button[class*="cerrar"],
+:global(body.nox-mode) [class*="botonHistoria"] {
+  background-color: #2b2118 !important;
+  color: #e2c992 !important;
+  border: 1px solid #8a6f3d !important;
+}
+
+:global(body.nox-mode) button[class*="revelar"]:hover,
+:global(body.nox-mode) button[class*="cerrar"]:hover,
+:global(body.nox-mode) [class*="botonHistoria"]:hover {
+  background-color: #3e2f22 !important;
+  color: #ffffff !important;
 }
