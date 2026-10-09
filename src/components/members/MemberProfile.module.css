@@ -50,10 +50,9 @@
   --tinta: #392c22;
   --borde: #96784c;
 
-  max-width: 1100px;
+  max-width: 100%; /* cambie esto para que no quede el container gris*/
   margin-inline: auto;
   color: var(--tinta);
-  box-shadow: 0 12px 30px #0000001f;
 }
 
 /* ---------- Temas especiales (opcional: campo `tema` del integrante) ----------
@@ -174,7 +173,13 @@
 
 /* Azkaban: foto en grises, marco metálico (como el expediente del TP1). */
 .perfil[data-tema="azkaban"] .foto {
-  background: linear-gradient(135deg, #8a989b, #252f34 45%, #67777b 70%, #172025);
+  background: linear-gradient(
+    135deg,
+    #8a989b,
+    #252f34 45%,
+    #67777b 70%,
+    #172025
+  );
   border-color: #718084;
   filter: grayscale(0.85) contrast(1.12);
   box-shadow:
@@ -401,4 +406,62 @@
   .perfil .cabecera .nombre {
     font-size: 3rem;
   }
+}
+
+/* ==========================================================================
+   MODO OSCURO (NOX) PARA PERFILES Y TITULOS
+   ========================================================================== */
+
+/* Redefinición de variables de pergamino y texto a modo noche */
+:global(body.nox-mode) .perfil {
+  --pergamino: #1a1614;
+  --pergamino-claro: #120e0d;
+  --tinta: #e2d7be;
+  --borde: #8a6f3d;
+
+  /* Ajuste de tinta por casa en modo oscuro */
+  --casa-tinta: #d3a625 !important; /* Dorado visible en fondo oscuro */
+
+  background-color: var(--pergamino-claro) !important;
+  color: var(--tinta) !important;
+}
+
+/* Forzar títulos y textos en modo NOX */
+:global(body.nox-mode) .perfil .titulo,
+:global(body.nox-mode) .perfil .nombre,
+:global(body.nox-mode) .perfil .intro {
+  color: var(--casa-tinta) !important;
+}
+
+/* Ajustes específicos de color por Casa en MODO NOX */
+:global(body.nox-mode) .perfil[data-casa="gryffindor"] {
+  --casa-tinta: #e2c992 !important; /* Dorado resplandeciente Gryffindor */
+}
+
+:global(body.nox-mode) .perfil[data-casa="slytherin"] {
+  --casa-tinta: #2ecc71 !important; /* Verde esmeralda claro */
+}
+
+:global(body.nox-mode) .perfil[data-casa="ravenclaw"] {
+  --casa-tinta: #5dade2 !important; /* Azul claro / Bronce */
+}
+
+:global(body.nox-mode) .perfil[data-casa="hufflepuff"] {
+  --casa-tinta: #ecb939 !important; /* Amarillo cálido */
+}
+
+/* Fondo de tarjetas / bloques internos en modo NOX */
+:global(body.nox-mode) .pergamino,
+:global(body.nox-mode) .habilidad,
+:global(body.nox-mode) .placa {
+  background: #1d1815 !important;
+  color: #e2d7be !important;
+  border-color: #8a6f3d !important;
+}
+
+/* Excepción para la insignia de Casa de Hufflepuff en Modo NOX */
+:global(body.nox-mode) .perfil[data-casa="hufflepuff"] .casa {
+  background-color: var(--hufflepuff1, #ecb939) !important;
+  color: var(--hufflepuff2, #372e29) !important;
+  border-color: var(--hufflepuff2, #372e29) !important;
 }

@@ -209,7 +209,6 @@
   padding: 1.25rem;
   background: var(--mapa-ficha);
   border: 4px double var(--tema-borde, #583b2980);
-  box-shadow: 4px 8px 16px #583b2918;
 }
 
 .mapa .tituloFicha {
@@ -368,4 +367,30 @@
     grid-template-columns: minmax(0, 2.3fr) minmax(260px, 1fr);
     align-items: start;
   }
+}
+
+/* ==========================================================================
+   MODO NOX (OSCURO) 
+   ========================================================================== */
+:global(body.nox-mode) .mapa {
+  --mapa-tinta: #e2d7be;
+  --mapa-papel: #1f1a17;
+  --mapa-ficha: #28211d;
+  color: #e2d7be;
+}
+
+:global(body.nox-mode) .mapa .titulo,
+:global(body.nox-mode) .mapa .nombreLugar {
+  color: #d3a625 !important;
+}
+
+:global(body.nox-mode) .ficha dl,
+:global(body.nox-mode) .ficha .detalles,
+:global(body.nox-mode) .invitacion .detalles,
+:global(body.nox-mode) [class*="detalles"] {
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
 }

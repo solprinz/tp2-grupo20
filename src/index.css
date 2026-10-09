@@ -81,9 +81,11 @@ h3,
 }
 
 .main-content {
-  background-color: var(--hallows-bg-light) !important;
+  background-color: var(--hallows-bg-light);
   color: var(--hallows-text-dark);
   min-height: 100vh;
+  padding: 1rem;
+  margin: 1rem;
   /* Sin esto, un contenido ancho (min-content) empuja a <main> fuera de la
      pantalla en lugar de dejar que se encoja junto a la sidebar fija. */
   min-width: 0;
@@ -93,6 +95,7 @@ h3,
 .main-content h2 {
   color: #18100c !important;
   text-align: center;
+  padding: 2rem;
 }
 
 /* ==========================================================================
@@ -426,12 +429,28 @@ h3,
    ========================================================================== */
 body.nox-mode .main-content {
   background-color: #120b08 !important;
-  color: #e0e0e0 !important;
+  color: #e2d7be !important;
 }
 
+/* Títulos principales y secundarios en modo NOX (Home, secciones, etc.) */
 body.nox-mode .main-content h1,
-body.nox-mode .main-content h2 {
-  color: var(--hallows-gold-text) !important;
+body.nox-mode .main-content h2,
+body.nox-mode .main-content .h1,
+body.nox-mode .main-content .h2 {
+  color: var(--hallows-gold-text, #e2c992) !important;
+  text-shadow: 0 0 10px rgba(226, 201, 146, 0.25);
+}
+
+/* Bajadas, párrafos y descripciones de la Home en modo NOX */
+body.nox-mode .main-content p,
+body.nox-mode .main-content span,
+body.nox-mode .main-content .lead,
+body.nox-mode .main-content .text-muted {
+  color: #dcd0b9 !important;
+}
+
+body.nox-mode .main-content a:not(.btn-ver-mas):not(.nav-link) {
+  color: #e2c992 !important;
 }
 
 /* ==========================================================================

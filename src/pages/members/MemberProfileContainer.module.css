@@ -18,7 +18,7 @@
 /* Clase repetida a propósito: sube la especificidad por encima de la regla
    Nox de index.css (body.nox-mode .main-content h1) sin tocar el global. */
 .noEncontrado .titulo.titulo {
-  color: #392c22 !important;
+  color: inherit !important;
   font-family: "Cinzel", serif !important;
   font-size: 1.5rem;
   letter-spacing: normal;
@@ -71,4 +71,17 @@
   .noEncontrado {
     margin-top: 5rem;
   }
+}
+
+/* Modo NOX para la pantalla 404 */
+:global(body.nox-mode) .noEncontrado {
+  background: #181310 !important;
+  border-color: #d4af37 !important;
+  color: #e2d7be !important;
+}
+
+:global(body.nox-mode) .enlace {
+  background: #2b2118 !important;
+  color: #d4af37 !important;
+  border-color: #d4af37 !important;
 }
