@@ -173,6 +173,12 @@ Se implementó para desbloquear la auditoría responsive de los perfiles.
 - **Accesibilidad:** `aria-expanded`/`aria-controls` en el botón, foco al botón de cierre al abrir y de vuelta al botón de menú al cerrar, Tab atrapado dentro del panel, scroll de la página bloqueado mientras está abierto, panel cerrado fuera del orden de Tab (`visibility: hidden`), objetivos táctiles de 44px, `prefers-reduced-motion` respetado.
 - **Sección activa:** `NavLink` marca la clase `active-link` y `aria-current="page"` automáticamente.
 
+**Grupos desplegables (rama `feature/sidebar-grupos`)**
+- Títulos: *Integrantes*, *Proyecto* (Árbol de Componentes, Bitácora) y *Hogwarts* (Estudiantes, Hechizos). Los tres usan el mismo estilo que tenía el título "Integrantes" (tipografía Lumos); los enlaces siguen en Cinzel.
+- Acordeón: un solo grupo abierto a la vez. Al navegar se abre el grupo de la página actual (en la portada, ninguno); los títulos se abren y cierran a mano. Con todo cerrado la sidebar muestra 4 filas.
+- Sin barra de scroll en la sidebar desde 591px de alto de ventana, con cualquier grupo abierto.
+- Para sumar un enlace nuevo: agregarlo al grupo correspondiente de la constante `GRUPOS` en `Sidebar.jsx`.
+
 **Cambios en archivos compartidos (revisar con Sol)**
 - `src/components/Sidebar.jsx`: reescrito (enlaces ahora salen de dos listas `INTEGRANTES` y `SECCIONES`).
 - `src/index.css`: sección 4b nueva; `.main-content` con `min-width: 0` (evita que un contenido ancho empuje a `<main>` fuera de pantalla); variable `--topbar-altura`; la barra superior se suma a los selectores de color por casa; corrección del botón Nox/Lumos, que era ilegible sobre el fondo amarillo de Hufflepuff.

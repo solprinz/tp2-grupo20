@@ -17,23 +17,55 @@ import { useEffect, useRef, useState } from "react";
  *
  * La sección activa la marca NavLink automáticamente (clase active-link y
  * aria-current="page").
+ *
+ * Grupos desplegables (acordeón): Integrantes, Proyecto y Hogwarts. Con los
+ * grupos cerrados la sidebar muestra solo 4 filas, así que no necesita barra
+ * de scroll en un monitor común. Solo un grupo está abierto a la vez:
+ * al navegar se abre el grupo de la página actual (en la portada, ninguno),
+ * y los títulos se pueden abrir y cerrar a mano.
  */
 
-// Enlaces de integrantes; los ids coinciden con /perfil/:id (membersData).
-const INTEGRANTES = [
-  { to: "/perfil/alejandro", label: "Alejandro" },
-  { to: "/perfil/daniela", label: "Daniela" },
-  { to: "/perfil/juanpablo", label: "Juan Pablo" },
-  { to: "/perfil/lucas", label: "Lucas" },
-  { to: "/perfil/sol", label: "Sol" },
+// Grupos del menú. Los ids de los integrantes coinciden con /perfil/:id
+// (membersData). `prefijo` hace que cualquier /perfil/... abra su grupo,
+// incluso un id inexistente (pantalla "perfil no encontrado").
+const GRUPOS = [
+  {
+    id: "integrantes",
+    titulo: "Integrantes",
+    prefijo: "/perfil/",
+    enlaces: [
+      { to: "/perfil/alejandro", label: "Alejandro" },
+      { to: "/perfil/daniela", label: "Daniela" },
+      { to: "/perfil/juanpablo", label: "Juan Pablo" },
+      { to: "/perfil/lucas", label: "Lucas" },
+      { to: "/perfil/sol", label: "Sol" },
+    ],
+  },
+  {
+    id: "proyecto",
+    titulo: "Proyecto",
+    enlaces: [
+      { to: "/arbol", label: "Árbol de Componentes" },
+      { to: "/bitacora", label: "Bitácora" },
+    ],
+  },
+  {
+    id: "hogwarts",
+    titulo: "Hogwarts",
+    enlaces: [
+      { to: "/estudiantes", label: "Estudiantes" },
+      { to: "/hechizos", label: "Hechizos" },
+    ],
+  },
 ];
 
-const SECCIONES = [
-  { to: "/arbol", label: "Árbol de Componentes" },
-  { to: "/estudiantes", label: "Estudiantes" },
-  { to: "/hechizos", label: "Hechizos" },
-  { to: "/bitacora", label: "Bitácora" },
-];
+/** Id del grupo al que pertenece la ruta, o null (portada, 404, etc.). */
+const grupoDeRuta = (pathname) =>
+  GRUPOS.find(
+    (g) =>
+      (g.prefijo && pathname.startsWith(g.prefijo)) ||
+      g.enlaces.some((e) => e.to === pathname),
+  )?.id ?? null;
 
 const claseEnlace = ({ isActive }) =>
   `nav-link ${isActive ? "active-link" : ""}`;
@@ -41,17 +73,28 @@ const claseEnlace = ({ isActive }) =>
 export function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  // Acordeón: id del único grupo abierto (o null). Arranca con el grupo de la
+  // página actual, así la sección activa se ve sin tocar nada.
+  const [grupoAbierto, setGrupoAbierto] = useState(() =>
+    grupoDeRuta(location.pathname),
+  );
   const toggleRef = useRef(null);
   const cerrarRef = useRef(null);
   const asideRef = useRef(null);
 
-  // Cambiar de ruta (enlace, botón Atrás, etc.) cierra el panel. Se compara
-  // durante el render en lugar de usar un efecto: evita un render de más.
+  // Cambiar de ruta (enlace, botón Atrás, etc.) cierra el panel móvil y abre
+  // el grupo de la nueva página. Se compara durante el render en lugar de usar
+  // un efecto: evita un render de más.
   const [rutaPrevia, setRutaPrevia] = useState(location.pathname);
   if (rutaPrevia !== location.pathname) {
     setRutaPrevia(location.pathname);
     setIsOpen(false);
+    setGrupoAbierto(grupoDeRuta(location.pathname));
   }
+
+  // Abrir un grupo cierra los demás; pulsar el abierto lo cierra.
+  const alternarGrupo = (id) =>
+    setGrupoAbierto((actual) => (actual === id ? null : id));
 
   const cerrar = (devolverFoco = false) => {
     setIsOpen(false);
@@ -177,7 +220,7 @@ export function Sidebar() {
           <i className="fa-solid fa-xmark" aria-hidden="true"></i>
         </button>
 
-        <div className="sidebar-header text-center mb-4">
+        <div className="sidebar-header text-center mb-3">
           <img
             src="/img/hallows-logo.png"
             alt="Hallows Logo"
@@ -193,33 +236,50 @@ export function Sidebar() {
             <i className="fa-solid fa-house me-2"></i>Inicio
           </NavLink>
 
-          <div className="text-muted small fw-bold mt-3 mb-1 text-uppercase px-2">
-            Integrantes
-          </div>
-          {INTEGRANTES.map(({ to, label }) => (
-            <NavLink
-              key={to}
-              to={to}
-              onClick={() => cerrar()}
-              className={claseEnlace}
-            >
-              {label}
-            </NavLink>
-          ))}
-
-          {SECCIONES.map(({ to, label }) => (
-            <NavLink
-              key={to}
-              to={to}
-              onClick={() => cerrar()}
-              className={claseEnlace}
-            >
-              {label}
-            </NavLink>
-          ))}
+          {GRUPOS.map(({ id, titulo, enlaces }) => {
+            const abierto = grupoAbierto === id;
+            return (
+              <div key={id} className={`nav-grupo ${abierto ? "abierto" : ""}`}>
+                {/* Los tres títulos comparten estilo (clases de "Integrantes"). */}
+                <button
+                  type="button"
+                  id={`grupo-${id}-titulo`}
+                  className="nav-grupo-titulo text-muted small fw-bold text-uppercase"
+                  aria-expanded={abierto}
+                  aria-controls={`grupo-${id}`}
+                  onClick={() => alternarGrupo(id)}
+                >
+                  <span>{titulo}</span>
+                  <i
+                    className="fa-solid fa-chevron-down nav-grupo-flecha"
+                    aria-hidden="true"
+                  ></i>
+                </button>
+                <div
+                  id={`grupo-${id}`}
+                  className="nav-grupo-lista"
+                  role="group"
+                  aria-labelledby={`grupo-${id}-titulo`}
+                >
+                  <div className="nav-grupo-enlaces">
+                    {enlaces.map(({ to, label }) => (
+                      <NavLink
+                        key={to}
+                        to={to}
+                        onClick={() => cerrar()}
+                        className={claseEnlace}
+                      >
+                        {label}
+                      </NavLink>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </nav>
 
-        <div className="mt-auto pt-4 border-top border-secondary text-center">
+        <div className="mt-auto pt-3 border-top border-secondary text-center">
           <button
             className="btn btn-outline-warning btn-sm w-100"
             onClick={() => setModoOscuro(!modoOscuro)}
