@@ -239,9 +239,19 @@ h3,
   letter-spacing: 1.5px;
 }
 
-/* La barra ocupa lugar arriba: el contenido baja su misma altura. */
-.main-content {
-  padding-top: var(--topbar-altura);
+/* La barra ocupa lugar arriba: el contenido baja su misma altura.
+   `!important` porque <main> lleva la clase p-0 de Bootstrap (padding: 0
+   !important), que de otro modo anula este desplazamiento y deja el comienzo
+   de la página tapado por la barra. Solo en mobile: desde 768px no hay barra. */
+@media (max-width: 767.98px) {
+  .main-content {
+    padding-top: var(--topbar-altura) !important;
+  }
+
+  /* Que el foco o un ancla no queden escondidos bajo la barra fija. */
+  html {
+    scroll-padding-top: var(--topbar-altura);
+  }
 }
 
 /* ---- Fondo oscuro detrás del panel ---- */
@@ -307,10 +317,6 @@ h3,
   .sidebar-backdrop,
   .sidebar-cerrar {
     display: none;
-  }
-
-  .main-content {
-    padding-top: 0;
   }
 
   .sidebar-hallows {
