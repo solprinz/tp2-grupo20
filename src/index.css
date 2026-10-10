@@ -105,33 +105,33 @@ h3,
   background-color: var(--hallows-bg-dark) !important;
   color: var(--hallows-gold-text);
   border-right: 1px solid #38251b;
-  /* Ancho y posición: ver "4b. SIDEBAR RESPONSIVE". */
 }
 
-/* Logo */
 .sidebar-hallows .h4 {
   color: var(--hallows-gold-text) !important;
+  font-size: 1.1rem !important;
+  margin-bottom: 0.2rem !important;
 }
 
 .sidebar-hallows .text-muted {
   color: var(--hallows-gold-muted) !important;
   letter-spacing: 1.5px;
-  font-size: 0.85rem;
+  font-size: 0.75rem !important;
 }
 
-/* Enlaces de navegación */
 .sidebar-hallows .nav-link {
   font-family: "Cinzel", serif !important;
   font-weight: 700;
   color: var(--hallows-gold-text) !important;
   opacity: 0.85;
-  padding: 8px 12px;
+  padding: 3px 10px !important; /* Relleno compacto para eliminar scroll */
+  margin-bottom: 2px !important;
   border-radius: 4px;
   transition: all 0.2s ease;
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 0.85rem;
-  letter-spacing: 1.5px;
+  font-size: 0.8rem !important;
+  letter-spacing: 1px;
 }
 
 .sidebar-hallows .nav-link:hover {
@@ -144,8 +144,15 @@ h3,
   background-color: var(--hallows-bg-selected) !important;
   color: var(--hallows-gold-text) !important;
   border: 1px solid var(--hallows-gold-border) !important;
-  border-bottom: 2px solid var(--hallows-gold-text) !important;
   font-weight: bold;
+}
+
+/* Subtítulos de sección (ej. INTEGRANTES) */
+.sidebar-hallows .sidebar-section-title,
+.sidebar-hallows span.text-uppercase {
+  margin-top: 0.4rem !important;
+  margin-bottom: 0.2rem !important;
+  font-size: 0.75rem !important;
 }
 
 /* Botón Lumos / Nox */
@@ -154,8 +161,33 @@ h3,
   font-weight: 700 !important;
   letter-spacing: 1.5px !important;
   text-transform: uppercase !important;
+  padding: 4px 10px !important;
+  margin-top: 0.5rem !important;
 }
 
+.sidebar-hallows .border-top {
+  border-top: 1px solid rgba(226, 201, 146, 0.25) !important;
+}
+
+/* Logo unificado con excelente contraste en todas las casas */
+.sidebar-hallows .sidebar-logo {
+  background-color: rgba(
+    20,
+    15,
+    12,
+    0.85
+  ) !important; /* Fondo oscuro constante */
+  border: 1px solid var(--hallows-gold-border, #d4af37) !important;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4) !important;
+  padding: 3px;
+  object-fit: contain;
+}
+
+/* Efecto opcional al pasar el mouse por el logo */
+.sidebar-hallows .sidebar-logo:hover {
+  box-shadow: 0 0 15px rgba(226, 201, 146, 0.5) !important;
+  transform: scale(1.05);
+}
 /* ==========================================================================
    4b. SIDEBAR RESPONSIVE (NAV-2)
    Mobile-first: el estilo base es el de pantalla chica y los breakpoints

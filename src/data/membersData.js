@@ -43,7 +43,10 @@ export const membersData = [
     // Perfil ambientado como expediente de Azkaban (igual que en el TP1).
     tema: "azkaban",
     intro: "Archivo reservado · Azkaban",
-    placa: { titulo: "Azkaban · Expediente 020", leyenda: "Prisionero del código" },
+    placa: {
+      titulo: "Azkaban · Expediente 020",
+      leyenda: "Prisionero del código",
+    },
     datos: [
       { etiqueta: "Ciudad", valor: "CABA" },
       { etiqueta: "Edad", valor: "30 años" },
@@ -575,8 +578,7 @@ export const membersData = [
           { etiqueta: "Género", valor: "Post-grunge / Rock" },
           {
             etiqueta: "Frase destacada",
-            valor:
-              "If I go crazy, then will you still call me Superman? 🎶",
+            valor: "If I go crazy, then will you still call me Superman? 🎶",
           },
         ],
       },
@@ -770,7 +772,77 @@ export const membersData = [
     ],
     // En el TP1 Sol no tenía proyectos (tenía "Always" y la Copa de las
     // Casas, que se pueden pasar como `children` de la plantilla).
-    proyectos: [],
+    proyectos: [
+      {
+        titulo: "KittApp Web",
+        subtitulo: "Plataforma de Adopción Responsable",
+        resumen:
+          "Sitio web dinámico diseñado para promover y facilitar la adopción responsable de gatos y publicación de mascotas en busca de hogar.",
+        imagen: "/img/sol/sol-proyecto1.png",
+        historia: {
+          titulo: "Diseno UX/UI & Proceso Creativo",
+          texto:
+            "Desarrollado a partir de un proceso integral de diseño UX/UI en Figma. El mayor desafío fue crear un flujo de adopción claro e intuitivo, combinando componentes interactivos con modales de validación en tiempo real.",
+          tecnologias: [
+            "HTML5",
+            "SASS/SCSS",
+            "JavaScript (ES6+)",
+            "Bootstrap 5",
+            "Figma",
+          ],
+          aporte:
+            "Proceso completo de Investigación UX, prototipado interactivo en Figma, maquetado responsivo y lógica de validación de formularios.",
+          enlace: {
+            url: "https://github.com/solprinz/KittApp-Web",
+            texto: "Ver repositorio en GitHub",
+          },
+        },
+      },
+      {
+        titulo: "Viajá Seguro",
+        subtitulo: "Cotizador de Seguros en Tiempo Real",
+        resumen:
+          "Aplicación web interactiva que calcula y cotiza el costo de un seguro de viaje según destino, duración y pasajeros.",
+        imagen: "/img/sol/sol-proyecto2.png",
+        historia: {
+          titulo: "Lógica Frontend & Manipulación del DOM",
+          texto:
+            "Proyecto enfocado en la interacción dinámica con el usuario. Implementa cálculo instantáneo, persistencia de datos mediante LocalStorage para guardar cotizaciones y control estricto de validación de campos.",
+          tecnologias: ["JavaScript (ES6+)", "HTML5", "CSS3", "LocalStorage"],
+          aporte:
+            "Desarrollo de la lógica de cotización en tiempo real, eventos en el DOM y almacenamiento local de búsquedas previas.",
+          enlace: {
+            url: "https://github.com/solprinz/ViajaSeguro",
+            texto: "Ver repositorio en GitHub",
+          },
+        },
+      },
+      {
+        titulo: "Portfolio Profesional",
+        subtitulo: "Práctica Formativa Front End",
+        resumen:
+          "Sitio web personal y portfolio profesional desarrollado con HTML5, CSS3 y Bootstrap 5, diseñado para presentar proyectos de desarrollo Web y Mobile.",
+        imagen: "/img/sol/sol-proyecto3.png",
+        historia: {
+          titulo: "Estructura Semántica & Maquetación UI",
+          texto:
+            "Desarrollado como Práctica Formativa de la materia Desarrollo de Sistemas Web. Enfocado en la maquetación semántica, diseño responsivo mediante utilidades de Flexbox/Bootstrap 5 e integración de formularios funcionales sin backend mediante Formspree.",
+          tecnologias: [
+            "HTML5",
+            "CSS3",
+            "Bootstrap 5.3",
+            "Font Awesome 6",
+            "Formspree",
+          ],
+          aporte:
+            "Diseño e implementación integral de la maqueta: paleta de colores, tipografías, grilla responsiva, integración de formulario de contacto y organización de proyectos.",
+          enlace: {
+            url: "https://github.com/solprinz/portfolio-sol-prinzen",
+            texto: "Ver repositorio en GitHub",
+          },
+        },
+      },
+    ],
   },
 ];
 
