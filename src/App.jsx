@@ -3,6 +3,7 @@ import { Sidebar } from "./components/Sidebar";
 import { Home } from "./pages/Home";
 import { Footer } from "./components/Footer";
 import { MemberProfileContainer } from "./pages/members/MemberProfileContainer";
+import { WandProvider } from "./components/wand/WandProvider";
 
 // Componentes provisorios para las otras rutas
 const Estudiantes = () => <h2>Estudiantes (JSON)</h2>;
@@ -20,30 +21,36 @@ const NotFound = () => (
 export default function App() {
   return (
     <BrowserRouter>
-      <div className="layout-hallows d-flex">
-        <Sidebar />
-        <main className="main-content flex-grow-1 d-flex flex-column min-vh-100 p-0 m-0">
-           <div className="flex-grow-1 d-flex flex-column w-100 p-2 p-md-3">
-            <Routes>
-              {/* Ruta principal mapeada a la vista Home */}
-              <Route path="/" element={<Home />} />
+      {/* Varita-cursor global: está en todas las páginas y no se reinicia al navegar. */}
+      <WandProvider>
+        <div className="layout-hallows d-flex">
+          <Sidebar />
+          <main className="main-content flex-grow-1 d-flex flex-column min-vh-100 p-0 m-0">
+            <div className="flex-grow-1 d-flex flex-column w-100 p-2 p-md-3">
+              <Routes>
+                {/* Ruta principal mapeada a la vista Home */}
+                <Route path="/" element={<Home />} />
 
-              {/* Ruta dinámica de integrantes: /perfil/lucas, /perfil/sol… */}
-              <Route path="/perfil/:id" element={<MemberProfileContainer />} />
+                {/* Ruta dinámica de integrantes: /perfil/lucas, /perfil/sol… */}
+                <Route
+                  path="/perfil/:id"
+                  element={<MemberProfileContainer />}
+                />
 
-              {/* Rutas de secciones */}
-              <Route path="/arbol" element={<ArbolComponentes />} />
-              <Route path="/estudiantes" element={<Estudiantes />} />
-              <Route path="/hechizos" element={<Hechizos />} />
-              <Route path="/bitacora" element={<Bitacora />} />
+                {/* Rutas de secciones */}
+                <Route path="/arbol" element={<ArbolComponentes />} />
+                <Route path="/estudiantes" element={<Estudiantes />} />
+                <Route path="/hechizos" element={<Hechizos />} />
+                <Route path="/bitacora" element={<Bitacora />} />
 
-              {/*  Ruta 404 Global para URLs inexistentes */}
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </div>
-          <Footer />
-        </main>
-      </div>
+                {/*  Ruta 404 Global para URLs inexistentes */}
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </div>
+            <Footer />
+          </main>
+        </div>
+      </WandProvider>
     </BrowserRouter>
   );
 }
