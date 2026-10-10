@@ -328,6 +328,105 @@ h3,
 }
 
 /* ==========================================================================
+   4c. GRUPOS DESPLEGABLES DE LA SIDEBAR (Integrantes, Proyecto, Hogwarts)
+   Los títulos reutilizan las clases del título original de "Integrantes"
+   ("text-muted small fw-bold text-uppercase"): ellas ya fijan tipografía
+   (Lumos), color y tamaño, y los temas por casa las recolorean. Aquí solo se
+   agrega el comportamiento de botón y el desplegable animado.
+   ========================================================================== */
+.sidebar-hallows .nav-grupo-titulo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.5rem; /* igual al px-2 del título original */
+  text-align: left;
+  background: transparent;
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.sidebar-hallows .nav-grupo-titulo:hover {
+  background-color: rgba(226, 201, 146, 0.1);
+}
+
+.sidebar-hallows .nav-grupo-titulo:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.nav-grupo-flecha {
+  font-size: 0.7rem;
+  transition: transform 0.25s ease;
+}
+
+.nav-grupo.abierto .nav-grupo-flecha {
+  transform: rotate(180deg);
+}
+
+/* Cerrado: altura 0 y fuera del orden de Tab (visibility). Abierto: 1fr. */
+.nav-grupo-lista {
+  display: grid;
+  grid-template-rows: 0fr;
+  visibility: hidden;
+  transition:
+    grid-template-rows 0.25s ease,
+    visibility 0s linear 0.25s;
+}
+
+.nav-grupo.abierto .nav-grupo-lista {
+  grid-template-rows: 1fr;
+  visibility: visible;
+  transition:
+    grid-template-rows 0.25s ease,
+    visibility 0s;
+}
+
+.nav-grupo-enlaces {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-height: 0;
+  padding-left: 1rem;
+  overflow: hidden;
+}
+
+/* Los márgenes (no el padding) dan el aire vertical: así el grupo cerrado
+   colapsa a 0 de alto. */
+.nav-grupo-enlaces > :first-child {
+  margin-top: 0.5rem;
+}
+
+.nav-grupo-enlaces > :last-child {
+  margin-bottom: 0.25rem;
+}
+
+/* Guía vertical que une los enlaces con su título; toma el color del texto. */
+.nav-grupo-enlaces::before {
+  position: absolute;
+  top: 0.5rem;
+  bottom: 0.25rem;
+  left: 0.5rem;
+  width: 1px;
+  content: "";
+  background: currentColor;
+  opacity: 0.3;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sidebar-hallows .nav-grupo-titulo,
+  .nav-grupo-flecha,
+  .nav-grupo-lista,
+  .nav-grupo.abierto .nav-grupo-lista {
+    transition: none;
+  }
+}
+
+/* ==========================================================================
    5. TEMAS POR CASAS (SIDEBAR & FOOTER UNIFICADOS)
    ========================================================================== */
 
@@ -400,6 +499,10 @@ h3,
 .sidebar-hallows.house-hufflepuff .nav-link {
   color: var(--hufflepuff2) !important;
   opacity: 0.85;
+}
+
+.sidebar-hallows.house-hufflepuff .nav-grupo-titulo:hover {
+  background-color: rgba(55, 46, 41, 0.1);
 }
 
 .sidebar-hallows.house-hufflepuff .nav-link:hover {

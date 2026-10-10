@@ -173,6 +173,12 @@ Se implementó para desbloquear la auditoría responsive de los perfiles.
 - **Accesibilidad:** `aria-expanded`/`aria-controls` en el botón, foco al botón de cierre al abrir y de vuelta al botón de menú al cerrar, Tab atrapado dentro del panel, scroll de la página bloqueado mientras está abierto, panel cerrado fuera del orden de Tab (`visibility: hidden`), objetivos táctiles de 44px, `prefers-reduced-motion` respetado.
 - **Sección activa:** `NavLink` marca la clase `active-link` y `aria-current="page"` automáticamente.
 
+**Grupos desplegables de la sidebar**
+- Sobre la sidebar de Sol (con sus íconos), los enlaces se agrupan bajo tres títulos: *Integrantes*, *Proyecto* (Árbol de Componentes, Bitácora) y *Hogwarts* (Estudiantes, Hechizos). Los tres usan el estilo que ya tenía el título "Integrantes".
+- Solo se muestra abierto el grupo de la página actual (en la portada, ninguno); los títulos se abren y cierran a mano y abrir uno cierra los demás.
+- Para sumar un enlace: agregarlo a `INTEGRANTES`, `PROYECTO` o `HOGWARTS` en `Sidebar.jsx`.
+- Se quitó la línea separadora entre Integrantes y el resto: los títulos ocupan su lugar.
+
 **Cambios en archivos compartidos (revisar con Sol)**
 - `src/components/Sidebar.jsx`: reescrito (enlaces ahora salen de dos listas `INTEGRANTES` y `SECCIONES`).
 - `src/index.css`: sección 4b nueva; `.main-content` con `min-width: 0` (evita que un contenido ancho empuje a `<main>` fuera de pantalla); variable `--topbar-altura`; la barra superior se suma a los selectores de color por casa; corrección del botón Nox/Lumos, que era ilegible sobre el fondo amarillo de Hufflepuff.
