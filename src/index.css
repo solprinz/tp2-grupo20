@@ -83,7 +83,7 @@ h3,
 .main-content {
   background-color: var(--hallows-bg-light);
   color: var(--hallows-text-dark);
-  min-height: 100vh;
+  min-height: 100%;
   padding: 1rem;
   margin: 1rem;
   /* Sin esto, un contenido ancho (min-content) empuja a <main> fuera de la

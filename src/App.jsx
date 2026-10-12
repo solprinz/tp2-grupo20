@@ -25,8 +25,8 @@ export default function App() {
       <WandProvider>
         <div className="layout-hallows d-flex">
           <Sidebar />
-          <main className="main-content flex-grow-1 d-flex flex-column min-vh-100 p-0 m-0">
-            <div className="flex-grow-1 d-flex flex-column w-100 p-2 p-md-3">
+          <main className="main-content flex-grow-1 d-flex flex-column p-0 m-0">
+            <div className="flex-grow-1 d-flex flex-column w-100 ">
               <Routes>
                 {/* Ruta principal mapeada a la vista Home */}
                 <Route path="/" element={<Home />} />
