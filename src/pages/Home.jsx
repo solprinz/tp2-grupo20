@@ -19,7 +19,7 @@ export function Home() {
     {
       nombre: "JUAN PABLO",
       rol: "Erudito de Aritmancia y Lógica de JavaScript",
-      casa: "ravenclaw",
+      casa: "slytherin",
       foto: "/img/juanpablo-avatar.jpg",
       path: "/perfil/juanpablo",
     },
