@@ -5,9 +5,10 @@ import { Footer } from "./components/Footer";
 import { MemberProfileContainer } from "./pages/members/MemberProfileContainer";
 import { WandProvider } from "./components/wand/WandProvider";
 
+import { LibroDeHechizos } from "./pages/LibroDeHechizos";
+
 // Componentes provisorios para las otras rutas
-const Estudiantes = () => <h2>Estudiantes (JSON)</h2>;
-const Hechizos = () => <h2>Hechizos (API Externa)</h2>;
+const Estudiantes = () => <h2>Estudiantes (API Externa)</h2>;
 const ArbolComponentes = () => <h2>Árbol de Componentes</h2>;
 const Bitacora = () => <h2>Bitácora de Desarrollo</h2>;
 
@@ -40,7 +41,7 @@ export default function App() {
                 {/* Rutas de secciones */}
                 <Route path="/arbol" element={<ArbolComponentes />} />
                 <Route path="/estudiantes" element={<Estudiantes />} />
-                <Route path="/hechizos" element={<Hechizos />} />
+                <Route path="/hechizos" element={<LibroDeHechizos />} />
                 <Route path="/bitacora" element={<Bitacora />} />
 
                 {/*  Ruta 404 Global para URLs inexistentes */}
