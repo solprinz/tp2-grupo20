@@ -55,38 +55,6 @@
   color: var(--tinta);
 }
 
-/* ---------- Temas especiales (opcional: campo `tema` del integrante) ----------
-   Un tema redefine la paleta completa del perfil. Las variables `--tema-*`
-   también las leen FavoritesMap y ProjectRelics, que las usan con un valor de
-   respaldo: sin tema, todo conserva los colores de pergamino de siempre.
-
-   Azkaban (perfil de Alejandro, TP1): expediente de prisión, tonos fríos. */
-.perfil[data-tema="azkaban"] {
-  --pergamino: #202b30;
-  --pergamino-claro: #1c2529;
-  --tinta: #dce3e3;
-  --borde: #697b80;
-  --casa-tinta: #dce3e3; /* los títulos pasan a tinta clara sobre fondo oscuro */
-
-  --tema-tinta: #dce3e3;
-  --tema-acento: #aebfb8;
-  --tema-panel: #1c2529;
-  --tema-borde: #697b80;
-  --tema-boton: #29383e;
-  --tema-boton-texto: #dce3e3;
-  --tema-boton-hover: #3c5057;
-  --tema-filtro: saturate(0.65);
-  --tema-ilustracion: radial-gradient(ellipse, #405058, #141c20);
-  --tema-placa: #141c20;
-  --tema-fondo:
-    radial-gradient(ellipse at 15% 0, #58727825, transparent 60%),
-    repeating-linear-gradient(0deg, transparent 0 119px, #00000020 120px 122px),
-    linear-gradient(110deg, #11181c, #202b30 50%, #11181c);
-
-  background: #11181c;
-  box-shadow: 0 12px 30px #0009;
-}
-
 /* ---------- Secciones genéricas ---------- */
 .seccion {
   padding: 2.5rem 1rem;
@@ -169,24 +137,6 @@
     inset 0 0 0 5px #73562f,
     0 5px 0 #73562f,
     0 18px 30px #392c2235;
-}
-
-/* Azkaban: foto en grises, marco metálico (como el expediente del TP1). */
-.perfil[data-tema="azkaban"] .foto {
-  background: linear-gradient(
-    135deg,
-    #8a989b,
-    #252f34 45%,
-    #67777b 70%,
-    #172025
-  );
-  border-color: #718084;
-  filter: grayscale(0.85) contrast(1.12);
-  box-shadow:
-    inset 0 0 0 2px #b3bcb9,
-    inset 0 0 0 5px #273238,
-    0 10px 0 -2px #273238,
-    0 22px 35px #0009;
 }
 
 /* Placa bajo el retrato (p. ej. "Azkaban · Expediente 020"). */

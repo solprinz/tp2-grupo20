@@ -29,7 +29,10 @@ export function PatronusAlways() {
           className={styles.boton}
           onClick={() => setRevelado(true)}
         >
-          <i className="fa-solid fa-wand-magic-sparkles me-2" aria-hidden="true" />
+          <i
+            className="fa-solid fa-wand-magic-sparkles me-2"
+            aria-hidden="true"
+          />
           Revelio
         </button>
       )}
@@ -42,7 +45,7 @@ export function PatronusAlways() {
           role="status"
         >
           <img
-            src="/img/patronus-ciervo.png"
+            src="/img/sol/patronus-sol.png"
             alt="Patronus en forma de ciervo"
             className={styles.patronus}
           />

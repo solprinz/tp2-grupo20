@@ -57,8 +57,10 @@
   width: 100%;
   max-width: min(350px, 80vw);
   height: auto;
-  margin: 0.75rem auto;
-  filter: drop-shadow(0 0 15px #82dcff);
+  margin: 1rem auto;
+  /* Asegura que la caja de la imagen no esté recortada */
+  overflow: visible !important;
+  object-fit: contain;
 }
 
 .respuesta {
@@ -72,6 +74,15 @@
     0 0 30px rgba(255, 255, 255, 0.6);
 }
 
+.raiz,
+.escena {
+  /* Permite que el resplandor y la imagen fluyan sin límites */
+  overflow: visible !important;
+  /* Evita que alturas fijas colapsen o aprieten el contenido */
+  height: auto !important;
+  max-height: none !important;
+  box-sizing: border-box;
+}
 /* ---------- Aparición (solo si no se pidió menos movimiento) ---------- */
 @media (prefers-reduced-motion: no-preference) {
   .patronus {

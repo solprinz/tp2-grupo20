@@ -52,7 +52,11 @@ const HOGWARTS = [
     label: "Estudiantes",
     icon: "fa-solid fa-user-graduate",
   },
-  { to: "/hechizos", label: "Libro de Hechizos", icon: "fa-solid fa-book-open" },
+  {
+    to: "/hechizos",
+    label: "Libro de Hechizos",
+    icon: "fa-solid fa-book-open",
+  },
 ];
 
 // Grupos del menú. `prefijo` hace que cualquier /perfil/... abra Integrantes,
@@ -113,7 +117,7 @@ export function Sidebar() {
   const getHouseClass = () => {
     const path = location.pathname;
     if (path.includes("/perfil/sol")) return "house-gryffindor";
-    // Alejandro: sin clase de casa a propósito (tema Azkaban, sidebar neutra).
+    if (path.includes("/perfil/alejandro")) return "house-gryffindor";
     if (path.includes("/perfil/daniela")) return "house-slytherin";
     if (path.includes("/perfil/juanpablo")) return "house-slytherin";
     if (path.includes("/perfil/lucas")) return "house-hufflepuff";

@@ -4,6 +4,7 @@ import { Home } from "./pages/Home";
 import { Footer } from "./components/Footer";
 import { MemberProfileContainer } from "./pages/members/MemberProfileContainer";
 import { WandProvider } from "./components/wand/WandProvider";
+import { ScrollToTop } from "./components/ScrollToTop";
 
 import { LibroDeHechizos } from "./pages/LibroDeHechizos";
 
@@ -51,6 +52,7 @@ export default function App() {
             <Footer />
           </main>
         </div>
+        <ScrollToTop />
       </WandProvider>
     </BrowserRouter>
   );
