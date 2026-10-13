@@ -8,9 +8,9 @@ import { ScrollToTop } from "./components/ScrollToTop";
 
 import { LibroDeHechizos } from "./pages/LibroDeHechizos";
 import { Bitacora } from "./pages/Bitacora";
+import { Estudiantes } from "./pages/Estudiantes";
 
 // Componentes provisorios para las otras rutas
-const Estudiantes = () => <h2>Estudiantes (API Externa)</h2>;
 const ArbolComponentes = () => <h2>Árbol de Componentes</h2>;
 
 const NotFound = () => (

@@ -1,0 +1,252 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.titulo {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.subtitulo {
+  color: #6b6b6b;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.herramientas {
+  margin-bottom: 1.5rem;
+}
+
+.filtrosRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.buscadorWrapper {
+  position: relative;
+  flex: 1;
+  min-width: 220px;
+}
+
+.iconoBuscador {
+  position: absolute;
+  left: 0.8rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #a08b5c;
+  pointer-events: none;
+}
+
+.inputBuscador {
+  width: 100%;
+  padding: 0.5rem 0.8rem 0.5rem 2.2rem;
+  border: 1px solid #c8b88a;
+  border-radius: 6px;
+  background: #fdf9f0;
+  font-size: 0.95rem;
+}
+
+.selectFiltro {
+  padding: 0.5rem 0.6rem;
+  border: 1px solid #c8b88a;
+  border-radius: 6px;
+  background: #fdf9f0;
+  font-size: 0.95rem;
+  min-width: 180px;
+}
+
+.btnReset {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.9rem;
+  border: 1px solid #c8b88a;
+  background: transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #6b4c1c;
+  transition: all 0.2s ease;
+}
+
+.btnReset:hover {
+  background: #f3e9d2;
+}
+
+.metadata {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.contadorBadge {
+  color: #6b4c1c;
+}
+
+/* ─── ESTADOS (cargando / error) ─── */
+.estado {
+  text-align: center;
+  padding: 4rem 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.estadoIcono {
+  font-size: 3rem;
+  color: #c8b88a;
+  margin-bottom: 1rem;
+}
+
+.estadoIconoError {
+  color: #b8433a;
+}
+
+.estadoTitulo {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: #4a3e31;
+}
+
+.estadoTexto {
+  color: #6b6b6b;
+  margin-bottom: 1.5rem;
+}
+
+/* ─── Grilla de estudiantes ─── */
+.grilla {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.tarjeta {
+  border: 1px solid #d9caa0;
+  border-radius: 10px;
+  background: #fdf9f0;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-top: 4px solid #d9caa0;
+}
+
+.tarjeta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 14px rgba(107, 76, 28, 0.15);
+}
+
+.gryffindor {
+  border-top-color: #7f0909;
+}
+.slytherin {
+  border-top-color: #1a472a;
+}
+.ravenclaw {
+  border-top-color: #0e1a40;
+}
+.hufflepuff {
+  border-top-color: #ecb939;
+}
+
+.fotoWrapper {
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: #f1ede4;
+}
+
+.foto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.fotoPlaceholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #c8b88a;
+  font-size: 3rem;
+}
+
+.tarjetaInfo {
+  padding: 0.75rem 0.9rem 1rem;
+}
+
+.nombre {
+  font-size: 1rem;
+  margin: 0 0 0.4rem;
+  color: #2c2c2c;
+}
+
+.casaBadge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.15rem 0.5rem;
+  border-radius: 6px;
+  background: #f1ede4;
+  color: #4a3e31;
+  border: 1px solid #d2c5b2;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.actor {
+  margin: 0.5rem 0 0;
+  font-size: 0.85rem;
+  color: #6b6b6b;
+}
+
+/* ─── Sin resultados ─── */
+.sinResultados {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #6b6b6b;
+}
+
+.sinResultadosIcono {
+  font-size: 2.5rem;
+  color: #c8b88a;
+  margin-bottom: 1rem;
+}
+
+.sinResultadosTitulo {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.sinResultadosTexto {
+  margin-bottom: 1.5rem;
+}
+
+/* ─── Modo Nox ─── */
+:global(.nox-mode) .tarjeta {
+  background: #1a1310;
+  border-color: #553c2d;
+}
+
+:global(.nox-mode) .nombre {
+  color: #e8d7a8;
+}
+
+:global(.nox-mode) .actor {
+  color: #a08b5c;
+}
+
+:global(.nox-mode) .inputBuscador,
+:global(.nox-mode) .selectFiltro {
+  background: #2b1d16;
+  color: #d1b885;
+  border-color: #553c2d;
+}
