@@ -161,7 +161,7 @@ En el TP2 usamos herramientas de IA como **asistentes técnicos** en momentos pu
 | Integrante | Aplicación | Modelo | Tareas |
 |------------|-----------|--------|--------|
 | Alejandro Ramos | _completar_ | _completar_ | _completar_ |
-| Daniela Méndez | _completar_ | _completar_ | _completar_ |
+| Daniela Méndez | DeepSeek | V3 | Estructura de Estudiantes y Bitácora, ajustes CSS, redacción   del README |
 | Juan Pablo | _completar_ | _completar_ | _completar_ |
 | Lucas Sosa | _completar_ | _completar_ | _completar_ |
 | Sol Prinzen | _completar_ | _completar_ | _completar_ |
