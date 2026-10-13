@@ -3,6 +3,8 @@ import styles from "./Estudiantes.module.css";
 
 const API_URL = "https://hp-api.onrender.com/api/characters/students";
 
+const POR_PAGINA = 24;
+
 const CASAS = [
   { valor: "todas", etiqueta: "Todas las casas" },
   { valor: "Gryffindor", etiqueta: "🦁 Gryffindor" },
@@ -24,6 +26,7 @@ export function Estudiantes() {
   const [error, setError] = useState(null);
   const [busqueda, setBusqueda] = useState("");
   const [filtroCasa, setFiltroCasa] = useState("todas");
+  const [pagina, setPagina] = useState(1);
 
   useEffect(() => {
     const tituloPrevio = document.title;
@@ -67,14 +70,30 @@ export function Estudiantes() {
     });
   }, [estudiantes, busqueda, filtroCasa]);
 
+  const totalPaginas = Math.ceil(filtrados.length / POR_PAGINA) || 1;
+  const estudiantesPaginados = useMemo(() => {
+    const inicio = (pagina - 1) * POR_PAGINA;
+    return filtrados.slice(inicio, inicio + POR_PAGINA);
+  }, [filtrados, pagina]);
+
   const hayFiltrosActivos = busqueda.trim() !== "" || filtroCasa !== "todas";
+
+  const handleBusquedaChange = (e) => {
+    setBusqueda(e.target.value);
+    setPagina(1);
+  };
+
+  const handleFiltroChange = (e) => {
+    setFiltroCasa(e.target.value);
+    setPagina(1);
+  };
 
   const handleReset = () => {
     setBusqueda("");
     setFiltroCasa("todas");
+    setPagina(1);
   };
 
-  // ─── ESTADO: CARGANDO ───
   if (loading) {
     return (
       <div className={styles.container}>
@@ -92,7 +111,6 @@ export function Estudiantes() {
     );
   }
 
-  // ─── ESTADO: ERROR ───
   if (error) {
     return (
       <div className={styles.container}>
@@ -125,7 +143,10 @@ export function Estudiantes() {
         </p>
       </header>
 
-      <section className={styles.herramientas} aria-label="Filtros de estudiantes">
+      <section
+        className={styles.herramientas}
+        aria-label="Filtros de estudiantes"
+      >
         <div className={styles.filtrosRow}>
           <div className={styles.buscadorWrapper}>
             <i
@@ -135,7 +156,7 @@ export function Estudiantes() {
             <input
               type="text"
               value={busqueda}
-              onChange={(e) => setBusqueda(e.target.value)}
+              onChange={handleBusquedaChange}
               placeholder="Buscar por nombre o actor..."
               className={styles.inputBuscador}
               aria-label="Buscar estudiantes"
@@ -144,7 +165,7 @@ export function Estudiantes() {
 
           <select
             value={filtroCasa}
-            onChange={(e) => setFiltroCasa(e.target.value)}
+            onChange={handleFiltroChange}
             className={styles.selectFiltro}
             aria-label="Filtrar por casa"
           >
@@ -186,6 +207,12 @@ export function Estudiantes() {
           {filtrados.length === 1 ? "estudiante" : "estudiantes"}
           {hayFiltrosActivos && " (filtrados)"} de {estudiantes.length} en total
         </span>
+
+        {filtrados.length > 0 && totalPaginas > 1 && (
+          <span>
+            Página {pagina} de {totalPaginas}
+          </span>
+        )}
       </div>
 
       {filtrados.length === 0 ? (
@@ -210,43 +237,108 @@ export function Estudiantes() {
           </button>
         </div>
       ) : (
-        <div className={styles.grilla}>
-          {filtrados.map((est) => (
-            <article
-              key={est.id}
-              className={`${styles.tarjeta} ${
-                est.house ? styles[clasePorCasa[est.house]] || "" : ""
-              }`}
+        <>
+          <div className={styles.grilla}>
+            {estudiantesPaginados.map((est) => (
+              <article
+                key={est.id}
+                className={`${styles.tarjeta} ${
+                  est.house ? styles[clasePorCasa[est.house]] || "" : ""
+                }`}
+              >
+                <div className={styles.fotoWrapper}>
+                  {est.image ? (
+                    <img
+                      src={est.image}
+                      alt={est.name}
+                      className={styles.foto}
+                      loading="lazy"
+                    />
+                  ) : (
+                    <div className={styles.fotoPlaceholder}>
+                      <i className="fa-solid fa-user" aria-hidden="true"></i>
+                    </div>
+                  )}
+                </div>
+                <div className={styles.tarjetaInfo}>
+                  <h3 className={styles.nombre}>{est.name}</h3>
+                  {est.house && (
+                    <span className={styles.casaBadge}>{est.house}</span>
+                  )}
+                  {est.actor && (
+                    <p className={styles.actor}>
+                      <i
+                        className="fa-solid fa-film me-1"
+                        aria-hidden="true"
+                      ></i>
+                      {est.actor}
+                    </p>
+                  )}
+                </div>
+              </article>
+            ))}
+          </div>
+
+          {totalPaginas > 1 && (
+            <nav
+              className={styles.paginacion}
+              aria-label="Paginación de estudiantes"
             >
-              <div className={styles.fotoWrapper}>
-                {est.image ? (
-                  <img
-                    src={est.image}
-                    alt={est.name}
-                    className={styles.foto}
-                    loading="lazy"
-                  />
-                ) : (
-                  <div className={styles.fotoPlaceholder}>
-                    <i className="fa-solid fa-user" aria-hidden="true"></i>
-                  </div>
-                )}
-              </div>
-              <div className={styles.tarjetaInfo}>
-                <h3 className={styles.nombre}>{est.name}</h3>
-                {est.house && (
-                  <span className={styles.casaBadge}>{est.house}</span>
-                )}
-                {est.actor && (
-                  <p className={styles.actor}>
-                    <i className="fa-solid fa-film me-1" aria-hidden="true"></i>
-                    {est.actor}
-                  </p>
-                )}
-              </div>
-            </article>
-          ))}
-        </div>
+              <button
+                type="button"
+                className={styles.btnPagina}
+                onClick={() => setPagina((p) => Math.max(1, p - 1))}
+                disabled={pagina === 1}
+              >
+                ← Anterior
+              </button>
+
+              {Array.from({ length: totalPaginas }, (_, i) => i + 1)
+                .filter(
+                  (p) =>
+                    p === 1 || p === totalPaginas || Math.abs(p - pagina) <= 2
+                )
+                .map((num, idx, arr) => {
+                  const prev = arr[idx - 1];
+                  return (
+                    <span
+                      key={num}
+                      style={{ display: "inline-flex", gap: "0.25rem" }}
+                    >
+                      {prev && num - prev > 1 && (
+                        <span
+                          style={{
+                            padding: "0.3rem 0.5rem",
+                            color: "#888",
+                          }}
+                        >
+                          …
+                        </span>
+                      )}
+                      <button
+                        type="button"
+                        className={`${styles.btnPagina} ${
+                          pagina === num ? styles.btnPaginaActiva : ""
+                        }`}
+                        onClick={() => setPagina(num)}
+                      >
+                        {num}
+                      </button>
+                    </span>
+                  );
+                })}
+
+              <button
+                type="button"
+                className={styles.btnPagina}
+                onClick={() => setPagina((p) => Math.min(totalPaginas, p + 1))}
+                disabled={pagina === totalPaginas}
+              >
+                Siguiente →
+              </button>
+            </nav>
+          )}
+        </>
       )}
     </div>
   );
