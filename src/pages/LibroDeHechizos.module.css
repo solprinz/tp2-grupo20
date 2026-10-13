@@ -299,11 +299,93 @@
   font-size: 0.9rem;
   line-height: 1.5;
   color: #3b332a;
-  margin-bottom: 0;
+  margin-bottom: 0.75rem;
+  flex-grow: 1;
 }
 
 :global(.nox-mode) .descripcion {
   color: #ddd4c7;
+}
+
+/* DETALLE DESPLEGABLE CON REQUERIMIENTOS DE VARITA (Criterio 10 Propone) */
+.btnToggleDetalle {
+  background: transparent;
+  border: none;
+  color: var(--hallows-gold-border, #b89552);
+  font-weight: 600;
+  font-size: 0.82rem;
+  cursor: pointer;
+  padding: 0.4rem 0 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: color 0.2s ease;
+  margin-top: auto;
+}
+
+.btnToggleDetalle:hover {
+  color: #916c27;
+}
+
+:global(.nox-mode) .btnToggleDetalle {
+  color: var(--hallows-gold-text, #e2c992);
+}
+
+:global(.nox-mode) .btnToggleDetalle:hover {
+  color: #fff;
+}
+
+.detalleBox {
+  margin-top: 0.65rem;
+  padding: 0.65rem 0.8rem;
+  background: #f8f6f0;
+  border-left: 3px solid var(--hallows-gold-border, #b89552);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.82rem;
+  animation: fadeIn 0.2s ease;
+}
+
+:global(.nox-mode) .detalleBox {
+  background: #251a14;
+}
+
+.detalleFila {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.detalleTitulo {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.78rem;
+  color: var(--hallows-gold-border, #b89552);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+:global(.nox-mode) .detalleTitulo {
+  color: var(--hallows-gold-text, #e2c992);
+}
+
+.detalleTitulo strong {
+  color: #18100c;
+}
+
+:global(.nox-mode) .detalleTitulo strong {
+  color: var(--hallows-gold-text, #e2c992);
+}
+
+.detalleTexto {
+  margin: 0;
+  line-height: 1.45;
+  color: #4a3f33;
+  font-style: italic;
+}
+
+:global(.nox-mode) .detalleTexto {
+  color: #cfc5b8;
 }
 
 /* ESTADO SIN RESULTADOS */

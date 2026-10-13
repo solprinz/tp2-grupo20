@@ -1,746 +1,870 @@
-[
-  {
-    "id": 2,
-    "hechizo": "Aberto",
-    "tipo": "Encantamiento de abertura",
-    "descripcion": "Este encantamiento permite desbloquear una puerta cerrada. Es una variante ligeramente más novedosa del encantamiento de apertura."
-  },
-  {
-    "id": 3,
-    "hechizo": "Accio",
-    "tipo": "Encantamiento convocador",
-    "descripcion": "Este encantamiento permite atraer un objeto a las manos del lanzador, incluso a una distancia significativa.[3]"
-  },
-  {
-    "id": 4,
-    "hechizo": "Aguamenti",
-    "tipo": "Hechizo de creación de agua",
-    "descripcion": "Este encantamiento genera un chorro de agua desde la punta de la varita.[4]"
-  },
-  {
-    "id": 5,
-    "hechizo": "Aliento de pimienta",
-    "tipo": "Maleficio de aliento de pimienta",
-    "descripcion": "Este maleficio genera un aliento muy ardiente en su víctima."
-  },
-  {
-    "id": 6,
-    "hechizo": "Alohomora",
-    "tipo": "Encantamiento de apertura",
-    "descripcion": "Este encantamiento permite abrir y desbloquear cerraduras cerradas con llave.[7]"
-  },
-  {
-    "id": 7,
-    "hechizo": "Amato animo animato animagus",
-    "tipo": "Hechizo de animago",
-    "descripcion": "Este hechizo es utilizado durante los pasos a seguir para que un mago o bruja desarrolle la transformación en animago."
-  },
-  {
-    "id": 8,
-    "hechizo": "Aparecium",
-    "tipo": "Encantamiento de revelación",
-    "descripcion": "Este encantamiento permite revelar mensajes ocultos con tinta invisible.[8]"
-  },
-  {
-    "id": 9,
-    "hechizo": "Appare vestigium[11]",
-    "tipo": "Hechizo rastreador[11]",
-    "descripcion": "Este hechizo es utilizado para recrear momentos y situaciones completas del pasado.[12]"
-  },
-  {
-    "id": 10,
-    "hechizo": "Aqua eructo",
-    "tipo": "Encantamiento Aqua eructo",
-    "descripcion": "Este encantamiento genera un potente chorro de agua de la punta de la varita, que puede extinguir llamas o hacer daños a criaturas como las salamandras.[13]"
-  },
-  {
-    "id": 11,
-    "hechizo": "Arania exumai",
-    "tipo": "Hechizo para repeler arañas",
-    "descripcion": "Este hechizo permite repeler a las arañas.[6]"
-  },
-  {
-    "id": 12,
-    "hechizo": "Arresto momentum",
-    "tipo": "Encantamiento ralentizador",
-    "descripcion": "Este encantamiento disminuye rápidamente la velocidad de un objetivo en movimiento.[16]"
-  },
-  {
-    "id": 13,
-    "hechizo": "Ascendio",
-    "tipo": "Encantamiento de ascensión",
-    "descripcion": "Este hechizo eleva por lo alto al lanzador.[17]"
-  },
-  {
-    "id": 14,
-    "hechizo": "Atabraquium",
-    "tipo": "Embrujo para atar extremidades",
-    "descripcion": "Este embrujo ata firmemente las extremidades del objetivo con cuerdas invisibles.[19]"
-  },
-  {
-    "id": 15,
-    "hechizo": "Avada Kedavra",
-    "tipo": "Maldición asesina",
-    "descripcion": "Esta peligrosa y complicada maldición genera un destello verde de la punta de la varita, que mata en el acto a cualquier ser vivo que le alcance; por lo anterior,e es considerada como una de las tres Maldiciones Imperdonables. Sus efectos no poseen contrahechizo alguno.[3]"
-  },
-  {
-    "id": 16,
-    "hechizo": "Avifors",
-    "tipo": "Hechizo Avifors",
-    "descripcion": "Este hechizo de transformación convierte los objetos inanimados en aves.[21]"
-  },
-  {
-    "id": 17,
-    "hechizo": "Avis",
-    "tipo": "Encantamiento para conjurar pájaros",
-    "descripcion": "Este encantamiento invoca una bandada de aves de la punta de la varita.[3]"
-  },
-  {
-    "id": 18,
-    "hechizo": "Bombarda",
-    "tipo": "Encantamiento explosivo",
-    "descripcion": "Este encantamiento provoca una pequeña explosión en su objetivo.[16]"
-  },
-  {
-    "id": 19,
-    "hechizo": "Calvorio",
-    "tipo": "Maldición pérdida de cabello",
-    "descripcion": "Esta maldición hace caer el cabello de la víctima, dejándola calva.[28]"
-  },
-  {
-    "id": 20,
-    "hechizo": "Cantis",
-    "tipo": "Encantamiento de canto",
-    "descripcion": "Este encantamiento obliga a las personas y objetos a cantar.[10]"
-  },
-  {
-    "id": 21,
-    "hechizo": "Capacious extremis",
-    "tipo": "Encantamiento de extensión indetectable",
-    "descripcion": "Este encantamiento permite aumentar las dimensiones internas de un objeto, sin alterar su tamaño exterior.[29]"
-  },
-  {
-    "id": 22,
-    "hechizo": "Carpe retractum",
-    "tipo": "Encantamiento tira y afloja",
-    "descripcion": "Este encantamiento crea una cuerda mágica desde la punta de la varita, que permite tirar objetos lejanos hacia el lanzador, o jalar al usuario hacia el objeto en que se usa el hechizo.[31]"
-  },
-  {
-    "id": 23,
-    "hechizo": "Celescere",
-    "tipo": "Encantamiento invernadero",
-    "descripcion": "Este encantamiento ayuda al crecimiento de las plantas en invernaderos que son usadas como ingredientes de pociones."
-  },
-  {
-    "id": 24,
-    "hechizo": "Colloshoo",
-    "tipo": "Maldición de parálisis",
-    "descripcion": "Esta maldición pega los zapatos de la víctima al suelo.[20]"
-  },
-  {
-    "id": 25,
-    "hechizo": "Colovaria",
-    "tipo": "Encantamiento de cambio de color",
-    "descripcion": "Este encantamiento cambia el color de un objeto o ser vivo."
-  },
-  {
-    "id": 26,
-    "hechizo": "Confringo",
-    "tipo": "Maldición explosiva",
-    "descripcion": "Esta maldición hace explotar cualquier cosa que golpee. Puede ser muy peligrosa e incluso letal si es usada sin responsabilidad.[29]"
-  },
-  {
-    "id": 27,
-    "hechizo": "Confundo",
-    "tipo": "Encantamiento confundus",
-    "descripcion": "Este encantamiento causa confusión en una persona o un objeto que esté hechizado para pensar por su cuenta. Puede usarse para sugestionar a la víctima a realizar lo que el usuario le indique.[4]"
-  },
-  {
-    "id": 28,
-    "hechizo": "Crucio",
-    "tipo": "Maldición Cruciatus",
-    "descripcion": "Esta maldición provoca un dolor insoportable y agónico en su víctima, y puede llevarla a la locura permanente e irreversible si es sometida a sus efectos de manera prolongada; por lo anterior, se considera como una de las tres Maldiciones Imperdonables.[3]"
-  },
-  {
-    "id": 29,
-    "hechizo": "Defodio",
-    "tipo": "Hechizo excavador",
-    "descripcion": "Este encantamiento permite cavar en la tierra y la roca.[29]"
-  },
-  {
-    "id": 30,
-    "hechizo": "Deletrius",
-    "tipo": "Hechizo de erradicación",
-    "descripcion": "Este encantamiento es usado para desintegrar o desaparecer ciertas cosas, como la sombra del último hechizo usado con la varita.[3]"
-  },
-  {
-    "id": 31,
-    "hechizo": "Depulso",
-    "tipo": "Encantamiento repulsor",
-    "descripcion": "Este encantamiento permite mandar a volar objetos y seres vivos lejos de quien lo usa.[3]"
-  },
-  {
-    "id": 32,
-    "hechizo": "Desmaius",
-    "tipo": "Encantamiento aturdidor",
-    "descripcion": "Este encantamiento deja inconsciente a su víctima y puede detener objetos en movimiento.[3]"
-  },
-  {
-    "id": 33,
-    "hechizo": "Diffindo",
-    "tipo": "Encantamiento seccionador",
-    "descripcion": "Este encantamiento permite romper o cortar parcialmente ciertos objetos. También puede generar cortes dolorosos en los seres vivos.[3][29]"
-  },
-  {
-    "id": 34,
-    "hechizo": "Dissendium",
-    "tipo": "Hechizo de la bruja tuerta",
-    "descripcion": "Este encantamiento permite abrir uno de los pasadizos ocultos de Hogwarts ubicado en la estatua de la bruja tuerta, y que conecta con Honeydukes. Posiblemente también sirva para abrir pasadizos ocultos en general.[2]"
-  },
-  {
-    "id": 35,
-    "hechizo": "Draconifors",
-    "tipo": "Hechizo draconifors",
-    "descripcion": "Este hechizo de transformación permite transformar estatuas de dragones en pequeños dragones animados.[31]"
-  },
-  {
-    "id": 36,
-    "hechizo": "Duro",
-    "tipo": "Encantamiento de endurecimiento",
-    "descripcion": "Este encantamiento permite convertir los objetos en piedra.[29]"
-  },
-  {
-    "id": 37,
-    "hechizo": "Ebublio",
-    "tipo": "Embrujo Ebublio",
-    "descripcion": "Este embrujo encierra a su víctima en una burbuja gigante.[13]"
-  },
-  {
-    "id": 38,
-    "hechizo": "Ectomatic",
-    "tipo": "Hechizo Ecto",
-    "descripcion": "Este hechizo conjura gotas de ectoplasma desde la punta de la varita.[42]"
-  },
-  {
-    "id": 39,
-    "hechizo": "Engorgio",
-    "tipo": "Encantamiento de congestión",
-    "descripcion": "Este encantamiento permite aumentar el tamaño de un objeto o animal.[3]"
-  },
-  {
-    "id": 40,
-    "hechizo": "Entomorphis",
-    "tipo": "Maleficio insecto",
-    "descripcion": "Este maleficio convierte a la víctima en un insecto."
-  },
-  {
-    "id": 41,
-    "hechizo": "Estrigiforma",
-    "tipo": "De lechuza a anteojos de teatro",
-    "descripcion": "Este hechizo de transformación convierte una lechuza en unos anteojos de teatro."
-  },
-  {
-    "id": 42,
-    "hechizo": "Evanesco",
-    "tipo": "Hechizo desvanecedor",
-    "descripcion": "Este hechizo hace que un objeto o sustancia desaparezca. Requiere mayor concentración a mayor complejidad de lo que se desea desaparecer.[5]"
-  },
-  {
-    "id": 43,
-    "hechizo": "Expecto Patronum",
-    "tipo": "Encantamiento Patronus",
-    "descripcion": "Este antiguo y difícil encantamiento materializa los pensamientos felices en un guardián mágico que puede proteger contra la magia más oscura. Puede usarse para repeler dementores y lethifolds, y también para enviar mensajes a otras personas.[2][5]"
-  },
-  {
-    "id": 44,
-    "hechizo": "Expelliarmus",
-    "tipo": "Encantamiento desarmador",
-    "descripcion": "Este encantamiento permite quitar de las manos los objetos que sostenga su víctima. Es útil en los duelos para desarmar al oponente y quitarle su varita.[8]"
-  },
-  {
-    "id": 45,
-    "hechizo": "Expulso",
-    "tipo": "Maleficio Expulso",
-    "descripcion": "Este maleficio empuja bruscamente por los aires a un objeto o una persona.[29]"
-  },
-  {
-    "id": 46,
-    "hechizo": "Felifors",
-    "tipo": "De gato a caldero[25]",
-    "descripcion": "Este hechizo de transformación permite convertir un gato en un caldero.[25]"
-  },
-  {
-    "id": 47,
-    "hechizo": "Fermaportus",
-    "tipo": "Hechizo paralizante",
-    "descripcion": "Este hechizo cierra o sella una puerta mágicamente.[5]"
-  },
-  {
-    "id": 48,
-    "hechizo": "Férula",
-    "tipo": "Encantamiento para vendar",
-    "descripcion": "Este hechizo sanador entablilla y venda una parte del cuerpo fracturada.[2]"
-  },
-  {
-    "id": 49,
-    "hechizo": "Finite incantatem",
-    "tipo": "Encantamiento general de contrahechizos",
-    "descripcion": "Este encantamiento funciona como un contrahechizo para cesar todos los encantamientos realizados en un área.[8]"
-  },
-  {
-    "id": 50,
-    "hechizo": "Flipendo",
-    "tipo": "Conjuro de rechazo de enemigos",
-    "descripcion": "Este maleficio permite golpear y alejar objetos pequeños, y aturdir a oponentes no muy fuertes.[21]"
-  },
-  {
-    "id": 51,
-    "hechizo": "Fregotego",
-    "tipo": "Encantamiento antigrasa",
-    "descripcion": "Este encantamiento doméstico permite limpiar objetos de todo tipo de suciedad.[5]"
-  },
-  {
-    "id": 52,
-    "hechizo": "Fumos",
-    "tipo": "Hechizo de pantalla de humo",
-    "descripcion": "Este hechizo genera una pantalla de humo desde la punta de la varita.[9]"
-  },
-  {
-    "id": 53,
-    "hechizo": "Furnunculus",
-    "tipo": "Mal de ojo de espinillas",
-    "descripcion": "Este maleficio causa forúnculos sobre su víctima.[3]"
-  },
-  {
-    "id": 54,
-    "hechizo": "Geminio",
-    "tipo": "Maldición Gemino",
-    "descripcion": "Esta maldición permite copiar un objeto y multiplicarlo tantas veces como desee el usuario. Los objetos duplicados suelen ser de menor valor que los originales.[29]"
-  },
-  {
-    "id": 55,
-    "hechizo": "Glacius",
-    "tipo": "Hechizo congelador",
-    "descripcion": "Este hechizo genera ráfagas heladas desde la punta de la varita, que permiten congelar a su objetivo.[31]"
-  },
-  {
-    "id": 56,
-    "hechizo": "Glisseo",
-    "tipo": "Hechizo deslizante",
-    "descripcion": "Este hechizo convierte una escalera en una superficie lisa como un tobogán.[29]"
-  },
-  {
-    "id": 57,
-    "hechizo": "Gusarajus",
-    "tipo": "Embrujo Gusarajus",
-    "descripcion": "Este embrujo convierte a la víctima en un gusano.[13]"
-  },
-  {
-    "id": 58,
-    "hechizo": "Harmonia nectere passus",
-    "tipo": "Hechizo de reparación del Armario Evanescente",
-    "descripcion": "Este hechizo permite reparar las propiedades mágicas de un Armario Evanescente dañado.[48]"
-  },
-  {
-    "id": 59,
-    "hechizo": "Hechizo para sellar habitaciones",
-    "tipo": "Embrujo sellador de habitaciones",
-    "descripcion": "Este embrujo permite sellar una habitación mágicamente."
-  },
-  {
-    "id": 60,
-    "hechizo": "Histrifors",
-    "tipo": "De puercoespín a alfiletero",
-    "descripcion": "Este hechizo de transformación convierte un puercoespín en un alfiletero."
-  },
-  {
-    "id": 61,
-    "hechizo": "Homenum revelio",
-    "tipo": "Hechizo revelador de presencia humana",
-    "descripcion": "Este hechizo revela al usuario la presencia y ubicación de magos y brujas que estén ocultos a la vista en un lugar determinado.[29]"
-  },
-  {
-    "id": 62,
-    "hechizo": "Immobulus",
-    "tipo": "Encantamiento de congelación",
-    "descripcion": "Este encantamiento inmoviliza seres vivos y paraliza aparatos electrónicos.[6]"
-  },
-  {
-    "id": 63,
-    "hechizo": "Impedimenta",
-    "tipo": "Encantamiento obstaculizador",
-    "descripcion": "Este encantamiento impide el movimiento de su víctima, paralizándolo temporalmente.[3]"
-  },
-  {
-    "id": 64,
-    "hechizo": "Imperio",
-    "tipo": "Maldición Imperius",
-    "descripcion": "Esta maldición permite controlar completamente los pensamientos y acciones de la víctima, obligándola a realizar todo lo que el usuario desee sin limitaciones y por todo el tiempo que desee; por lo anterior, corresponde a una de las tres Maldiciones Imperdonables.[3]"
-  },
-  {
-    "id": 65,
-    "hechizo": "Impervius",
-    "tipo": "Encantamiento impermeabilizante",
-    "descripcion": "Este encantamiento hace impermeable al objetivo contra líquidos -como el agua de lluvia- y permite repeler en menor medida algunos objetos sólidos.[2]"
-  },
-  {
-    "id": 66,
-    "hechizo": "Inanimatus Conjurus",
-    "tipo": "Inanimatus Conjurus",
-    "descripcion": "Este hechizo de transformación permite alterar el diseño de una habitación.[5]"
-  },
-  {
-    "id": 67,
-    "hechizo": "Incarcerous[26]",
-    "tipo": "Hechizo incarcerous",
-    "descripcion": "Este hechizo invoca unas cuerdas gruesas que salen disparadas desde la punta de la varita, atando fuertemente a su objetivo.[5]"
-  },
-  {
-    "id": 68,
-    "hechizo": "Incendio",
-    "tipo": "Hechizo para producir fuego",
-    "descripcion": "Este hechizo genera llamas desde la punta de la varita, que permiten quemar un objetivo para encender fuego.[3]"
-  },
-  {
-    "id": 69,
-    "hechizo": "Inflatus",
-    "tipo": "Embrujo Inflatus",
-    "descripcion": "Este embrujo infla a su víctima de forma similar a un globo."
-  },
-  {
-    "id": 70,
-    "hechizo": "Informus",
-    "tipo": "Hechizo informus",
-    "descripcion": "Este hechizo permite añadir información sobre una criatura mágica al Folio Bruti del usuario.[47]"
-  },
-  {
-    "id": 71,
-    "hechizo": "Legeremens",
-    "tipo": "Hechizo de Legeremancia",
-    "descripcion": "Este hechizo permite usar la Legeremancia, el arte de penetrar en la mente de su objetivo.[5]"
-  },
-  {
-    "id": 72,
-    "hechizo": "Levicorpus",
-    "tipo": "Embrujo colgador",
-    "descripcion": "Este hechizo dispara un destello de luz que deja a la víctima colgando por su tobillo boca abajo en el aire.[4]"
-  },
-  {
-    "id": 73,
-    "hechizo": "Levioso",
-    "tipo": "Hechizo levitatorio",
-    "descripcion": "Este encantamiento permite levitar objetos pequeños. Es una variante del encantamiento levitatorio."
-  },
-  {
-    "id": 74,
-    "hechizo": "Locomotor",
-    "tipo": "Encantamiento locomotor",
-    "descripcion": "Este encantamiento hace que los objetos se muevan por su cuenta en una dirección deseada flotando suavemente en el aire. Normalmente requiere nombrar el objeto a encantar junto al conjuro.[9][5]"
-  },
-  {
-    "id": 75,
-    "hechizo": "Locomotor mortis",
-    "tipo": "Maleficio de las piernas unidas",
-    "descripcion": "Este maleficio pega las piernas de la víctima entre sí, impidiendo sus movimientos libremente.[7]"
-  },
-  {
-    "id": 76,
-    "hechizo": "Locomotor wibbly",
-    "tipo": "Hechizo de piernas de gelatina",
-    "descripcion": "Este hechizo debilita las piernas de la víctima, haciéndolas temblar como si fueran gelatina.[3]"
-  },
-  {
-    "id": 77,
-    "hechizo": "Lumos",
-    "tipo": "Encantamiento para encender varitas",
-    "descripcion": "Este encantamiento genera un constante haz de chispas en la punta de la varita, que es útil para iluminar un lugar oscuro.[2]"
-  },
-  {
-    "id": 78,
-    "hechizo": "Mimble Wimble",
-    "tipo": "Encantamiento de lengua atada",
-    "descripcion": "Esta maldición hace un nudo con la lengua de la víctima para prevenir que hable sobre algo específico."
-  },
-  {
-    "id": 79,
-    "hechizo": "Molliare",
-    "tipo": "Encantamiento del almohadón",
-    "descripcion": "Este encantamiento crea un efecto invisible de suavidad en las superficies en que es usado."
-  },
-  {
-    "id": 80,
-    "hechizo": "Morsmordre",
-    "tipo": "Marca Tenebrosa",
-    "descripcion": "Este hechizo conjura en el cielo una resplandeciente e inmensa calavera formada por chispas verdes, de cuya boca sale una serpiente. La Marca Tenebrosa es el símbolo usado por Voldemort y sus mortífagos después de realizar un asesinato.[3]"
-  },
-  {
-    "id": 81,
-    "hechizo": "Mucus ad nauseam",
-    "tipo": "Maleficio de los mocos",
-    "descripcion": "Este maleficio genera síntomas de resfrío en la víctima, y puede ser lo suficientemente severo para debilitarle y obligarle a guardar cama.[9]"
-  },
-  {
-    "id": 82,
-    "hechizo": "Nebulus",
-    "tipo": "Hechizo de niebla",
-    "descripcion": "Este encantamiento crea una niebla espesa y oscura que sirve para esconderse o evitar ser seguido por alguien.[12]"
-  },
-  {
-    "id": 83,
-    "hechizo": "Nox",
-    "tipo": "Encantamiento que extingue las varitas",
-    "descripcion": "Este encantamiento permite apagar la luz de la punta de la varita generada por el hechizo Lumos.[2]"
-  },
-  {
-    "id": 84,
-    "hechizo": "Obliviate",
-    "tipo": "Encantamiento desmemorizante",
-    "descripcion": "Este encantamiento borra los recuerdos de su víctima a elección de quien lo ejecuta.[8]"
-  },
-  {
-    "id": 85,
-    "hechizo": "Oppugno",
-    "tipo": "Embrujo Oppugno",
-    "descripcion": "Este embrujo puede usarse para obligar a seres vivos conjurados o a ciertos objetos a atacar a una víctima.[4]"
-  },
-  {
-    "id": 86,
-    "hechizo": "Orbis",
-    "tipo": "Embrujo Orbis",
-    "descripcion": "Este embrujo, en conjunto con el encantamiento levitatorio, succiona a su objetivo bajo tierra en un pequeño torbellino.[13]"
-  },
-  {
-    "id": 87,
-    "hechizo": "Orchideus",
-    "tipo": "Hechizo de ramo de flores",
-    "descripcion": "Este hechizo invoca un ramo de flores de la punta de la varita.[3]"
-  },
-  {
-    "id": 88,
-    "hechizo": "Oriéntame",
-    "tipo": "Encantamiento brújula",
-    "descripcion": "Este encantamiento hace actuar a la varita como una brújula, apuntando hacia el norte.[3]"
-  },
-  {
-    "id": 89,
-    "hechizo": "Pario vestigius",
-    "tipo": "Hechizo de los rastros",
-    "descripcion": "Este encantamiento revela rastros ocultos de Incontratus desplazados por la Calamidad.[69]"
-  },
-  {
-    "id": 90,
-    "hechizo": "Patolifors",
-    "tipo": "Embrujo Patolifors",
-    "descripcion": "Este embrujo convierte una criatura en un pato pequeño.[13]"
-  },
-  {
-    "id": 91,
-    "hechizo": "Pestis Incendium",
-    "tipo": "Fuego maligno",
-    "descripcion": "Esta maldición invoca un fuego desde la punta de la varita, el cual es tan intenso que puede consumir completamente lo que sea que entre en contacto con las llamas, ya sean objetos o seres vivos. Las flamas de este hechizo también se caracterizan por tomar la forma de distintas criaturas. Esta maldición es muy potente y difícil de controlar, y es una de las escasas cosas que puede destruir un horrocrux.[29]"
-  },
-  {
-    "id": 92,
-    "hechizo": "Petrificus Totalus",
-    "tipo": "Parálisis de cuerpo entero",
-    "descripcion": "Esta maldición paraliza completamente el cuerpo de su víctima, permitiéndole mover sólo sus ojos.[7]"
-  },
-  {
-    "id": 93,
-    "hechizo": "Piertotum locomotor",
-    "tipo": "Encantamiento de animación",
-    "descripcion": "Este encantamiento anima objetos inanimados de un lugar determinado, haciendo que obedezcan las órdenes del lanzador del hechizo.[29]"
-  },
-  {
-    "id": 94,
-    "hechizo": "Portus",
-    "tipo": "Hechizo Traslador",
-    "descripcion": "Este hechizo convierte un objeto en un traslador. Su uso requiere la aprobación del Ministerio de Magia.[5]"
-  },
-  {
-    "id": 95,
-    "hechizo": "Prior Incantato",
-    "tipo": "Hechizo de reversión",
-    "descripcion": "Este hechizo es usado en las varitas para hacer que expulsen una especie de nubes fantasmagóricas, las cuales replican los efectos de los últimos hechizos que han realizado. [3]"
-  },
-  {
-    "id": 96,
-    "hechizo": "Protego",
-    "tipo": "Encantamiento escudo",
-    "descripcion": "Este encantamiento genera una barrera invisible que permite bloquear y desviar hechizos enemigos y ataques físicos.[3]"
-  },
-  {
-    "id": 97,
-    "hechizo": "Pullus",
-    "tipo": "Embrujo Pullus",
-    "descripcion": "Este embrujo convierte a la víctima en una gallina o un pollo.[13]"
-  },
-  {
-    "id": 98,
-    "hechizo": "Quietus",
-    "tipo": "Encantamiento acallador",
-    "descripcion": "Este encantamiento disminuye el volumen de la voz de quien lo usa. Es el contrahechizo del encantamiento sonoro.[3]"
-  },
-  {
-    "id": 99,
-    "hechizo": "Redactum skullus",
-    "tipo": "Maleficio reductor de cabezas",
-    "descripcion": "Este maleficio se puede usar para reducir el tamaño de la cabeza de la víctima."
-  },
-  {
-    "id": 100,
-    "hechizo": "Reducto",
-    "tipo": "Maldición reductora",
-    "descripcion": "Esta maldición destruye un objeto en pedazos, incluso volviéndolo polvo si es lo suficientemente poderoso.[3]"
-  },
-  {
-    "id": 101,
-    "hechizo": "Relashio",
-    "tipo": "Embrujo de repugnancia",
-    "descripcion": "Este embrujo obliga a un objeto o ser vivo a soltar a otro.[3]"
-  },
-  {
-    "id": 102,
-    "hechizo": "Rennervate",
-    "tipo": "Hechizo reanimador",
-    "descripcion": "Este encantamiento regresa la consciencia a una persona inconsciente. Es el contrahechizo del encantamiento aturdidor.[3]"
-  },
-  {
-    "id": 103,
-    "hechizo": "Reparo",
-    "tipo": "Encantamiento de reparación",
-    "descripcion": "Este encantamiento repara un objeto roto o destruido, dejándolo como nuevo.[8]"
-  },
-  {
-    "id": 104,
-    "hechizo": "Repello muggletum",
-    "tipo": "Encantamiento repelente de muggles",
-    "descripcion": "Este encantamiento permite alejar a los muggles de la zona que se encanta. Cuando se acercan al lugar encantado, los muggles recuerdan que tienen que hacer otra cosa y se van.[3][29]"
-  },
-  {
-    "id": 105,
-    "hechizo": "Revelio",
-    "tipo": "Encantamiento revelio",
-    "descripcion": "Este encantamiento de transformación permite revelar la verdadera apariencia de las cosas, o para hacer visible lo invisible.[38]"
-  },
-  {
-    "id": 106,
-    "hechizo": "Rictusempra",
-    "tipo": "Encantamiento de cosquillas",
-    "descripcion": "Este encantamiento genera cosquillas en su víctima.[8]"
-  },
-  {
-    "id": 107,
-    "hechizo": "Riddikulus",
-    "tipo": "Hechizo repulsor de boggarts",
-    "descripcion": "Este encantamiento obliga a un boggart a adoptar una forma graciosa para quien lo realiza.[2]"
-  },
-  {
-    "id": 108,
-    "hechizo": "Sectumsempra",
-    "tipo": "Maldición de laceración",
-    "descripcion": "Esta poderosa maldición genera cortes profundos en la víctima, que pueden seccionar partes de su cuerpo con facilidad. Las partes amputadas con esta maldición no tienen cura conocida, y las heridas pueden ser letales por el desangramiento generado.[4]"
-  },
-  {
-    "id": 109,
-    "hechizo": "Silencio",
-    "tipo": "Encantamiento silenciador",
-    "descripcion": "Este encantamiento silencia la garganta de su objetivo, impidiendo que emita cualquier tipo de sonido.[5]"
-  },
-  {
-    "id": 110,
-    "hechizo": "Skurge",
-    "tipo": "Encantamiento desinfectante",
-    "descripcion": "Este encantamiento disuelve el ectoplasma dejado por fantasmas y espectros.[47]"
-  },
-  {
-    "id": 111,
-    "hechizo": "Slugulus eructo",
-    "tipo": "Encantamiento vomitababosas",
-    "descripcion": "Este encantamiento obliga a la víctima a vomitar babosas y babas.[8]"
-  },
-  {
-    "id": 112,
-    "hechizo": "Sonorus",
-    "tipo": "Encantamiento amplificador",
-    "descripcion": "Este encantamiento aumenta el volumen de la voz de quien lo usa.[3]"
-  },
-  {
-    "id": 113,
-    "hechizo": "Spongify",
-    "tipo": "Encantamiento de ablandamiento",
-    "descripcion": "Este encantamiento es usado en objetos o seres vivos para volverlos más flexibles y elásticos.[21]"
-  },
-  {
-    "id": 114,
-    "hechizo": "Stella cascadia",
-    "tipo": "Hechizo de lluvia de estrellas",
-    "descripcion": "Este hechizo hace aparecer una lluvia de estrellas tanto en retratos como en espacios abiertos.[25]"
-  },
-  {
-    "id": 115,
-    "hechizo": "Stella corusco",
-    "tipo": "Hechizo de estrellas brillantes",
-    "descripcion": "Este hechizo hace aparecer estrellas que brillan intensamente tanto en retratos como en espacios abiertos.[25]"
-  },
-  {
-    "id": 116,
-    "hechizo": "Surgito",
-    "tipo": "Encantamiento para desencantar",
-    "descripcion": "Este contraencantamiento deshace los efectos de los encantamientos amorosos sobre su víctima.[12]"
-  },
-  {
-    "id": 117,
-    "hechizo": "Tarantallegra",
-    "tipo": "Encantamiento de pies danzantes",
-    "descripcion": "Este encantamiento obliga a su objetivo a realizar un baile descontrolado con sus pies.[8]"
-  },
-  {
-    "id": 118,
-    "hechizo": "Tergeo",
-    "tipo": "Hechizo de limpieza",
-    "descripcion": "Este hechizo de limpieza permite aspirar líquidos, polvo o ciertas sustancias con la punta de la varita.[5]"
-  },
-  {
-    "id": 119,
-    "hechizo": "Titillando",
-    "tipo": "Maleficio de cosquillas",
-    "descripcion": "Este maleficio causa cosquillas y debilita a su víctima.[20]"
-  },
-  {
-    "id": 120,
-    "hechizo": "Ventus",
-    "tipo": "Hechizo de viento",
-    "descripcion": "Este hechizo dispara una ráfaga de viento en espiral de la punta de la varita.[13]"
-  },
-  {
-    "id": 121,
-    "hechizo": "Vera verto",
-    "tipo": "De animal a copa",
-    "descripcion": "Este hechizo de transformación convierte un animal en una copa. Requiere tres toque sobre el animal con la punta de la varita.[6]"
-  },
-  {
-    "id": 122,
-    "hechizo": "Verdimillious",
-    "tipo": "Encantamiento Verdimillious",
-    "descripcion": "Este encantamiento dispara un haz de chispas verdes de la punta de la varita, que pueden usarse para atacar a un oponente o revelar objetos ocultos por magia.[21]"
-  },
-  {
-    "id": 123,
-    "hechizo": "Vermillious",
-    "tipo": "Chispas rojas",
-    "descripcion": "Este sencillo encantamiento permite lanzar chispas rojas de la punta de la varita. Puede estar relacionado con el hechizo Periculum.[7]"
-  },
-  {
-    "id": 124,
-    "hechizo": "Vipera evanesca",
-    "tipo": "Hechizo desvanecedor de serpientes",
-    "descripcion": "Este hechizo permite desaparecer una serpiente invocada mágicamente. Es una variante del encantamiento desvanecedor.[6]"
-  },
-  {
-    "id": 125,
-    "hechizo": "Wingardium leviosa",
-    "tipo": "Encantamiento levitatorio",
-    "descripcion": "Este encantamiento permite levitar objetos o pequeños seres vivos.[7]"
-  }
+﻿[
+    {
+        "id":  2,
+        "hechizo":  "Aberto",
+        "tipo":  "Encantamiento de abertura",
+        "descripcion":  "Este encantamiento permite desbloquear una puerta cerrada. Es una variante ligeramente más novedosa del encantamiento de apertura.",
+        "movimiento":  "Dos giros en sentido horario y toque suave hacia la manija."
+    },
+    {
+        "id":  3,
+        "hechizo":  "Accio",
+        "tipo":  "Encantamiento convocador",
+        "descripcion":  "Este encantamiento permite atraer un objeto a las manos del lanzador, incluso a una distancia significativa.[3]",
+        "movimiento":  "Tirón enérgico con la varita apuntando al objeto y trayéndolo hacia el pecho."
+    },
+    {
+        "id":  4,
+        "hechizo":  "Aguamenti",
+        "tipo":  "Hechizo de creación de agua",
+        "descripcion":  "Este encantamiento genera un chorro de agua desde la punta de la varita.[4]",
+        "movimiento":  "Trazado ondeante en forma de 'S' horizontal simulando la corriente de agua."
+    },
+    {
+        "id":  5,
+        "hechizo":  "Aliento de pimienta",
+        "tipo":  "Maleficio de aliento de pimienta",
+        "descripcion":  "Este maleficio genera un aliento muy ardiente en su víctima.",
+        "movimiento":  "Dos vueltas rápidas de varita y un paso hacia atrás."
+    },
+    {
+        "id":  6,
+        "hechizo":  "Alohomora",
+        "tipo":  "Encantamiento de apertura",
+        "descripcion":  "Este encantamiento permite abrir y desbloquear cerraduras cerradas con llave.[7]",
+        "movimiento":  "Giro en forma de 'S' invertida hacia atrás y toque en la cerradura."
+    },
+    {
+        "id":  7,
+        "hechizo":  "Amato animo animato animagus",
+        "tipo":  "Hechizo de animago",
+        "descripcion":  "Este hechizo es utilizado durante los pasos a seguir para que un mago o bruja desarrolle la transformación en animago.",
+        "movimiento":  "Trazado en espiral ascendente con una ligera inclinación de muñeca."
+    },
+    {
+        "id":  8,
+        "hechizo":  "Aparecium",
+        "tipo":  "Encantamiento de revelación",
+        "descripcion":  "Este encantamiento permite revelar mensajes ocultos con tinta invisible.[8]",
+        "movimiento":  "Punteo triple en el pergamino y barrido en diagonal."
+    },
+    {
+        "id":  9,
+        "hechizo":  "Appare vestigium[11]",
+        "tipo":  "Hechizo rastreador[11]",
+        "descripcion":  "Este hechizo es utilizado para recrear momentos y situaciones completas del pasado.[12]",
+        "movimiento":  "Sacudida diagonal de derecha a izquierda con postura firme de pies."
+    },
+    {
+        "id":  10,
+        "hechizo":  "Aqua eructo",
+        "tipo":  "Encantamiento Aqua eructo",
+        "descripcion":  "Este encantamiento genera un potente chorro de agua de la punta de la varita, que puede extinguir llamas o hacer daños a criaturas como las salamandras.[13]",
+        "movimiento":  "Dos vueltas de varita en sentido horario y un golpe seco hacia el frente."
+    },
+    {
+        "id":  11,
+        "hechizo":  "Arania exumai",
+        "tipo":  "Hechizo para repeler arañas",
+        "descripcion":  "Este hechizo permite repeler a las arañas.[6]",
+        "movimiento":  "Golpe en cruz en el aire y retroceso de medio paso con pie derecho."
+    },
+    {
+        "id":  12,
+        "hechizo":  "Arresto momentum",
+        "tipo":  "Encantamiento ralentizador",
+        "descripcion":  "Este encantamiento disminuye rápidamente la velocidad de un objetivo en movimiento.[16]",
+        "movimiento":  "Movimiento en forma de 'M' amplia ralentizando la velocidad de la mano."
+    },
+    {
+        "id":  13,
+        "hechizo":  "Ascendio",
+        "tipo":  "Encantamiento de ascensión",
+        "descripcion":  "Este hechizo eleva por lo alto al lanzador.[17]",
+        "movimiento":  "Elevación vertical firme de la varita desde la cadera hacia el cielo."
+    },
+    {
+        "id":  14,
+        "hechizo":  "Atabraquium",
+        "tipo":  "Embrujo para atar extremidades",
+        "descripcion":  "Este embrujo ata firmemente las extremidades del objetivo con cuerdas invisibles.[19]",
+        "movimiento":  "Giro fluido de 360 grados apuntando al suelo y elevación súbita."
+    },
+    {
+        "id":  15,
+        "hechizo":  "Avada Kedavra",
+        "tipo":  "Maldición asesina",
+        "descripcion":  "Esta peligrosa y complicada maldición genera un destello verde de la punta de la varita, que mata en el acto a cualquier ser vivo que le alcance; por lo anterior,e es considerada como una de las tres Maldiciones Imperdonables. Sus efectos no poseen contrahechizo alguno.[3]",
+        "movimiento":  "Movimiento en forma de rayo descendente con intención tajante y decisiva."
+    },
+    {
+        "id":  16,
+        "hechizo":  "Avifors",
+        "tipo":  "Hechizo Avifors",
+        "descripcion":  "Este hechizo de transformación convierte los objetos inanimados en aves.[21]",
+        "movimiento":  "Doble corte en cruz en el aire y leve inclinación del torso."
+    },
+    {
+        "id":  17,
+        "hechizo":  "Avis",
+        "tipo":  "Encantamiento para conjurar pájaros",
+        "descripcion":  "Este encantamiento invoca una bandada de aves de la punta de la varita.[3]",
+        "movimiento":  "Estocada frontal rápida seguida de un semicírculo hacia arriba."
+    },
+    {
+        "id":  18,
+        "hechizo":  "Bombarda",
+        "tipo":  "Encantamiento explosivo",
+        "descripcion":  "Este encantamiento provoca una pequeña explosión en su objetivo.[16]",
+        "movimiento":  "Empuje violento hacia adelante con terminación en chasquido ascendente."
+    },
+    {
+        "id":  19,
+        "hechizo":  "Calvorio",
+        "tipo":  "Maldición pérdida de cabello",
+        "descripcion":  "Esta maldición hace caer el cabello de la víctima, dejándola calva.[28]",
+        "movimiento":  "Trazado de un arco protector de derecha a izquierda y tirón hacia el pecho."
+    },
+    {
+        "id":  20,
+        "hechizo":  "Cantis",
+        "tipo":  "Encantamiento de canto",
+        "descripcion":  "Este encantamiento obliga a las personas y objetos a cantar.[10]",
+        "movimiento":  "Trazado en espiral ascendente con una ligera inclinación de muñeca."
+    },
+    {
+        "id":  21,
+        "hechizo":  "Capacious extremis",
+        "tipo":  "Encantamiento de extensión indetectable",
+        "descripcion":  "Este encantamiento permite aumentar las dimensiones internas de un objeto, sin alterar su tamaño exterior.[29]",
+        "movimiento":  "Movimiento ondeante de izquierda a derecha con agarre firme de varita."
+    },
+    {
+        "id":  22,
+        "hechizo":  "Carpe retractum",
+        "tipo":  "Encantamiento tira y afloja",
+        "descripcion":  "Este encantamiento crea una cuerda mágica desde la punta de la varita, que permite tirar objetos lejanos hacia el lanzador, o jalar al usuario hacia el objeto en que se usa el hechizo.[31]",
+        "movimiento":  "Sacudida diagonal de derecha a izquierda con postura firme de pies."
+    },
+    {
+        "id":  23,
+        "hechizo":  "Celescere",
+        "tipo":  "Encantamiento invernadero",
+        "descripcion":  "Este encantamiento ayuda al crecimiento de las plantas en invernaderos que son usadas como ingredientes de pociones.",
+        "movimiento":  "Dos vueltas de varita en sentido horario y un golpe seco hacia el frente."
+    },
+    {
+        "id":  24,
+        "hechizo":  "Colloshoo",
+        "tipo":  "Maldición de parálisis",
+        "descripcion":  "Esta maldición pega los zapatos de la víctima al suelo.[20]",
+        "movimiento":  "Paso lateral a la izquierda, golpe vertical descendente y exhalación profunda."
+    },
+    {
+        "id":  25,
+        "hechizo":  "Colovaria",
+        "tipo":  "Encantamiento de cambio de color",
+        "descripcion":  "Este encantamiento cambia el color de un objeto o ser vivo.",
+        "movimiento":  "Doble toque en el aire y giro de muñeca en sentido de las agujas del reloj."
+    },
+    {
+        "id":  26,
+        "hechizo":  "Confringo",
+        "tipo":  "Maldición explosiva",
+        "descripcion":  "Esta maldición hace explotar cualquier cosa que golpee. Puede ser muy peligrosa e incluso letal si es usada sin responsabilidad.[29]",
+        "movimiento":  "Trazado explosivo en cruz y golpe seco hacia el objetivo."
+    },
+    {
+        "id":  27,
+        "hechizo":  "Confundo",
+        "tipo":  "Encantamiento confundus",
+        "descripcion":  "Este encantamiento causa confusión en una persona o un objeto que esté hechizado para pensar por su cuenta. Puede usarse para sugestionar a la víctima a realizar lo que el usuario le indique.[4]",
+        "movimiento":  "Giro fluido de 360 grados apuntando al suelo y elevación súbita."
+    },
+    {
+        "id":  28,
+        "hechizo":  "Crucio",
+        "tipo":  "Maldición Cruciatus",
+        "descripcion":  "Esta maldición provoca un dolor insoportable y agónico en su víctima, y puede llevarla a la locura permanente e irreversible si es sometida a sus efectos de manera prolongada; por lo anterior, se considera como una de las tres Maldiciones Imperdonables.[3]",
+        "movimiento":  "Estocada directa y sostenida con enfoque mental absoluto."
+    },
+    {
+        "id":  29,
+        "hechizo":  "Defodio",
+        "tipo":  "Hechizo excavador",
+        "descripcion":  "Este encantamiento permite cavar en la tierra y la roca.[29]",
+        "movimiento":  "Doble corte en cruz en el aire y leve inclinación del torso."
+    },
+    {
+        "id":  30,
+        "hechizo":  "Deletrius",
+        "tipo":  "Hechizo de erradicación",
+        "descripcion":  "Este encantamiento es usado para desintegrar o desaparecer ciertas cosas, como la sombra del último hechizo usado con la varita.[3]",
+        "movimiento":  "Estocada frontal rápida seguida de un semicírculo hacia arriba."
+    },
+    {
+        "id":  31,
+        "hechizo":  "Depulso",
+        "tipo":  "Encantamiento repulsor",
+        "descripcion":  "Este encantamiento permite mandar a volar objetos y seres vivos lejos de quien lo usa.[3]",
+        "movimiento":  "Empuje frontal con ambos brazos y estocada final de varita."
+    },
+    {
+        "id":  32,
+        "hechizo":  "Desmaius",
+        "tipo":  "Encantamiento aturdidor",
+        "descripcion":  "Este encantamiento deja inconsciente a su víctima y puede detener objetos en movimiento.[3]",
+        "movimiento":  "Trazado de un arco protector de derecha a izquierda y tirón hacia el pecho."
+    },
+    {
+        "id":  33,
+        "hechizo":  "Diffindo",
+        "tipo":  "Encantamiento seccionador",
+        "descripcion":  "Este encantamiento permite romper o cortar parcialmente ciertos objetos. También puede generar cortes dolorosos en los seres vivos.[3][29]",
+        "movimiento":  "Trazado en espiral ascendente con una ligera inclinación de muñeca."
+    },
+    {
+        "id":  34,
+        "hechizo":  "Dissendium",
+        "tipo":  "Hechizo de la bruja tuerta",
+        "descripcion":  "Este encantamiento permite abrir uno de los pasadizos ocultos de Hogwarts ubicado en la estatua de la bruja tuerta, y que conecta con Honeydukes. Posiblemente también sirva para abrir pasadizos ocultos en general.[2]",
+        "movimiento":  "Movimiento ondeante de izquierda a derecha con agarre firme de varita."
+    },
+    {
+        "id":  35,
+        "hechizo":  "Draconifors",
+        "tipo":  "Hechizo draconifors",
+        "descripcion":  "Este hechizo de transformación permite transformar estatuas de dragones en pequeños dragones animados.[31]",
+        "movimiento":  "Sacudida diagonal de derecha a izquierda con postura firme de pies."
+    },
+    {
+        "id":  36,
+        "hechizo":  "Duro",
+        "tipo":  "Encantamiento de endurecimiento",
+        "descripcion":  "Este encantamiento permite convertir los objetos en piedra.[29]",
+        "movimiento":  "Dos vueltas de varita en sentido horario y un golpe seco hacia el frente."
+    },
+    {
+        "id":  37,
+        "hechizo":  "Ebublio",
+        "tipo":  "Embrujo Ebublio",
+        "descripcion":  "Este embrujo encierra a su víctima en una burbuja gigante.[13]",
+        "movimiento":  "Paso lateral a la izquierda, golpe vertical descendente y exhalación profunda."
+    },
+    {
+        "id":  38,
+        "hechizo":  "Ectomatic",
+        "tipo":  "Hechizo Ecto",
+        "descripcion":  "Este hechizo conjura gotas de ectoplasma desde la punta de la varita.[42]",
+        "movimiento":  "Doble toque en el aire y giro de muñeca en sentido de las agujas del reloj."
+    },
+    {
+        "id":  39,
+        "hechizo":  "Engorgio",
+        "tipo":  "Encantamiento de congestión",
+        "descripcion":  "Este encantamiento permite aumentar el tamaño de un objeto o animal.[3]",
+        "movimiento":  "Trazado de un círculo completo cerrado con un toque hacia el centro."
+    },
+    {
+        "id":  40,
+        "hechizo":  "Entomorphis",
+        "tipo":  "Maleficio insecto",
+        "descripcion":  "Este maleficio convierte a la víctima en un insecto.",
+        "movimiento":  "Giro fluido de 360 grados apuntando al suelo y elevación súbita."
+    },
+    {
+        "id":  41,
+        "hechizo":  "Estrigiforma",
+        "tipo":  "De lechuza a anteojos de teatro",
+        "descripcion":  "Este hechizo de transformación convierte una lechuza en unos anteojos de teatro.",
+        "movimiento":  "Un paso al frente con reverencia sutil y barrido horizontal de la varita."
+    },
+    {
+        "id":  42,
+        "hechizo":  "Evanesco",
+        "tipo":  "Hechizo desvanecedor",
+        "descripcion":  "Este hechizo hace que un objeto o sustancia desaparezca. Requiere mayor concentración a mayor complejidad de lo que se desea desaparecer.[5]",
+        "movimiento":  "Doble corte en cruz en el aire y leve inclinación del torso."
+    },
+    {
+        "id":  43,
+        "hechizo":  "Expecto Patronum",
+        "tipo":  "Encantamiento Patronus",
+        "descripcion":  "Este antiguo y difícil encantamiento materializa los pensamientos felices en un guardián mágico que puede proteger contra la magia más oscura. Puede usarse para repeler dementores y lethifolds, y también para enviar mensajes a otras personas.[2][5]",
+        "movimiento":  "Estocada frontal rápida seguida de un semicírculo hacia arriba."
+    },
+    {
+        "id":  44,
+        "hechizo":  "Expelliarmus",
+        "tipo":  "Encantamiento desarmador",
+        "descripcion":  "Este encantamiento permite quitar de las manos los objetos que sostenga su víctima. Es útil en los duelos para desarmar al oponente y quitarle su varita.[8]",
+        "movimiento":  "Rotación circular lenta de la punta de la varita y chasquido seco final."
+    },
+    {
+        "id":  45,
+        "hechizo":  "Expulso",
+        "tipo":  "Maleficio Expulso",
+        "descripcion":  "Este maleficio empuja bruscamente por los aires a un objeto o una persona.[29]",
+        "movimiento":  "Trazado de un arco protector de derecha a izquierda y tirón hacia el pecho."
+    },
+    {
+        "id":  46,
+        "hechizo":  "Felifors",
+        "tipo":  "De gato a caldero[25]",
+        "descripcion":  "Este hechizo de transformación permite convertir un gato en un caldero.[25]",
+        "movimiento":  "Trazado en espiral ascendente con una ligera inclinación de muñeca."
+    },
+    {
+        "id":  47,
+        "hechizo":  "Fermaportus",
+        "tipo":  "Hechizo paralizante",
+        "descripcion":  "Este hechizo cierra o sella una puerta mágicamente.[5]",
+        "movimiento":  "Movimiento ondeante de izquierda a derecha con agarre firme de varita."
+    },
+    {
+        "id":  48,
+        "hechizo":  "Férula",
+        "tipo":  "Encantamiento para vendar",
+        "descripcion":  "Este hechizo sanador entablilla y venda una parte del cuerpo fracturada.[2]",
+        "movimiento":  "Sacudida diagonal de derecha a izquierda con postura firme de pies."
+    },
+    {
+        "id":  49,
+        "hechizo":  "Finite incantatem",
+        "tipo":  "Encantamiento general de contrahechizos",
+        "descripcion":  "Este encantamiento funciona como un contrahechizo para cesar todos los encantamientos realizados en un área.[8]",
+        "movimiento":  "Dos vueltas de varita en sentido horario y un golpe seco hacia el frente."
+    },
+    {
+        "id":  50,
+        "hechizo":  "Flipendo",
+        "tipo":  "Conjuro de rechazo de enemigos",
+        "descripcion":  "Este maleficio permite golpear y alejar objetos pequeños, y aturdir a oponentes no muy fuertes.[21]",
+        "movimiento":  "Paso lateral a la izquierda, golpe vertical descendente y exhalación profunda."
+    },
+    {
+        "id":  51,
+        "hechizo":  "Fregotego",
+        "tipo":  "Encantamiento antigrasa",
+        "descripcion":  "Este encantamiento doméstico permite limpiar objetos de todo tipo de suciedad.[5]",
+        "movimiento":  "Doble toque en el aire y giro de muñeca en sentido de las agujas del reloj."
+    },
+    {
+        "id":  52,
+        "hechizo":  "Fumos",
+        "tipo":  "Hechizo de pantalla de humo",
+        "descripcion":  "Este hechizo genera una pantalla de humo desde la punta de la varita.[9]",
+        "movimiento":  "Trazado de un círculo completo cerrado con un toque hacia el centro."
+    },
+    {
+        "id":  53,
+        "hechizo":  "Furnunculus",
+        "tipo":  "Mal de ojo de espinillas",
+        "descripcion":  "Este maleficio causa forúnculos sobre su víctima.[3]",
+        "movimiento":  "Giro fluido de 360 grados apuntando al suelo y elevación súbita."
+    },
+    {
+        "id":  54,
+        "hechizo":  "Geminio",
+        "tipo":  "Maldición Gemino",
+        "descripcion":  "Esta maldición permite copiar un objeto y multiplicarlo tantas veces como desee el usuario. Los objetos duplicados suelen ser de menor valor que los originales.[29]",
+        "movimiento":  "Un paso al frente con reverencia sutil y barrido horizontal de la varita."
+    },
+    {
+        "id":  55,
+        "hechizo":  "Glacius",
+        "tipo":  "Hechizo congelador",
+        "descripcion":  "Este hechizo genera ráfagas heladas desde la punta de la varita, que permiten congelar a su objetivo.[31]",
+        "movimiento":  "Doble corte en cruz en el aire y leve inclinación del torso."
+    },
+    {
+        "id":  56,
+        "hechizo":  "Glisseo",
+        "tipo":  "Hechizo deslizante",
+        "descripcion":  "Este hechizo convierte una escalera en una superficie lisa como un tobogán.[29]",
+        "movimiento":  "Estocada frontal rápida seguida de un semicírculo hacia arriba."
+    },
+    {
+        "id":  57,
+        "hechizo":  "Gusarajus",
+        "tipo":  "Embrujo Gusarajus",
+        "descripcion":  "Este embrujo convierte a la víctima en un gusano.[13]",
+        "movimiento":  "Rotación circular lenta de la punta de la varita y chasquido seco final."
+    },
+    {
+        "id":  58,
+        "hechizo":  "Harmonia nectere passus",
+        "tipo":  "Hechizo de reparación del Armario Evanescente",
+        "descripcion":  "Este hechizo permite reparar las propiedades mágicas de un Armario Evanescente dañado.[48]",
+        "movimiento":  "Trazado de un arco protector de derecha a izquierda y tirón hacia el pecho."
+    },
+    {
+        "id":  59,
+        "hechizo":  "Hechizo para sellar habitaciones",
+        "tipo":  "Embrujo sellador de habitaciones",
+        "descripcion":  "Este embrujo permite sellar una habitación mágicamente.",
+        "movimiento":  "Trazado en espiral ascendente con una ligera inclinación de muñeca."
+    },
+    {
+        "id":  60,
+        "hechizo":  "Histrifors",
+        "tipo":  "De puercoespín a alfiletero",
+        "descripcion":  "Este hechizo de transformación convierte un puercoespín en un alfiletero.",
+        "movimiento":  "Movimiento ondeante de izquierda a derecha con agarre firme de varita."
+    },
+    {
+        "id":  61,
+        "hechizo":  "Homenum revelio",
+        "tipo":  "Hechizo revelador de presencia humana",
+        "descripcion":  "Este hechizo revela al usuario la presencia y ubicación de magos y brujas que estén ocultos a la vista en un lugar determinado.[29]",
+        "movimiento":  "Sacudida diagonal de derecha a izquierda con postura firme de pies."
+    },
+    {
+        "id":  62,
+        "hechizo":  "Immobulus",
+        "tipo":  "Encantamiento de congelación",
+        "descripcion":  "Este encantamiento inmoviliza seres vivos y paraliza aparatos electrónicos.[6]",
+        "movimiento":  "Dos vueltas de varita en sentido horario y un golpe seco hacia el frente."
+    },
+    {
+        "id":  63,
+        "hechizo":  "Impedimenta",
+        "tipo":  "Encantamiento obstaculizador",
+        "descripcion":  "Este encantamiento impide el movimiento de su víctima, paralizándolo temporalmente.[3]",
+        "movimiento":  "Paso lateral a la izquierda, golpe vertical descendente y exhalación profunda."
+    },
+    {
+        "id":  64,
+        "hechizo":  "Imperio",
+        "tipo":  "Maldición Imperius",
+        "descripcion":  "Esta maldición permite controlar completamente los pensamientos y acciones de la víctima, obligándola a realizar todo lo que el usuario desee sin limitaciones y por todo el tiempo que desee; por lo anterior, corresponde a una de las tres Maldiciones Imperdonables.[3]",
+        "movimiento":  "Doble toque en el aire y giro de muñeca en sentido de las agujas del reloj."
+    },
+    {
+        "id":  65,
+        "hechizo":  "Impervius",
+        "tipo":  "Encantamiento impermeabilizante",
+        "descripcion":  "Este encantamiento hace impermeable al objetivo contra líquidos -como el agua de lluvia- y permite repeler en menor medida algunos objetos sólidos.[2]",
+        "movimiento":  "Trazado de un círculo completo cerrado con un toque hacia el centro."
+    },
+    {
+        "id":  66,
+        "hechizo":  "Inanimatus Conjurus",
+        "tipo":  "Inanimatus Conjurus",
+        "descripcion":  "Este hechizo de transformación permite alterar el diseño de una habitación.[5]",
+        "movimiento":  "Giro fluido de 360 grados apuntando al suelo y elevación súbita."
+    },
+    {
+        "id":  67,
+        "hechizo":  "Incarcerous[26]",
+        "tipo":  "Hechizo incarcerous",
+        "descripcion":  "Este hechizo invoca unas cuerdas gruesas que salen disparadas desde la punta de la varita, atando fuertemente a su objetivo.[5]",
+        "movimiento":  "Un paso al frente con reverencia sutil y barrido horizontal de la varita."
+    },
+    {
+        "id":  68,
+        "hechizo":  "Incendio",
+        "tipo":  "Hechizo para producir fuego",
+        "descripcion":  "Este hechizo genera llamas desde la punta de la varita, que permiten quemar un objetivo para encender fuego.[3]",
+        "movimiento":  "Doble corte en cruz en el aire y leve inclinación del torso."
+    },
+    {
+        "id":  69,
+        "hechizo":  "Inflatus",
+        "tipo":  "Embrujo Inflatus",
+        "descripcion":  "Este embrujo infla a su víctima de forma similar a un globo.",
+        "movimiento":  "Estocada frontal rápida seguida de un semicírculo hacia arriba."
+    },
+    {
+        "id":  70,
+        "hechizo":  "Informus",
+        "tipo":  "Hechizo informus",
+        "descripcion":  "Este hechizo permite añadir información sobre una criatura mágica al Folio Bruti del usuario.[47]",
+        "movimiento":  "Rotación circular lenta de la punta de la varita y chasquido seco final."
+    },
+    {
+        "id":  71,
+        "hechizo":  "Legeremens",
+        "tipo":  "Hechizo de Legeremancia",
+        "descripcion":  "Este hechizo permite usar la Legeremancia, el arte de penetrar en la mente de su objetivo.[5]",
+        "movimiento":  "Trazado de un arco protector de derecha a izquierda y tirón hacia el pecho."
+    },
+    {
+        "id":  72,
+        "hechizo":  "Levicorpus",
+        "tipo":  "Embrujo colgador",
+        "descripcion":  "Este hechizo dispara un destello de luz que deja a la víctima colgando por su tobillo boca abajo en el aire.[4]",
+        "movimiento":  "Trazado en espiral ascendente con una ligera inclinación de muñeca."
+    },
+    {
+        "id":  73,
+        "hechizo":  "Levioso",
+        "tipo":  "Hechizo levitatorio",
+        "descripcion":  "Este encantamiento permite levitar objetos pequeños. Es una variante del encantamiento levitatorio.",
+        "movimiento":  "Movimiento ondeante de izquierda a derecha con agarre firme de varita."
+    },
+    {
+        "id":  74,
+        "hechizo":  "Locomotor",
+        "tipo":  "Encantamiento locomotor",
+        "descripcion":  "Este encantamiento hace que los objetos se muevan por su cuenta en una dirección deseada flotando suavemente en el aire. Normalmente requiere nombrar el objeto a encantar junto al conjuro.[9][5]",
+        "movimiento":  "Sacudida diagonal de derecha a izquierda con postura firme de pies."
+    },
+    {
+        "id":  75,
+        "hechizo":  "Locomotor mortis",
+        "tipo":  "Maleficio de las piernas unidas",
+        "descripcion":  "Este maleficio pega las piernas de la víctima entre sí, impidiendo sus movimientos libremente.[7]",
+        "movimiento":  "Dos vueltas de varita en sentido horario y un golpe seco hacia el frente."
+    },
+    {
+        "id":  76,
+        "hechizo":  "Locomotor wibbly",
+        "tipo":  "Hechizo de piernas de gelatina",
+        "descripcion":  "Este hechizo debilita las piernas de la víctima, haciéndolas temblar como si fueran gelatina.[3]",
+        "movimiento":  "Paso lateral a la izquierda, golpe vertical descendente y exhalación profunda."
+    },
+    {
+        "id":  77,
+        "hechizo":  "Lumos",
+        "tipo":  "Encantamiento para encender varitas",
+        "descripcion":  "Este encantamiento genera un constante haz de chispas en la punta de la varita, que es útil para iluminar un lugar oscuro.[2]",
+        "movimiento":  "Giro suave de muñeca y elevación hacia el cielo."
+    },
+    {
+        "id":  78,
+        "hechizo":  "Mimble Wimble",
+        "tipo":  "Encantamiento de lengua atada",
+        "descripcion":  "Esta maldición hace un nudo con la lengua de la víctima para prevenir que hable sobre algo específico.",
+        "movimiento":  "Trazado de un círculo completo cerrado con un toque hacia el centro."
+    },
+    {
+        "id":  79,
+        "hechizo":  "Molliare",
+        "tipo":  "Encantamiento del almohadón",
+        "descripcion":  "Este encantamiento crea un efecto invisible de suavidad en las superficies en que es usado.",
+        "movimiento":  "Giro fluido de 360 grados apuntando al suelo y elevación súbita."
+    },
+    {
+        "id":  80,
+        "hechizo":  "Morsmordre",
+        "tipo":  "Marca Tenebrosa",
+        "descripcion":  "Este hechizo conjura en el cielo una resplandeciente e inmensa calavera formada por chispas verdes, de cuya boca sale una serpiente. La Marca Tenebrosa es el símbolo usado por Voldemort y sus mortífagos después de realizar un asesinato.[3]",
+        "movimiento":  "Un paso al frente con reverencia sutil y barrido horizontal de la varita."
+    },
+    {
+        "id":  81,
+        "hechizo":  "Mucus ad nauseam",
+        "tipo":  "Maleficio de los mocos",
+        "descripcion":  "Este maleficio genera síntomas de resfrío en la víctima, y puede ser lo suficientemente severo para debilitarle y obligarle a guardar cama.[9]",
+        "movimiento":  "Doble corte en cruz en el aire y leve inclinación del torso."
+    },
+    {
+        "id":  82,
+        "hechizo":  "Nebulus",
+        "tipo":  "Hechizo de niebla",
+        "descripcion":  "Este encantamiento crea una niebla espesa y oscura que sirve para esconderse o evitar ser seguido por alguien.[12]",
+        "movimiento":  "Estocada frontal rápida seguida de un semicírculo hacia arriba."
+    },
+    {
+        "id":  83,
+        "hechizo":  "Nox",
+        "tipo":  "Encantamiento que extingue las varitas",
+        "descripcion":  "Este encantamiento permite apagar la luz de la punta de la varita generada por el hechizo Lumos.[2]",
+        "movimiento":  "Sacudida corta hacia abajo con suave exhalación."
+    },
+    {
+        "id":  84,
+        "hechizo":  "Obliviate",
+        "tipo":  "Encantamiento desmemorizante",
+        "descripcion":  "Este encantamiento borra los recuerdos de su víctima a elección de quien lo ejecuta.[8]",
+        "movimiento":  "Trazado de un arco protector de derecha a izquierda y tirón hacia el pecho."
+    },
+    {
+        "id":  85,
+        "hechizo":  "Oppugno",
+        "tipo":  "Embrujo Oppugno",
+        "descripcion":  "Este embrujo puede usarse para obligar a seres vivos conjurados o a ciertos objetos a atacar a una víctima.[4]",
+        "movimiento":  "Trazado en espiral ascendente con una ligera inclinación de muñeca."
+    },
+    {
+        "id":  86,
+        "hechizo":  "Orbis",
+        "tipo":  "Embrujo Orbis",
+        "descripcion":  "Este embrujo, en conjunto con el encantamiento levitatorio, succiona a su objetivo bajo tierra en un pequeño torbellino.[13]",
+        "movimiento":  "Movimiento ondeante de izquierda a derecha con agarre firme de varita."
+    },
+    {
+        "id":  87,
+        "hechizo":  "Orchideus",
+        "tipo":  "Hechizo de ramo de flores",
+        "descripcion":  "Este hechizo invoca un ramo de flores de la punta de la varita.[3]",
+        "movimiento":  "Sacudida diagonal de derecha a izquierda con postura firme de pies."
+    },
+    {
+        "id":  88,
+        "hechizo":  "Oriéntame",
+        "tipo":  "Encantamiento brújula",
+        "descripcion":  "Este encantamiento hace actuar a la varita como una brújula, apuntando hacia el norte.[3]",
+        "movimiento":  "Dos vueltas de varita en sentido horario y un golpe seco hacia el frente."
+    },
+    {
+        "id":  89,
+        "hechizo":  "Pario vestigius",
+        "tipo":  "Hechizo de los rastros",
+        "descripcion":  "Este encantamiento revela rastros ocultos de Incontratus desplazados por la Calamidad.[69]",
+        "movimiento":  "Paso lateral a la izquierda, golpe vertical descendente y exhalación profunda."
+    },
+    {
+        "id":  90,
+        "hechizo":  "Patolifors",
+        "tipo":  "Embrujo Patolifors",
+        "descripcion":  "Este embrujo convierte una criatura en un pato pequeño.[13]",
+        "movimiento":  "Doble toque en el aire y giro de muñeca en sentido de las agujas del reloj."
+    },
+    {
+        "id":  91,
+        "hechizo":  "Pestis Incendium",
+        "tipo":  "Fuego maligno",
+        "descripcion":  "Esta maldición invoca un fuego desde la punta de la varita, el cual es tan intenso que puede consumir completamente lo que sea que entre en contacto con las llamas, ya sean objetos o seres vivos. Las flamas de este hechizo también se caracterizan por tomar la forma de distintas criaturas. Esta maldición es muy potente y difícil de controlar, y es una de las escasas cosas que puede destruir un horrocrux.[29]",
+        "movimiento":  "Trazado de un círculo completo cerrado con un toque hacia el centro."
+    },
+    {
+        "id":  92,
+        "hechizo":  "Petrificus Totalus",
+        "tipo":  "Parálisis de cuerpo entero",
+        "descripcion":  "Esta maldición paraliza completamente el cuerpo de su víctima, permitiéndole mover sólo sus ojos.[7]",
+        "movimiento":  "Giro fluido de 360 grados apuntando al suelo y elevación súbita."
+    },
+    {
+        "id":  93,
+        "hechizo":  "Piertotum locomotor",
+        "tipo":  "Encantamiento de animación",
+        "descripcion":  "Este encantamiento anima objetos inanimados de un lugar determinado, haciendo que obedezcan las órdenes del lanzador del hechizo.[29]",
+        "movimiento":  "Un paso al frente con reverencia sutil y barrido horizontal de la varita."
+    },
+    {
+        "id":  94,
+        "hechizo":  "Portus",
+        "tipo":  "Hechizo Traslador",
+        "descripcion":  "Este hechizo convierte un objeto en un traslador. Su uso requiere la aprobación del Ministerio de Magia.[5]",
+        "movimiento":  "Doble corte en cruz en el aire y leve inclinación del torso."
+    },
+    {
+        "id":  95,
+        "hechizo":  "Prior Incantato",
+        "tipo":  "Hechizo de reversión",
+        "descripcion":  "Este hechizo es usado en las varitas para hacer que expulsen una especie de nubes fantasmagóricas, las cuales replican los efectos de los últimos hechizos que han realizado. [3]",
+        "movimiento":  "Estocada frontal rápida seguida de un semicírculo hacia arriba."
+    },
+    {
+        "id":  96,
+        "hechizo":  "Protego",
+        "tipo":  "Encantamiento escudo",
+        "descripcion":  "Este encantamiento genera una barrera invisible que permite bloquear y desviar hechizos enemigos y ataques físicos.[3]",
+        "movimiento":  "Rotación circular lenta de la punta de la varita y chasquido seco final."
+    },
+    {
+        "id":  97,
+        "hechizo":  "Pullus",
+        "tipo":  "Embrujo Pullus",
+        "descripcion":  "Este embrujo convierte a la víctima en una gallina o un pollo.[13]",
+        "movimiento":  "Trazado de un arco protector de derecha a izquierda y tirón hacia el pecho."
+    },
+    {
+        "id":  98,
+        "hechizo":  "Quietus",
+        "tipo":  "Encantamiento acallador",
+        "descripcion":  "Este encantamiento disminuye el volumen de la voz de quien lo usa. Es el contrahechizo del encantamiento sonoro.[3]",
+        "movimiento":  "Trazado en espiral ascendente con una ligera inclinación de muñeca."
+    },
+    {
+        "id":  99,
+        "hechizo":  "Redactum skullus",
+        "tipo":  "Maleficio reductor de cabezas",
+        "descripcion":  "Este maleficio se puede usar para reducir el tamaño de la cabeza de la víctima.",
+        "movimiento":  "Movimiento ondeante de izquierda a derecha con agarre firme de varita."
+    },
+    {
+        "id":  100,
+        "hechizo":  "Reducto",
+        "tipo":  "Maldición reductora",
+        "descripcion":  "Esta maldición destruye un objeto en pedazos, incluso volviéndolo polvo si es lo suficientemente poderoso.[3]",
+        "movimiento":  "Sacudida diagonal de derecha a izquierda con postura firme de pies."
+    },
+    {
+        "id":  101,
+        "hechizo":  "Relashio",
+        "tipo":  "Embrujo de repugnancia",
+        "descripcion":  "Este embrujo obliga a un objeto o ser vivo a soltar a otro.[3]",
+        "movimiento":  "Dos vueltas de varita en sentido horario y un golpe seco hacia el frente."
+    },
+    {
+        "id":  102,
+        "hechizo":  "Rennervate",
+        "tipo":  "Hechizo reanimador",
+        "descripcion":  "Este encantamiento regresa la consciencia a una persona inconsciente. Es el contrahechizo del encantamiento aturdidor.[3]",
+        "movimiento":  "Paso lateral a la izquierda, golpe vertical descendente y exhalación profunda."
+    },
+    {
+        "id":  103,
+        "hechizo":  "Reparo",
+        "tipo":  "Encantamiento de reparación",
+        "descripcion":  "Este encantamiento repara un objeto roto o destruido, dejándolo como nuevo.[8]",
+        "movimiento":  "Doble toque en el aire y giro de muñeca en sentido de las agujas del reloj."
+    },
+    {
+        "id":  104,
+        "hechizo":  "Repello muggletum",
+        "tipo":  "Encantamiento repelente de muggles",
+        "descripcion":  "Este encantamiento permite alejar a los muggles de la zona que se encanta. Cuando se acercan al lugar encantado, los muggles recuerdan que tienen que hacer otra cosa y se van.[3][29]",
+        "movimiento":  "Trazado de un círculo completo cerrado con un toque hacia el centro."
+    },
+    {
+        "id":  105,
+        "hechizo":  "Revelio",
+        "tipo":  "Encantamiento revelio",
+        "descripcion":  "Este encantamiento de transformación permite revelar la verdadera apariencia de las cosas, o para hacer visible lo invisible.[38]",
+        "movimiento":  "Giro fluido de 360 grados apuntando al suelo y elevación súbita."
+    },
+    {
+        "id":  106,
+        "hechizo":  "Rictusempra",
+        "tipo":  "Encantamiento de cosquillas",
+        "descripcion":  "Este encantamiento genera cosquillas en su víctima.[8]",
+        "movimiento":  "Un paso al frente con reverencia sutil y barrido horizontal de la varita."
+    },
+    {
+        "id":  107,
+        "hechizo":  "Riddikulus",
+        "tipo":  "Hechizo repulsor de boggarts",
+        "descripcion":  "Este encantamiento obliga a un boggart a adoptar una forma graciosa para quien lo realiza.[2]",
+        "movimiento":  "Doble corte en cruz en el aire y leve inclinación del torso."
+    },
+    {
+        "id":  108,
+        "hechizo":  "Sectumsempra",
+        "tipo":  "Maldición de laceración",
+        "descripcion":  "Esta poderosa maldición genera cortes profundos en la víctima, que pueden seccionar partes de su cuerpo con facilidad. Las partes amputadas con esta maldición no tienen cura conocida, y las heridas pueden ser letales por el desangramiento generado.[4]",
+        "movimiento":  "Estocada frontal rápida seguida de un semicírculo hacia arriba."
+    },
+    {
+        "id":  109,
+        "hechizo":  "Silencio",
+        "tipo":  "Encantamiento silenciador",
+        "descripcion":  "Este encantamiento silencia la garganta de su objetivo, impidiendo que emita cualquier tipo de sonido.[5]",
+        "movimiento":  "Rotación circular lenta de la punta de la varita y chasquido seco final."
+    },
+    {
+        "id":  110,
+        "hechizo":  "Skurge",
+        "tipo":  "Encantamiento desinfectante",
+        "descripcion":  "Este encantamiento disuelve el ectoplasma dejado por fantasmas y espectros.[47]",
+        "movimiento":  "Trazado de un arco protector de derecha a izquierda y tirón hacia el pecho."
+    },
+    {
+        "id":  111,
+        "hechizo":  "Slugulus eructo",
+        "tipo":  "Encantamiento vomitababosas",
+        "descripcion":  "Este encantamiento obliga a la víctima a vomitar babosas y babas.[8]",
+        "movimiento":  "Trazado en espiral ascendente con una ligera inclinación de muñeca."
+    },
+    {
+        "id":  112,
+        "hechizo":  "Sonorus",
+        "tipo":  "Encantamiento amplificador",
+        "descripcion":  "Este encantamiento aumenta el volumen de la voz de quien lo usa.[3]",
+        "movimiento":  "Movimiento ondeante de izquierda a derecha con agarre firme de varita."
+    },
+    {
+        "id":  113,
+        "hechizo":  "Spongify",
+        "tipo":  "Encantamiento de ablandamiento",
+        "descripcion":  "Este encantamiento es usado en objetos o seres vivos para volverlos más flexibles y elásticos.[21]",
+        "movimiento":  "Sacudida diagonal de derecha a izquierda con postura firme de pies."
+    },
+    {
+        "id":  114,
+        "hechizo":  "Stella cascadia",
+        "tipo":  "Hechizo de lluvia de estrellas",
+        "descripcion":  "Este hechizo hace aparecer una lluvia de estrellas tanto en retratos como en espacios abiertos.[25]",
+        "movimiento":  "Dos vueltas de varita en sentido horario y un golpe seco hacia el frente."
+    },
+    {
+        "id":  115,
+        "hechizo":  "Stella corusco",
+        "tipo":  "Hechizo de estrellas brillantes",
+        "descripcion":  "Este hechizo hace aparecer estrellas que brillan intensamente tanto en retratos como en espacios abiertos.[25]",
+        "movimiento":  "Paso lateral a la izquierda, golpe vertical descendente y exhalación profunda."
+    },
+    {
+        "id":  116,
+        "hechizo":  "Surgito",
+        "tipo":  "Encantamiento para desencantar",
+        "descripcion":  "Este contraencantamiento deshace los efectos de los encantamientos amorosos sobre su víctima.[12]",
+        "movimiento":  "Doble toque en el aire y giro de muñeca en sentido de las agujas del reloj."
+    },
+    {
+        "id":  117,
+        "hechizo":  "Tarantallegra",
+        "tipo":  "Encantamiento de pies danzantes",
+        "descripcion":  "Este encantamiento obliga a su objetivo a realizar un baile descontrolado con sus pies.[8]",
+        "movimiento":  "Trazado de un círculo completo cerrado con un toque hacia el centro."
+    },
+    {
+        "id":  118,
+        "hechizo":  "Tergeo",
+        "tipo":  "Hechizo de limpieza",
+        "descripcion":  "Este hechizo de limpieza permite aspirar líquidos, polvo o ciertas sustancias con la punta de la varita.[5]",
+        "movimiento":  "Giro fluido de 360 grados apuntando al suelo y elevación súbita."
+    },
+    {
+        "id":  119,
+        "hechizo":  "Titillando",
+        "tipo":  "Maleficio de cosquillas",
+        "descripcion":  "Este maleficio causa cosquillas y debilita a su víctima.[20]",
+        "movimiento":  "Un paso al frente con reverencia sutil y barrido horizontal de la varita."
+    },
+    {
+        "id":  120,
+        "hechizo":  "Ventus",
+        "tipo":  "Hechizo de viento",
+        "descripcion":  "Este hechizo dispara una ráfaga de viento en espiral de la punta de la varita.[13]",
+        "movimiento":  "Doble corte en cruz en el aire y leve inclinación del torso."
+    },
+    {
+        "id":  121,
+        "hechizo":  "Vera verto",
+        "tipo":  "De animal a copa",
+        "descripcion":  "Este hechizo de transformación convierte un animal en una copa. Requiere tres toque sobre el animal con la punta de la varita.[6]",
+        "movimiento":  "Estocada frontal rápida seguida de un semicírculo hacia arriba."
+    },
+    {
+        "id":  122,
+        "hechizo":  "Verdimillious",
+        "tipo":  "Encantamiento Verdimillious",
+        "descripcion":  "Este encantamiento dispara un haz de chispas verdes de la punta de la varita, que pueden usarse para atacar a un oponente o revelar objetos ocultos por magia.[21]",
+        "movimiento":  "Rotación circular lenta de la punta de la varita y chasquido seco final."
+    },
+    {
+        "id":  123,
+        "hechizo":  "Vermillious",
+        "tipo":  "Chispas rojas",
+        "descripcion":  "Este sencillo encantamiento permite lanzar chispas rojas de la punta de la varita. Puede estar relacionado con el hechizo Periculum.[7]",
+        "movimiento":  "Trazado de un arco protector de derecha a izquierda y tirón hacia el pecho."
+    },
+    {
+        "id":  124,
+        "hechizo":  "Vipera evanesca",
+        "tipo":  "Hechizo desvanecedor de serpientes",
+        "descripcion":  "Este hechizo permite desaparecer una serpiente invocada mágicamente. Es una variante del encantamiento desvanecedor.[6]",
+        "movimiento":  "Trazado en espiral ascendente con una ligera inclinación de muñeca."
+    },
+    {
+        "id":  125,
+        "hechizo":  "Wingardium leviosa",
+        "tipo":  "Encantamiento levitatorio",
+        "descripcion":  "Este encantamiento permite levitar objetos o pequeños seres vivos.[7]",
+        "movimiento":  "Agitar y golpear ('Swish and flick') con suave movimiento de muñeca."
+    }
 ]

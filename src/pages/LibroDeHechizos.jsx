@@ -20,7 +20,12 @@ const limpiar = (txt) => (txt ? String(txt).replace(/\[\d+\]/g, "").trim() : "")
 export function LibroDeHechizos() {
   const [busqueda, setBusqueda] = useState("");
   const [filtroTipo, setFiltroTipo] = useState("todos");
+  const [expandidoId, setExpandidoId] = useState(null);
   const [pagina, setPagina] = useState(1);
+
+  const toggleExpandir = (id) => {
+    setExpandidoId((prev) => (prev === id ? null : id));
+  };
 
   // Actualizar título de pestaña temático
   useEffect(() => {
@@ -197,24 +202,56 @@ export function LibroDeHechizos() {
       ) : (
         /* GRILLA DE TARJETAS DINÁMICAS (Criterio 10) */
         <div className={styles.grilla}>
-          {hechizosPaginados.map((item) => (
-            <article key={item.id} className={styles.tarjeta}>
-              <header className={styles.tarjetaHeader}>
-                <div className={styles.tarjetaTop}>
-                  <span className={styles.catalogoNum}>
-                    <i className="fa-solid fa-wand-sparkles me-1" aria-hidden="true"></i>
-                    #{String(item.id).padStart(3, "0")}
-                  </span>
-                  <span className={styles.badgeTipo} title={limpiar(item.tipo)}>
-                    {limpiar(item.tipo)}
-                  </span>
-                </div>
-                <h2 className={styles.nombreHechizo}>{limpiar(item.hechizo)}</h2>
-              </header>
+          {hechizosPaginados.map((item) => {
+            const estaExpandido = expandidoId === item.id;
 
-              <p className={styles.descripcion}>{limpiar(item.descripcion)}</p>
-            </article>
-          ))}
+            return (
+              <article key={item.id} className={styles.tarjeta}>
+                <header className={styles.tarjetaHeader}>
+                  <div className={styles.tarjetaTop}>
+                    <span className={styles.catalogoNum}>
+                      <i className="fa-solid fa-wand-sparkles me-1" aria-hidden="true"></i>
+                      #{String(item.id).padStart(3, "0")}
+                    </span>
+                    <span className={styles.badgeTipo} title={limpiar(item.tipo)}>
+                      {limpiar(item.tipo)}
+                    </span>
+                  </div>
+                  <h2 className={styles.nombreHechizo}>{limpiar(item.hechizo)}</h2>
+                </header>
+
+                <p className={styles.descripcion}>{limpiar(item.descripcion)}</p>
+
+                {/* BOTÓN PARA DESPLEGAR INFORMACIÓN ADICIONAL (Criterio 10 Propone) */}
+                <button
+                  type="button"
+                  className={styles.btnToggleDetalle}
+                  onClick={() => toggleExpandir(item.id)}
+                  aria-expanded={estaExpandido}
+                >
+                  <i
+                    className={`fa-solid ${
+                      estaExpandido ? "fa-chevron-up" : "fa-chevron-down"
+                    }`}
+                    aria-hidden="true"
+                  ></i>
+                  {estaExpandido ? "Ocultar ficha" : "Consultar ficha"}
+                </button>
+
+                {estaExpandido && (
+                  <div className={styles.detalleBox}>
+                    <div className={styles.detalleFila}>
+                      <div className={styles.detalleTitulo}>
+                        <i className="fa-solid fa-wand-magic-sparkles me-1" aria-hidden="true"></i>
+                        <strong>Instrucción de varita:</strong>
+                      </div>
+                      <p className={styles.detalleTexto}>{item.movimiento}</p>
+                    </div>
+                  </div>
+                )}
+              </article>
+            );
+          })}
         </div>
       )}
 
