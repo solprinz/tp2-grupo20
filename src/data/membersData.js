@@ -40,8 +40,7 @@ export const membersData = [
     rol: "Desarrollador Back End · Java · Spring Framework",
     casa: "gryffindor",
     avatar: "/img/alejandro-avatar.gif",
-    // Perfil ambientado como expediente de Azkaban (igual que en el TP1).
-    tema: "azkaban",
+    //tema: "azkaban", lo saqué, asique queda como el resto del equipo
     intro: "Archivo reservado · Azkaban",
     placa: {
       titulo: "Azkaban · Expediente 020",
@@ -770,8 +769,7 @@ export const membersData = [
         ],
       },
     ],
-    // En el TP1 Sol no tenía proyectos (tenía "Always" y la Copa de las
-    // Casas, que se pueden pasar como `children` de la plantilla).
+
     proyectos: [
       {
         titulo: "KittApp Web",
@@ -812,7 +810,7 @@ export const membersData = [
           aporte:
             "Desarrollo de la lógica de cotización en tiempo real, eventos en el DOM y almacenamiento local de búsquedas previas.",
           enlace: {
-            url: "https://github.com/solprinz/ViajaSeguro",
+            url: "https://github.com/solprinz/Viaja-Seguro",
             texto: "Ver repositorio en GitHub",
           },
         },

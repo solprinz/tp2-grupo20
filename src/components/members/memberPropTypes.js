@@ -77,8 +77,6 @@ export const memberShape = PropTypes.shape({
   rol: PropTypes.string.isRequired,
   casa: PropTypes.oneOf(CASAS).isRequired,
   avatar: PropTypes.string.isRequired,
-  /** Tema visual especial (redefine la paleta del perfil). */
-  tema: PropTypes.oneOf(["azkaban"]),
   /** Texto sobre el nombre (por defecto: "Perfil personal"). */
   intro: PropTypes.string,
   /** Placa bajo el avatar, p. ej. un número de expediente. */

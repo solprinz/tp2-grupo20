@@ -16,7 +16,7 @@
 :root {
   /* Paleta General Hallows Code */
   --hallows-bg-dark: #18100c; /* Sidebar oscura por defecto */
-  --hallows-bg-light: #dcd8d3; /* Fondo pergamino principal */
+  --hallows-bg-light: #fff4df; /* Fondo pergamino principal */
   --hallows-bg-selected: #2d1d15; /* Fondo link activo por defecto */
   --hallows-gold-text: #e2c992; /* Dorado principal textos */
   --hallows-gold-muted: #aa9368; /* Dorado suave subtítulos */
@@ -48,13 +48,21 @@
   box-sizing: border-box;
 }
 
+/* 
+   Fondo Pergamino Unificado para Toda la Aplicación
+ */
 html,
 body,
-#root {
-  width: 100%;
+#root,
+.layout-hallows,
+.main-content {
+  background-color: #ecdfc4 !important; /* Tono pergamino base */
+  background-image:
+    radial-gradient(ellipse at top left, #fff9ea70, transparent 65%),
+    repeating-linear-gradient(3deg, #80602b04 0 1px, transparent 1px 5px) !important;
+  background-attachment: fixed !important;
+  background-size: cover !important;
   min-height: 100vh;
-  margin: 0;
-  padding: 0;
 }
 
 body {
@@ -83,7 +91,7 @@ h3,
 .main-content {
   background-color: var(--hallows-bg-light);
   color: var(--hallows-text-dark);
-  min-height: 100vh;
+  min-height: 100%;
   padding: 1rem;
   margin: 1rem;
   /* Sin esto, un contenido ancho (min-content) empuja a <main> fuera de la
@@ -582,12 +590,13 @@ body.nox-mode .main-content a:not(.btn-ver-mas):not(.nav-link) {
 /* Marco blanco/claro interno de la imagen */
 .cromo-img-container {
   width: 100%;
-  aspect-ratio: 4 / 5;
-  height: auto;
+  height: 400px;
   border-radius: 8px;
   overflow: hidden;
   border: 3px solid #ffffff;
   box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+  object-fit: cover !important;
+  object-position: center !important;
 }
 
 .cromo-img {
@@ -751,4 +760,99 @@ body.nox-mode .main-content a:not(.btn-ver-mas):not(.nav-link) {
 
 .footer-hallows .footer-link-hallows:hover {
   opacity: 0.8;
+}
+
+/* ==========================================================================
+   9. BOTON FLOTANTE (Scroll to Top)
+   ========================================================================== */
+.boton-scroll-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition:
+    transform 0.25s ease,
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.boton-scroll-top:hover,
+.boton-scroll-top:focus-visible {
+  transform: translateY(-4px) scale(1.08);
+}
+
+/* --- TEMA HOME / GENERAL (Negro neutro con borde elegante) --- */
+.boton-scroll-top.tema-home {
+  background: #18181b;
+  color: #e4e4e7;
+  border: 2px solid #52525b;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+}
+.boton-scroll-top.tema-home:hover {
+  background: #27272a;
+  color: #ffffff;
+  border-color: #a1a1aa;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+/* --- TEMA GRYFFINDOR (Sol / Alejandro / Juan Pablo) --- */
+.boton-scroll-top.tema-gryffindor {
+  background: var(--gryffindor1, #740001);
+  color: var(--gryffindor2, #d3a625);
+  border: 2px solid var(--gryffindor2, #d3a625);
+  box-shadow: 0 4px 15px rgba(116, 0, 1, 0.5);
+}
+.boton-scroll-top.tema-gryffindor:hover {
+  background: var(--gryffindor2, #d3a625);
+  color: var(--gryffindor1, #740001);
+  box-shadow: 0 0 18px var(--gryffindor2, #d3a625);
+}
+
+/* --- TEMA SLYTHERIN (Daniela - Verde/Plateado) --- */
+.boton-scroll-top.tema-slytherin {
+  background: var(--slytherin1, #1a472a);
+  color: var(--slytherin2, #aaaaaa);
+  border: 2px solid var(--slytherin2, #aaaaaa);
+  box-shadow: 0 4px 15px rgba(26, 71, 42, 0.5);
+}
+.boton-scroll-top.tema-slytherin:hover {
+  background: var(--slytherin2, #aaaaaa);
+  color: var(--slytherin1, #1a472a);
+  box-shadow: 0 0 18px var(--slytherin2, #aaaaaa);
+}
+
+/* --- TEMA HUFFLEPUFF (Lucas - Amarillo/Negro) --- */
+.boton-scroll-top.tema-hufflepuff {
+  background: var(--hufflepuff1, #ecb939);
+  color: var(--hufflepuff2, #372e29);
+  border: 2px solid var(--hufflepuff2, #372e29);
+  box-shadow: 0 4px 15px rgba(236, 185, 57, 0.5);
+}
+.boton-scroll-top.tema-hufflepuff:hover {
+  background: var(--hufflepuff2, #372e29);
+  color: var(--hufflepuff1, #ecb939);
+  box-shadow: 0 0 18px var(--hufflepuff1, #ecb939);
+}
+
+/* --- TEMA RAVENCLAW (Azul/Bronce) --- */
+.boton-scroll-top.tema-ravenclaw {
+  background: var(--ravenclaw1, #0e1a40);
+  color: var(--ravenclaw2, #946b2d);
+  border: 2px solid var(--ravenclaw2, #946b2d);
+  box-shadow: 0 4px 15px rgba(14, 26, 64, 0.5);
+}
+.boton-scroll-top.tema-ravenclaw:hover {
+  background: var(--ravenclaw2, #946b2d);
+  color: var(--ravenclaw1, #0e1a40);
+  box-shadow: 0 0 18px var(--ravenclaw2, #946b2d);
 }
