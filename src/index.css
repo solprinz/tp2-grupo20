@@ -582,7 +582,8 @@ body.nox-mode .main-content a:not(.btn-ver-mas):not(.nav-link) {
 /* Marco blanco/claro interno de la imagen */
 .cromo-img-container {
   width: 100%;
-  height: 320px;
+  aspect-ratio: 4 / 5;
+  height: auto;
   border-radius: 8px;
   overflow: hidden;
   border: 3px solid #ffffff;
@@ -593,7 +594,23 @@ body.nox-mode .main-content a:not(.btn-ver-mas):not(.nav-link) {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top center;
   display: block;
+}
+
+/* Normalización de encuadre por integrante */
+.cromo-img[data-member="alejandro"] {
+  object-position: center 2%;
+}
+
+.cromo-img[data-member="daniela"] {
+  object-position: center 6%;
+}
+
+.cromo-img[data-member="juanpablo"],
+.cromo-img[data-member="lucas"],
+.cromo-img[data-member="sol"] {
+  object-position: center 5%;
 }
 
 /* 🦁 Gryffindor Cromo */

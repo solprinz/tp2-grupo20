@@ -1,10 +1,17 @@
 import { Link } from "react-router-dom";
 
 export function MemberCard({ nombre, rol, casa, foto, path }) {
+  const memberId = path ? path.replace("/perfil/", "") : "";
+
   return (
     <div className={`card card-cromo card-${casa} h-100 p-3`}>
       <div className="cromo-img-container mb-3">
-        <img src={foto} alt={`Avatar de ${nombre}`} className="cromo-img" />
+        <img
+          src={foto}
+          alt={`Avatar de ${nombre}`}
+          className="cromo-img"
+          data-member={memberId}
+        />
       </div>
       <div className="cromo-body text-center d-flex flex-column flex-grow-1">
         <h3 className="nombre-integrante font-lumos mb-2">{nombre}</h3>

@@ -52,7 +52,7 @@ const HOGWARTS = [
     label: "Estudiantes",
     icon: "fa-solid fa-user-graduate",
   },
-  { to: "/hechizos", label: "Hechizos", icon: "fa-solid fa-bolt" },
+  { to: "/hechizos", label: "Libro de Hechizos", icon: "fa-solid fa-book-open" },
 ];
 
 // Grupos del menú. `prefijo` hace que cualquier /perfil/... abra Integrantes,

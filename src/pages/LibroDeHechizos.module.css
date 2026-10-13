@@ -1,0 +1,413 @@
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 0.5rem 3rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.titulo {
+  font-family: "Lumos", serif !important;
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: var(--hallows-text-dark, #2b2621);
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+}
+
+:global(.nox-mode) .titulo {
+  color: var(--hallows-gold-text, #e2c992) !important;
+}
+
+.subtitulo {
+  font-size: 1.05rem;
+  color: #554a3f;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+:global(.nox-mode) .subtitulo {
+  color: var(--hallows-gold-muted, #aa9368);
+}
+
+/* BARRA DE HERRAMIENTAS Y BÚSQUEDA */
+.herramientas {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid var(--hallows-gold-border, #b89552);
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(4px);
+}
+
+:global(.nox-mode) .herramientas {
+  background: rgba(24, 16, 12, 0.7);
+  border-color: rgba(184, 149, 82, 0.4);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.filtrosRow {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .filtrosRow {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.buscadorWrapper {
+  position: relative;
+  flex: 1;
+}
+
+.iconoBuscador {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--hallows-gold-border, #b89552);
+  font-size: 1rem;
+  pointer-events: none;
+}
+
+.inputBuscador {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.6rem;
+  border: 1px solid #c2b39a;
+  border-radius: 8px;
+  background-color: #fff;
+  color: #2b2621;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.inputBuscador:focus {
+  outline: none;
+  border-color: var(--hallows-gold-border, #b89552);
+  box-shadow: 0 0 0 3px rgba(184, 149, 82, 0.25);
+}
+
+:global(.nox-mode) .inputBuscador {
+  background-color: #1f1612;
+  border-color: #4a382c;
+  color: #f0eae1;
+}
+
+.selectFiltro {
+  padding: 0.75rem 1rem;
+  border: 1px solid #c2b39a;
+  border-radius: 8px;
+  background-color: #fff;
+  color: #2b2621;
+  font-size: 0.95rem;
+  cursor: pointer;
+  min-width: 200px;
+}
+
+:global(.nox-mode) .selectFiltro {
+  background-color: #1f1612;
+  border-color: #4a382c;
+  color: #f0eae1;
+}
+
+.btnReset {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: transparent;
+  color: #7a2021;
+  border: 1px solid #7a2021;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btnReset:hover {
+  background: #7a2021;
+  color: #fff;
+}
+
+:global(.nox-mode) .btnReset {
+  color: #e2a4a4;
+  border-color: #a34848;
+}
+
+:global(.nox-mode) .btnReset:hover {
+  background: #a34848;
+  color: #fff;
+}
+
+/* CONTADOR Y METADATA */
+.metadata {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+  padding: 0 0.25rem;
+  font-size: 0.9rem;
+  color: #554a3f;
+}
+
+:global(.nox-mode) .metadata {
+  color: var(--hallows-gold-muted, #aa9368);
+}
+
+.contadorBadge {
+  display: inline-block;
+  background: rgba(184, 149, 82, 0.15);
+  color: #664f1d;
+  padding: 0.25rem 0.65rem;
+  border-radius: 20px;
+  font-weight: 600;
+  border: 1px solid rgba(184, 149, 82, 0.3);
+}
+
+:global(.nox-mode) .contadorBadge {
+  background: rgba(226, 201, 146, 0.1);
+  color: var(--hallows-gold-text, #e2c992);
+}
+
+/* GRILLA DE HECHIZOS */
+.grilla {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .grilla {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grilla {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* TARJETA DE HECHIZO */
+.tarjeta {
+  background: #fff;
+  border: 1px solid #dcd4c7;
+  border-radius: 10px;
+  padding: 1rem 1.15rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  position: relative;
+}
+
+.tarjeta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  border-color: var(--hallows-gold-border, #b89552);
+}
+
+:global(.nox-mode) .tarjeta {
+  background: #1b130f;
+  border-color: #38271e;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+:global(.nox-mode) .tarjeta:hover {
+  border-color: var(--hallows-gold-border, #b89552);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.tarjetaHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  width: 100%;
+  margin-bottom: 0.6rem;
+  border-bottom: 1px dashed rgba(184, 149, 82, 0.3);
+  padding-bottom: 0.5rem;
+}
+
+.tarjetaTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.catalogoNum {
+  font-family: "Cinzel", serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--hallows-gold-muted, #aa9368);
+  letter-spacing: 1px;
+  flex-shrink: 0;
+  padding-top: 0.15rem;
+}
+
+.badgeTipo {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+  background: #f1ede4;
+  color: #4a3e31;
+  border: 1px solid #d2c5b2;
+  line-height: 1.3;
+  max-width: 80%;
+  text-align: right;
+  word-break: break-word;
+  white-space: normal;
+}
+
+:global(.nox-mode) .badgeTipo {
+  background: #2b1d16;
+  color: #d1b885;
+  border-color: #553c2d;
+}
+
+.nombreHechizo {
+  font-family: "Lumos", serif !important;
+  font-size: 1.25rem;
+  color: #18100c;
+  margin: 0.2rem 0 0;
+  padding: 0 !important;
+  letter-spacing: 1.5px;
+  line-height: 1.25;
+  text-align: center;
+}
+
+:global(.nox-mode) .nombreHechizo {
+  color: var(--hallows-gold-text, #e2c992) !important;
+}
+
+.descripcion {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #3b332a;
+  margin-bottom: 0;
+}
+
+:global(.nox-mode) .descripcion {
+  color: #ddd4c7;
+}
+
+/* ESTADO SIN RESULTADOS */
+.sinResultados {
+  text-align: center;
+  padding: 3.5rem 1rem;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px dashed var(--hallows-gold-border, #b89552);
+  border-radius: 12px;
+  margin-top: 1rem;
+}
+
+:global(.nox-mode) .sinResultados {
+  background: rgba(24, 16, 12, 0.4);
+}
+
+.sinResultadosIcono {
+  font-size: 3rem;
+  color: var(--hallows-gold-muted, #aa9368);
+  margin-bottom: 1rem;
+}
+
+.sinResultadosTitulo {
+  font-family: "Lumos", serif !important;
+  font-size: 1.5rem;
+  color: var(--hallows-text-dark, #2b2621);
+  margin-bottom: 0.5rem;
+}
+
+:global(.nox-mode) .sinResultadosTitulo {
+  color: var(--hallows-gold-text, #e2c992);
+}
+
+.sinResultadosTexto {
+  font-size: 0.95rem;
+  color: #635749;
+  margin-bottom: 1.25rem;
+}
+
+:global(.nox-mode) .sinResultadosTexto {
+  color: #b5a999;
+}
+
+/* PAGINACIÓN */
+.paginacion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.btnPagina {
+  padding: 0.45rem 0.9rem;
+  background: #fff;
+  border: 1px solid #d2c5b2;
+  border-radius: 6px;
+  color: #3b332a;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btnPagina:hover:not(:disabled) {
+  border-color: var(--hallows-gold-border, #b89552);
+  background: #fbf7ef;
+}
+
+.btnPagina:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btnPaginaActiva {
+  background: var(--hallows-gold-border, #b89552) !important;
+  color: #fff !important;
+  border-color: var(--hallows-gold-border, #b89552) !important;
+}
+
+:global(.nox-mode) .btnPagina {
+  background: #201712;
+  border-color: #4a382c;
+  color: #d1b885;
+}
+
+:global(.nox-mode) .btnPagina:hover:not(:disabled) {
+  background: #2d2019;
+  border-color: var(--hallows-gold-border, #b89552);
+}
+
+:global(.nox-mode) .btnPaginaActiva {
+  background: var(--hallows-gold-border, #b89552) !important;
+  color: #18100c !important;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
