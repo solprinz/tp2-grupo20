@@ -213,3 +213,115 @@
   color: #d4b48f;
   border-color: #a4761a;
 }
+
+/* ─── Modo Nox (oscuro) para la Bitácora ─── */
+:global(.nox-mode) .container {
+  color: #e8d7a8;
+}
+
+:global(.nox-mode) .titulo {
+  color: #e8d7a8;
+}
+
+:global(.nox-mode) .subtitulo {
+  color: #a08b5c;
+}
+
+:global(.nox-mode) .labelFiltro {
+  color: #d1b885;
+}
+
+:global(.nox-mode) .select {
+  background: #2b1d16;
+  color: #d1b885;
+  border-color: #553c2d;
+}
+
+:global(.nox-mode) .btnReset {
+  background: transparent;
+  color: #d1b885;
+  border-color: #553c2d;
+}
+
+:global(.nox-mode) .btnReset:hover {
+  background: #3a281c;
+}
+
+:global(.nox-mode) .metadata {
+  color: #a08b5c;
+}
+
+:global(.nox-mode) .contadorBadge {
+  color: #d1b885;
+}
+
+:global(.nox-mode) .registro {
+  background: #1a1310;
+  border-color: #553c2d;
+}
+
+:global(.nox-mode) .registro[open] {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+:global(.nox-mode) .summary {
+  color: #e8d7a8;
+}
+
+:global(.nox-mode) .summary:hover {
+  background: #2b1d16;
+}
+
+:global(.nox-mode) .fecha {
+  color: #d1b885;
+}
+
+:global(.nox-mode) .integrante {
+  color: #a08b5c;
+}
+
+:global(.nox-mode) .tituloRegistro {
+  color: #e8d7a8;
+}
+
+:global(.nox-mode) .flecha {
+  color: #d1b885;
+}
+
+:global(.nox-mode) .detalle {
+  color: #d1b885;
+}
+
+:global(.nox-mode) .detalle strong {
+  color: #e8d7a8;
+}
+
+:global(.nox-mode) .tituloSeccion {
+  color: #d1b885;
+  border-bottom-color: #553c2d;
+}
+
+:global(.nox-mode) .cardTematica {
+  background: #1a1310;
+  border-color: #553c2d;
+}
+
+:global(.nox-mode) .cardTitulo {
+  color: #d1b885;
+}
+
+:global(.nox-mode) .cardTexto {
+  color: #d1b885;
+}
+
+:global(.nox-mode) .sinResultados {
+  color: #a08b5c;
+}
+
+:global(.nox-mode) .sinResultadosTitulo {
+  color: #e8d7a8;
+}
+
+:global(.nox-mode) .sinResultadosTexto {
+  color: #a08b5c;
+}
