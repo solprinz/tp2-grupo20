@@ -160,7 +160,7 @@ En el TP2 usamos herramientas de IA como **asistentes técnicos** en momentos pu
 
 | Integrante | Aplicación | Modelo | Tareas |
 |------------|-----------|--------|--------|
-| Alejandro Ramos | _completar_ | _completar_ | _completar_ |
+| Alejandro Ramos | Codex | GPT-6 Astra | Creación de la historia de las reliquias de la muerte |
 | Daniela Méndez | DeepSeek | V3 | Estructura de Estudiantes y Bitácora, ajustes CSS, redacción   del README |
 | Juan Pablo | _completar_ | _completar_ | _completar_ |
 | Lucas Sosa | _completar_ | _completar_ | _completar_ |
