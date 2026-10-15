@@ -1,0 +1,224 @@
+.relato {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  color: var(--tinta, #392c22);
+}
+
+.leyenda, .numero {
+  font-family: "Cinzel", serif;
+  font-size: .75rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.relato .titulo.titulo {
+  padding: 0;
+  color: var(--casa-tinta, #740001) !important;
+  font-family: "Cinzel", serif !important;
+  font-size: clamp(1.5rem, 4vw, 2.4rem);
+  letter-spacing: normal;
+}
+
+.bajada {
+  font-family: "Caveat", cursive;
+  font-size: 1.7rem;
+}
+
+.pergamino {
+  padding: clamp(1rem, 3vw, 2.5rem);
+  background: var(--pergamino-claro, #fff4df);
+  border: 4px double var(--borde, #96784c);
+  box-shadow: 0 12px 30px #392c221a;
+}
+
+.apertura {
+  max-width: 720px;
+  margin: 0 auto 1rem;
+  line-height: 1.8;
+}
+
+.indicacion, .progreso, .fuente {
+  font-size: .85rem;
+}
+
+.reliquias {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .75rem;
+  margin: 1.5rem 0;
+}
+
+.eleccion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .6rem;
+  padding: 1rem .65rem;
+  color: inherit;
+  background: var(--pergamino, #ecdfc4);
+  border: 1px solid var(--borde, #96784c);
+  border-radius: 3px;
+  cursor: pointer;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.eleccion:hover { transform: translateY(-3px); }
+.eleccion.activa { box-shadow: inset 0 0 0 2px var(--casa-tinta, #740001); }
+.eleccion strong { font-family: "Cinzel", serif; font-size: .95rem; }
+.marca { margin-top: auto; font-size: .75rem; }
+.icono, .sello { fill: none; stroke: currentColor; stroke-width: 2; }
+.icono { width: 65px; height: 80px; color: var(--casa-tinta, #740001); }
+.sello { width: 100px; height: 100px; margin-bottom: 1rem; color: var(--casa-tinta, #740001); }
+
+.panel {
+  padding: clamp(1rem, 3vw, 2rem);
+  text-align: left;
+  border-block: 1px solid var(--borde, #96784c);
+  line-height: 1.8;
+}
+
+.relato .subtitulo {
+  padding: 0;
+  color: var(--casa-tinta, #740001);
+  font-family: "Cinzel", serif !important;
+  font-size: 1.3rem;
+  letter-spacing: normal;
+  scroll-margin-top: 5rem;
+}
+
+.destino { border-left: 3px solid var(--borde, #96784c); padding-left: 1rem; }
+.espera { text-align: center; font-style: italic; margin: 0; }
+.progreso { margin: 1rem 0; }
+.boton {
+  padding: .65rem 1rem;
+  color: #fff4df;
+  background: #740001;
+  border: 1px solid #d3a625;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.boton:hover { background: #510001; }
+.relato :focus-visible { outline: 3px solid var(--casa-tinta, #740001); outline-offset: 4px; }
+.fuente { margin: 1rem 0 0; }
+.fuente a { color: var(--casa-tinta, #740001); }
+
+@media (max-width: 600px) {
+  .reliquias { grid-template-columns: 1fr; }
+  .eleccion { padding: 1rem; }
+  .icono { height: 55px; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .escena { animation: revelar .4s ease-out; }
+  @keyframes revelar {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .eleccion { transition: none; }
+  .eleccion:hover { transform: none; }
+}
+
+/* Teatro de sombras: toda la atmósfera queda dentro de este relato. */
+.relato {
+  --casa-tinta: #edcf94;
+  --borde: #8d714a;
+  --pergamino: #30251b;
+  --pergamino-claro: #211b16;
+  padding: clamp(1.25rem, 4vw, 3rem);
+  color: #ead9b9;
+  background:
+    radial-gradient(ellipse at 50% 0, #70553855, transparent 65%),
+    repeating-linear-gradient(6deg, #e6c98c04 0 1px, transparent 1px 5px),
+    #171411;
+  border: 1px solid #665039;
+  box-shadow: inset 0 0 70px #0009, 0 18px 35px #0003;
+  isolation: isolate;
+}
+
+.relato .pergamino {
+  background: radial-gradient(ellipse at top, #45322250, transparent 65%), #211b16;
+  box-shadow: inset 0 0 45px #0005;
+}
+
+.relato .teatro {
+  position: relative;
+  overflow: hidden;
+  margin: 0 0 2rem;
+  background: radial-gradient(ellipse at 60% 35%, #f0d49b, #b79661 55%, #725133);
+  border: 1px solid #9b7950;
+  box-shadow: inset 0 0 50px #332215aa;
+}
+
+.teatro::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  background: repeating-linear-gradient(92deg, #3a24150b 0 1px, transparent 1px 4px);
+  box-shadow: inset 0 0 55px #2a1a1370;
+}
+
+.paisaje { display: block; width: 100%; height: auto; }
+.luna { fill: #f6e3b6; opacity: .65; }
+.lejania { fill: #715638; opacity: .35; }
+.rio { fill: none; stroke: #f3d79f; stroke-width: 2; opacity: .5; }
+.sombras { fill: #2b2119; color: #2b2119; }
+.hermano { fill: #221b16; stroke: #221b16; stroke-width: 4; transition: opacity .8s; }
+.muerte { fill: #211a15; color: #211a15; transform-origin: 590px 110px; }
+.visage { fill: #8e7049; }
+.piedraLuz { fill: #ffe7ac; stroke: none; }
+.relato .cartela {
+  display: block;
+  position: relative;
+  padding: .7rem 1rem;
+  color: #f0d7a6 !important;
+  background: #251c16;
+  font-family: "Caveat", cursive;
+  font-size: clamp(1.2rem, 3vw, 1.7rem);
+}
+
+.relato[data-escena="varita"] .segundo,
+.relato[data-escena="varita"] .menor,
+.relato[data-escena="piedra"] .mayor,
+.relato[data-escena="piedra"] .menor,
+.relato[data-escena="capa"] .mayor,
+.relato[data-escena="capa"] .segundo { opacity: .18; }
+.relato[data-escena="capa"] .menor { opacity: .45; }
+.relato[data-escena="final"] .muerte { opacity: .35; }
+
+.relato .eleccion { background: linear-gradient(145deg, #493726, #29211a); border-color: #806341; }
+.relato .eleccion.activa { background: linear-gradient(145deg, #654b2e, #30251b); box-shadow: inset 0 0 0 1px #edcf94, 0 0 22px #d0a86018; }
+.relato .boton { background: #d3b27b; border-color: #f0d29c; color: #251c14; }
+.relato .boton:hover { background: #eed4a5; }
+.relato .panel { max-width: 700px; margin-inline: auto; }
+.relato .destino { font-style: italic; border-color: #b89358; }
+.relato .fuente a { color: #edcf94 !important; }
+
+/* Acota las excepciones a las reglas globales de Nox a este componente. */
+:global(body.nox-mode) .relato p,
+:global(body.nox-mode) .relato span { color: #ead9b9 !important; }
+:global(body.nox-mode) .relato .titulo,
+:global(body.nox-mode) .relato .subtitulo { color: #edcf94 !important; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .muerte { animation: flotar 7s ease-in-out 2; }
+  .luna { animation: luz 6s ease-in-out 2; }
+  .relato .escena { animation: revelar .8s ease-out; }
+  @keyframes flotar { 50% { transform: translateY(-7px) rotate(-2deg); } }
+  @keyframes luz { 50% { opacity: .4; } }
+}
+
+@media (max-width: 600px) {
+  .relato { padding: 1rem .65rem; }
+  .relato .pergamino { padding: 1rem .7rem; }
+  .paisaje { min-height: 150px; object-fit: cover; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hermano { transition: none; }
+}

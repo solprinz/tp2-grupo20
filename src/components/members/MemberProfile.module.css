@@ -235,6 +235,11 @@
 }
 
 /* ---------- 4. Habilidades ---------- */
+.extra.extraAncho {
+  padding: 0;
+  border-top: 0;
+}
+
 .habilidades {
   display: grid;
   grid-template-columns: 1fr;
