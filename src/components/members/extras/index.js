@@ -3,6 +3,7 @@ import { ExpelliarmusDuelo } from "./ExpelliarmusDuelo";
 import { PatronusAlways } from "./PatronusAlways";
 import { CopaDeLasCasas } from "./CopaDeLasCasas";
 import { SlytherinEfficiencyTest } from "./SlytherinEfficiencyTest";
+import { RelatoTresHermanos } from "./RelatoTresHermanos";
 
 /**
  * Registro de interacciones propias de cada integrante.
@@ -20,11 +21,10 @@ import { SlytherinEfficiencyTest } from "./SlytherinEfficiencyTest";
  * MemberProfile.module.css (--casa-fondo, --casa-acento, --casa-tinta,
  * --casa-sobre), así que se adaptan solos a la paleta del perfil.
  *
- * Alejandro no necesita un extra: su perfil es el tema "azkaban" (campos
- * `tema`, `intro` y `placa` en membersData.js) más las reliquias, que ya
- * forman parte de la plantilla.
+ * Alejandro tiene un relato interactivo sobre el origen de las reliquias.
  */
 export const EXTRAS_POR_MIEMBRO = {
+  alejandro: { despuesDeSobreMi: RelatoTresHermanos },
   daniela: { despuesDeSobreMi: SombreroQuiz },
   juanpablo: { despuesDeSobreMi: SlytherinEfficiencyTest },
   lucas: { despuesDeSobreMi: ExpelliarmusDuelo },

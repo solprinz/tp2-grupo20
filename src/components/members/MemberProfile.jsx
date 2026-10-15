@@ -112,7 +112,11 @@ export function MemberProfile(props) {
       )}
 
       {/* 3. INTERACCIÓN PROPIA (opcional) */}
-      {children && <div className={styles.extra}>{children}</div>}
+      {children && (
+        <div className={`${styles.extra} ${member.id === "alejandro" ? styles.extraAncho : ""}`}>
+          {children}
+        </div>
+      )}
 
       {/* 4. HABILIDADES */}
       <section className={styles.seccion} aria-labelledby="perfil-habilidades">
