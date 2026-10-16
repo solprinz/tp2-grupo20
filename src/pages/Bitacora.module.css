@@ -325,3 +325,14 @@
 :global(.nox-mode) .sinResultadosTexto {
   color: #a08b5c;
 }
+
+/* ─── Relleno para el contenido desplegable ─── */
+.detalle {
+  padding: 1rem 1.25rem 1.25rem; /* Da espacio arriba (1rem), a los lados (1.25rem) y abajo */
+  border-top: 1px solid #e8dec3; /* Separa visualmente la cabecera del cuerpo */
+}
+
+/* Ajuste del borde en Modo Nox */
+:global(.nox-mode) .detalle {
+  border-top-color: #3a281c;
+}

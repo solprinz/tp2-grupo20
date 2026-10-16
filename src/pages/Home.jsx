@@ -42,13 +42,13 @@ export function Home() {
   return (
     <div className="home-container">
       {/* SECCIÓN HERO */}
-      <section id="hero" className="container hero mb-5">
+      <section id="hero" className="container hero mb-3">
         <div className="row justify-content-center">
           <div className="col-12 col-md-10 col-lg-8 text-center">
-            <h1 className="title font-lumos display-4 mb-3">
+            <h1 className="title font-lumos fs-1 m-4 p-0 mb-2">
               ¡BIENVENIDOS A HOGWARTS!
             </h1>
-            <p className="subtitle fs-5 text-muted">
+            <p className="subtitle fs-6 text-muted mb-0">
               Provenientes de distintas casas y unidos por el arte del
               maquetado, combinamos antiguos encantos de HTML, pociones
               avanzadas de CSS y poderosos conjuros en JavaScript para dar vida

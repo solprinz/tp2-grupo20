@@ -805,7 +805,7 @@ body.nox-mode .main-content a:not(.btn-ver-mas):not(.nav-link) {
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
 }
 
-/* --- TEMA GRYFFINDOR (Sol / Alejandro / Juan Pablo) --- */
+/* --- TEMA GRYFFINDOR (Sol / Alejandro) --- */
 .boton-scroll-top.tema-gryffindor {
   background: var(--gryffindor1, #740001);
   color: var(--gryffindor2, #d3a625);
@@ -818,7 +818,7 @@ body.nox-mode .main-content a:not(.btn-ver-mas):not(.nav-link) {
   box-shadow: 0 0 18px var(--gryffindor2, #d3a625);
 }
 
-/* --- TEMA SLYTHERIN (Daniela - Verde/Plateado) --- */
+/* --- TEMA SLYTHERIN (Daniela /Juan Pablo- Verde/Plateado) --- */
 .boton-scroll-top.tema-slytherin {
   background: var(--slytherin1, #1a472a);
   color: var(--slytherin2, #aaaaaa);
