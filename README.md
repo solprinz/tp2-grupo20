@@ -73,24 +73,26 @@ Todas las secciones comparten la identidad visual del equipo: paleta dorada/crem
 
 ```
 tp2-grupo20/
-├── public/                    # Recursos estáticos (logos, imágenes)
+├── public/                     # Recursos estáticos (logos, imágenes)
 ├── src/
-│   ├── assets/                # Assets importados por componentes
 │   ├── components/            # Componentes reutilizables
 │   │   ├── Footer.jsx
 │   │   ├── MemberCard.jsx
 │   │   ├── ScrollToTop.jsx
 │   │   ├── Sidebar.jsx        # Menú lateral compartido
-│   │   ├── members/           # Componentes de perfil
+│   │   ├── members/           # Componentes de perfil reutilizables
+│   │   │   └── extras/        # Animaciones y componentes interactivos individuales
 │   │   └── wand/              # Cursor de varita + provider global
 │   ├── data/
 │   │   ├── libro_de_hechizos.json    # 124 hechizos
+│   │   ├── architectureData.js       # Datos de la jerarquía para el Árbol de Componentes
 │   │   └── membersData.js            # Datos de los 5 integrantes
 │   ├── pages/
+│   │   ├── Arquitectura.jsx          # Jerarquía visual del proyecto
+│   │   ├── Bitacora.jsx              # Timeline + decisiones + dificultades
+│   │   ├── Estudiantes.jsx           # HP-API con estados
 │   │   ├── Home.jsx                  # Portada
 │   │   ├── LibroDeHechizos.jsx       # JSON local + búsqueda/filtro
-│   │   ├── Estudiantes.jsx           # HP-API con estados
-│   │   ├── Bitacora.jsx              # Timeline + decisiones + dificultades
 │   │   └── members/
 │   │       └── MemberProfileContainer.jsx
 │   ├── App.jsx                # Router principal
@@ -158,6 +160,12 @@ tp2-grupo20/
 - Sección temática "Decisiones del Wizengamot" (continuación del TP1)
 - Sección temática "Dificultades y Maldiciones" (continuación del TP1)
 - Estado "sin resultados" con restablecer
+
+### Árbol de Componentes (`pages/ArbolComponentes.jsx`)
+
+- Esquema visual que representa la jerarquía y estructura de la app React
+- Muestra la relación entre `App`, `LayoutHallows`, `Sidebar`, `MainContent` y los componentes hijos
+- Explica el flujo de props, estados globales y modularización del proyecto
 
 ### Modo Nox/Lumos
 
