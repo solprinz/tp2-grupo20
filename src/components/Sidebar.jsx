@@ -42,7 +42,7 @@ const INTEGRANTES = [
 ]; //le agregue iconitos a todos
 
 const PROYECTO = [
-  { to: "/arbol", label: "Árbol de Componentes", icon: "fa-solid fa-sitemap" },
+  { to: "/arbol", label: "Arquitectura", icon: "fa-solid fa-sitemap" },
   { to: "/bitacora", label: "Bitácora", icon: "fa-solid fa-book-bookmark" },
 ];
 
