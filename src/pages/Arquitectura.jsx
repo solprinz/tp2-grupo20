@@ -78,6 +78,9 @@ export function Arquitectura() {
         <div><p className={styles.eyebrow}>El mapa del código</p><h2 id="tree-title">De la raíz a cada hechizo</h2></div>
         <p>La rama de <strong>Routes</strong> cambia con la URL. La navegación, el pie y la varita permanecen compartidos.</p>
       </header>
+      <ul className={styles.legend} aria-label="Tipos de nodos">
+        {Object.entries(nodeTypes).map(([type, label]) => <li key={type}><span className={styles.badge} data-type={type}>{label}</span></li>)}
+      </ul>
       <div className={styles.toolbar}>
         <p>Seleccioná una rama para ocultar o revelar sus descendientes.</p>
         <div className={styles.actions}>
@@ -85,9 +88,6 @@ export function Arquitectura() {
           <button type="button" onClick={() => setCollapsed(new Set(['root']))}>Plegar árbol</button>
         </div>
       </div>
-      <ul className={styles.legend} aria-label="Tipos de nodos">
-        {Object.entries(nodeTypes).map(([type, label]) => <li key={type}><span className={styles.badge} data-type={type}>{label}</span></li>)}
-      </ul>
       <ul className={styles.tree}><ArchitectureNode node={architectureTree} collapsed={collapsed} onToggle={toggle} /></ul>
       <p className={styles.mapNote}>✦ Las líneas indican composición visual. Los nodos HTML y los slots se distinguen de los componentes; las ramas condicionales no aparecen todas a la vez.</p>
     </section>
