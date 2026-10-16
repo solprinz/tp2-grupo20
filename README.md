@@ -147,7 +147,7 @@ tp2-grupo20/
 - Sección temática "Dificultades y Maldiciones" (continuación del TP1)
 - Estado "sin resultados" con restablecer
 
-- ### Árbol de Componentes (`pages/ArbolComponentes.jsx`)
+### Árbol de Componentes (`pages/ArbolComponentes.jsx`)
 - Esquema visual que representa la jerarquía y estructura de la app React
 - Muestra la relación entre `App`, `LayoutHallows`, `Sidebar`, `MainContent` y los componentes hijos
 - Explica el flujo de props, estados globales y modularización del proyecto
