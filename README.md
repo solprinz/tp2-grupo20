@@ -73,24 +73,26 @@ Todas las secciones comparten la identidad visual del equipo: paleta dorada/crem
 
 ```
 tp2-grupo20/
-├── public/                    # Recursos estáticos (logos, imágenes)
+├── public/                     # Recursos estáticos (logos, imágenes)
 ├── src/
-│   ├── assets/                # Assets importados por componentes
 │   ├── components/            # Componentes reutilizables
 │   │   ├── Footer.jsx
 │   │   ├── MemberCard.jsx
 │   │   ├── ScrollToTop.jsx
 │   │   ├── Sidebar.jsx        # Menú lateral compartido
-│   │   ├── members/           # Componentes de perfil
+│   │   ├── members/           # Componentes de perfil reutilizables
+│   │   │   └── extras/        # Animaciones y componentes interactivos individuales
 │   │   └── wand/              # Cursor de varita + provider global
 │   ├── data/
 │   │   ├── libro_de_hechizos.json    # 124 hechizos
+│   │   ├── architectureData.js       # Datos de la jerarquía para el Árbol de Componentes
 │   │   └── membersData.js            # Datos de los 5 integrantes
 │   ├── pages/
+│   │   ├── Arquitectura.jsx          # Jerarquía visual del proyecto
+│   │   ├── Bitacora.jsx              # Timeline + decisiones + dificultades
+│   │   ├── Estudiantes.jsx           # HP-API con estados
 │   │   ├── Home.jsx                  # Portada
 │   │   ├── LibroDeHechizos.jsx       # JSON local + búsqueda/filtro
-│   │   ├── Estudiantes.jsx           # HP-API con estados
-│   │   ├── Bitacora.jsx              # Timeline + decisiones + dificultades
 │   │   └── members/
 │   │       └── MemberProfileContainer.jsx
 │   ├── App.jsx                # Router principal
@@ -145,6 +147,11 @@ tp2-grupo20/
 - Sección temática "Dificultades y Maldiciones" (continuación del TP1)
 - Estado "sin resultados" con restablecer
 
+- ### Árbol de Componentes (`pages/ArbolComponentes.jsx`)
+- Esquema visual que representa la jerarquía y estructura de la app React
+- Muestra la relación entre `App`, `LayoutHallows`, `Sidebar`, `MainContent` y los componentes hijos
+- Explica el flujo de props, estados globales y modularización del proyecto
+
 ### Modo Nox/Lumos
 - Alternancia entre modo claro y oscuro desde la sidebar
 - Persistencia en localStorage
@@ -164,7 +171,7 @@ En el TP2 usamos herramientas de IA como **asistentes técnicos** en momentos pu
 | Daniela Méndez | DeepSeek | V3 | Estructura de Estudiantes y Bitácora, ajustes CSS, redacción   del README |
 | Juan Pablo | _completar_ | _completar_ | _completar_ |
 | Lucas Sosa | _completar_ | _completar_ | _completar_ |
-| Sol Prinzen | _completar_ | _completar_ | _completar_ |
+| Sol Prinzen | Gemini | Gemini 2.5 Pro | Asistencia técnica y consultas para la migración de HTML/CSS a componentes de React, estandarización de perfiles y  modo NOX | |
 
 > **Aclaración:** cada integrante completa su fila con la aplicación, el modelo y las tareas concretas para las que usó IA durante el TP2.
 
