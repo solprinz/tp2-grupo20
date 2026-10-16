@@ -9,9 +9,7 @@ import { ScrollToTop } from "./components/ScrollToTop";
 import { LibroDeHechizos } from "./pages/LibroDeHechizos";
 import { Bitacora } from "./pages/Bitacora";
 import { Estudiantes } from "./pages/Estudiantes";
-
-// Componentes provisorios para las otras rutas
-const ArbolComponentes = () => <h2>Árbol de Componentes</h2>;
+import { Arquitectura } from "./pages/Arquitectura";
 
 const NotFound = () => (
   <div className="text-center py-5">
@@ -40,7 +38,7 @@ export default function App() {
                 />
 
                 {/* Rutas de secciones */}
-                <Route path="/arbol" element={<ArbolComponentes />} />
+                <Route path="/arbol" element={<Arquitectura />} />
                 <Route path="/estudiantes" element={<Estudiantes />} />
                 <Route path="/hechizos" element={<LibroDeHechizos />} />
                 <Route path="/bitacora" element={<Bitacora />} />
