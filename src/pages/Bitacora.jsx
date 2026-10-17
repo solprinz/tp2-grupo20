@@ -150,6 +150,15 @@ const REGISTROS = [
       "Actualizamos el README.md agregando capturas de pantalla del proyecto (Home, Hechizos, Estudiantes, Modo Oscuro, Perfiles) y optimizamos el peso de las imágenes para el deploy final.",
     tipo: "contenido",
   },
+  {
+    id: 17,
+    fecha: "2026-10-17",
+    integrante: "Daniela Méndez",
+    titulo: "Actualización final de perfiles y proyectos",
+    detalle:
+      "Sumamos tres proyectos reales al perfil de Daniela (Urbana Cult, Clínica SePrise y Hallows Code), detallando el rol en cada uno, las tecnologías y los desafíos. También corregimos las rutas de las imágenes en el README para el deploy final.",
+    tipo: "contenido",
+  },
 ];
 
 
