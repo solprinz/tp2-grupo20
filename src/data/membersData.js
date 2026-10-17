@@ -314,9 +314,48 @@ export const membersData = [
         },
       },
     ],
-    // En el TP1 Daniela no tenía sección de proyectos: la plantilla muestra
-    // un mensaje amigable cuando la lista está vacía.
-    proyectos: [],
+    // A diferencia del TP1 (donde no existía esta sección), en el TP2
+    // Sumamos proyectos reales: el backend en Urbana Cult y el desarrollo.
+    // Frontend en esta misma aplicación (Hallows Code).
+        proyectos: [
+      {
+        titulo: "Urbana Cult API",
+        subtitulo: "Líder Técnico / Back End · GDSL Tech",
+        resumen:
+          "Plataforma colaborativa para 25 espacios culturales en las Comunas 3 y 5 de CABA. Desarrollada en equipo con Sol Prinzen (documentación y testing de interfaz) y Lucas Sosa (testing y documentación). Mi rol fue liderar el backend, la persistencia en MongoDB y la seguridad.",
+        historia: {
+          titulo: "Arquitectura, seguridad y persistencia",
+          texto:
+            "El gran desafío fue migrar la persistencia de archivos JSON a MongoDB y Mongoose, implementar validaciones personalizadas (como la regla de barrios por comuna) y asegurar las rutas con sesiones usando bcryptjs. También desarrollamos las pruebas de integración con Postman para validar todos los endpoints.",
+          tecnologias: [
+            "Node.js",
+            "Express",
+            "MongoDB Atlas",
+            "Mongoose",
+            "Pug",
+            "bcryptjs",
+            "express-session",
+            "Postman"
+          ],
+          aporte:
+            "Lideré el desarrollo del backend, el modelado de la base de datos, la lógica de controladores asíncronos (async/await), el sistema de autenticación y la integración con el motor de plantillas.",
+        },
+      },
+      {
+        titulo: "Hallows Code (TP2 - React)",
+        subtitulo: "La evolución de la magia",
+        resumen:
+          "Aplicación web construida en equipo con React. Me encargué del consumo de la API pública de HP (Estudiantes), los estados de carga/error y la Bitácora interactiva.",
+        historia: {
+          titulo: "Desafío y solución",
+          texto:
+            "El mayor desafío fue aprender React, manejar el ciclo de vida de los componentes y gestionar estados de una API real con tiempos de espera. Lo resolví con hooks (useState, useEffect) y custom hooks.",
+          tecnologias: ["React", "React Router", "Vite", "CSS Modules", "HP-API"],
+          aporte:
+            "Desarrollo de la página /estudiantes y /bitacora, implementación de filtros, paginación y el fix del modo oscuro (Nox).",
+        },
+      },
+    ],
   },
 
   {
