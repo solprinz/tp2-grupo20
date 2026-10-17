@@ -48,8 +48,8 @@ Todas las secciones comparten la identidad visual del equipo: paleta dorada/crem
 | Nombre              | GitHub                                               | Responsabilidad Principal     | Tareas Clave                                                                                                                      |
 | :------------------ | :--------------------------------------------------- | :---------------------------- | :-------------------------------------------------------------------------------------------------------------------------------- |
 | **Sol Prinzen**     | [@solprinz](https://github.com/solprinz)             | Layout, Navegación y Estilos  | Setup React Router, Sidebar responsive, Sistema de diseño (Pergamino/NOX), Portada (`/`) y Deploy Vercel con `vercel.json`        |
-| **Lucas Sosa**      | [@Strashoy](https://github.com/Strashoy)             | Perfiles Dinámicos            | Estructura `/perfil/:id`, Plantilla reutilizable `MemberProfileContainer` y Auditoría responsive/QA                               |
-| **Juan Pablo**      | [@JPFinal](https://github.com/JPFinal)               | Datos Locales y Filtros       | Libro de Hechizos (`/hechizos`), JSON con 124 registros, Búsqueda, Filtro combinado y Modal desplegable                           |
+| **Lucas Eliel Sosa**      | [@Strashoy](https://github.com/Strashoy)             | Perfiles Dinámicos            | Estructura `/perfil/:id`, Plantilla reutilizable `MemberProfileContainer` y Auditoría responsive/QA                               |
+| **Juan Pablo Duarte**      | [@JPFinal](https://github.com/JPFinal)               | Datos Locales y Filtros       | Libro de Hechizos (`/hechizos`), JSON con 124 registros, Búsqueda, Filtro combinado y Modal desplegable                           |
 | **Daniela Méndez**  | [@mendez-daniela](https://github.com/mendez-daniela) | Consumo de API y Bitácora     | Consumo HP-API Estudiantes (`/estudiantes`), Estados de carga/error/reintento y Timeline de Bitácora (`/bitacora`) con acordeones |
 | **Alejandro Ramos** | [@AleR25](https://github.com/AleR25)                 | Componentes Especiales y Docs | Árbol de Renderizado interactivo (`/arbol`) y Documentación README                                                                |
 
@@ -193,11 +193,9 @@ En el TP2 usamos herramientas de IA como **asistentes técnicos** en momentos pu
 | --------------- | ----------- | ----------- | ----------------------------------------------------------------------- |
 | Alejandro Ramos | Codex       | GPT-6 Astra | Creación de la historia de las reliquias de la muerte                   |
 | Daniela Méndez  | DeepSeek    | V3          | Estructura de Estudiantes y Bitácora, ajustes CSS, redacción del README |
-| Juan Pablo      | Antigravity | Gemini 3.8 | Creacion de detalles unicos para cada objeto del JSON de Libro de Hechizos y ajustes de CSS para tarjetas de hechizos.                         |
-| Lucas Sosa      | _completar_ | _completar_ | _completar_                                                             |
-| Sol Prinzen     | _completar_ | _completar_ | _completar_                                                             |
-
-> **Aclaración:** cada integrante completa su fila con la aplicación, el modelo y las tareas concretas para las que usó IA durante el TP2.
+| Juan Pablo Duarte      | Antigravity | Gemini 3.8 | Creacion de detalles unicos para cada objeto del JSON de Libro de Hechizos y ajustes de CSS para tarjetas de hechizos.                         |
+| Lucas Eliel Sosa      | Claude Code | Claude Opus 5.5 y Sonnet 5.5 | Perfiles dinámicos y plantilla reutilizable, interacciones del TP1, sidebar responsive y varita global, auditoría responsive |
+| Sol Prinzen     | Gemini | Gemini 2.5 Pro| Asistencia en la migración del proyecto a React, Sidebar y UI responsiva, auditoría de la rúbrica|
 
 ### Criterio de uso
 
