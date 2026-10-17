@@ -193,7 +193,7 @@ En el TP2 usamos herramientas de IA como **asistentes técnicos** en momentos pu
 | --------------- | ----------- | ----------- | ----------------------------------------------------------------------- |
 | Alejandro Ramos | Codex       | GPT-6 Astra | Creación de la historia de las reliquias de la muerte                   |
 | Daniela Méndez  | DeepSeek    | V3          | Estructura de Estudiantes y Bitácora, ajustes CSS, redacción del README |
-| Juan Pablo      | _completar_ | _completar_ | _completar_                                                             |
+| Juan Pablo      | Antigravity | Gemini 3.8 | Creacion de detalles unicos para cada objeto del JSON de Libro de Hechizos y ajustes de CSS para tarjetas de hechizos.                         |
 | Lucas Sosa      | _completar_ | _completar_ | _completar_                                                             |
 | Sol Prinzen     | _completar_ | _completar_ | _completar_                                                             |
 
