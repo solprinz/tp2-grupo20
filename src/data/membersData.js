@@ -317,12 +317,14 @@ export const membersData = [
     // A diferencia del TP1 (donde no existía esta sección), en el TP2
     // Sumamos proyectos reales: el backend en Urbana Cult y el desarrollo.
     // Frontend en esta misma aplicación (Hallows Code).
-        proyectos: [
+    // En el TP2 sumamos proyectos reales a este perfil: el backend en Urbana Cult,
+    // el análisis de sistemas de la Clínica SePrise y el frontend en Hallows Code.
+    proyectos: [
       {
         titulo: "Urbana Cult API",
-        subtitulo: "Líder Técnico / Back End · GDSL Tech",
+        subtitulo: "Proyecto Backend · Tecnicatura IFTS 29",
         resumen:
-          "Plataforma colaborativa para 25 espacios culturales en las Comunas 3 y 5 de CABA. Desarrollada en equipo con Sol Prinzen (documentación y testing de interfaz) y Lucas Sosa (testing y documentación). Mi rol fue liderar el backend, la persistencia en MongoDB y la seguridad.",
+          "Plataforma colaborativa para 25 espacios culturales en las Comunas 3 y 5 de CABA. Desarrollada como proyecto de la tecnicatura en equipo con Sol Prinzen (documentación y testing de interfaz) y Lucas Sosa (testing y documentación). Mi rol fue liderar el backend, la persistencia en MongoDB y la seguridad.",
         historia: {
           titulo: "Arquitectura, seguridad y persistencia",
           texto:
@@ -342,10 +344,32 @@ export const membersData = [
         },
       },
       {
-        titulo: "Hallows Code (TP2 - React)",
-        subtitulo: "La evolución de la magia",
+        titulo: "Clínica SePrise (Prototipo)",
+        subtitulo: "Análisis de Sistemas · Tecnicatura IFTS 29",
         resumen:
-          "Aplicación web construida en equipo con React. Me encargué del consumo de la API pública de HP (Estudiantes), los estados de carga/error y la Bitácora interactiva.",
+          "Análisis, relevamiento y diseño de un sistema de gestión para los circuitos de Consultorios Externos y Estudios Clínicos. Realizado en equipo con Lucas Sosa como trabajo de la tecnicatura. Incluye prototipado funcional en Figma (más de 35 pantallas) y diagramas UML (DFD, DER, DCU).",
+        historia: {
+          titulo: "De la necesidad al prototipo",
+          texto:
+            "El desafío fue traducir los problemas operativos de una clínica real (relevados mediante entrevistas y cuestionarios) en un modelo de datos robusto y una interfaz intuitiva mobile-first. Aplicamos metodología ágil (Sprints) y documentamos todas las decisiones de diseño.",
+          tecnologias: [
+            "Figma",
+            "Draw.io",
+            "DFD",
+            "DER",
+            "UML",
+            "Historias de Usuario",
+            "Scrum"
+          ],
+          aporte:
+            "Lideré el relevamiento, el diseño del modelo de datos (DER) y la planificación de los Sprints. Co-diseñé el prototipo funcional en Figma y redacté el cuaderno de especificaciones.",
+        },
+      },
+      {
+        titulo: "Hallows Code (TP2 - React)",
+        subtitulo: "Desarrollo Web · Tecnicatura IFTS 29",
+        resumen:
+          "Aplicación web construida en equipo con React como Trabajo Práctico de la tecnicatura. Me encargué del consumo de la API pública de HP (Estudiantes), los estados de carga/error y la Bitácora interactiva.",
         historia: {
           titulo: "Desafío y solución",
           texto:
