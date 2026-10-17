@@ -123,7 +123,35 @@ const REGISTROS = [
       "Arrancamos la integración de la HP API (hp-api.onrender.com) con estados de carga, error y botón reintentar. En paralelo, construimos esta Bitácora con acordeones y filtros por integrante y tipo.",
     tipo: "feature",
   },
+    {
+    id: 14,
+    fecha: "2026-10-17",
+    integrante: "Alejandro Ramos",
+    titulo: "Árbol de Renderizado y Arquitectura",
+    detalle:
+      "Desarrollamos la página /arbol (Arquitectura.jsx) con un esquema interactivo de componentes desplegables. Separamos la lógica de datos en architectureData.js para mantener el código limpio.",
+    tipo: "feature",
+  },
+  {
+    id: 15,
+    fecha: "2026-10-17",
+    integrante: "Alejandro Ramos",
+    titulo: "Relato de los Tres Hermanos en el perfil",
+    detalle:
+      "Agregamos un componente especial (RelatoTresHermanos.jsx) con una narrativa interactiva temática de las Reliquias de la Muerte para enriquecer el perfil personal.",
+    tipo: "feature",
+  },
+  {
+    id: 16,
+    fecha: "2026-10-17",
+    integrante: "Sol Prinzen",
+    titulo: "Documentación final y capturas en README",
+    detalle:
+      "Actualizamos el README.md agregando capturas de pantalla del proyecto (Home, Hechizos, Estudiantes, Modo Oscuro, Perfiles) y optimizamos el peso de las imágenes para el deploy final.",
+    tipo: "contenido",
+  },
 ];
+
 
 /**
  * Decisiones clave del equipo (continuación del formato del TP1:

@@ -121,7 +121,7 @@ tp2-grupo20/
 - Presentación del equipo con elementos interactivos
 - Tarjetas con acceso a cada perfil
 
-![Portada](/public/img/preview-home.png)
+![Portada](public/img/preview-home.png)
 **[Ver sección en vivo: Portada](https://tp2-grupo20.vercel.app)**
 
 ### Perfiles dinámicos (`pages/members/`)
@@ -130,7 +130,7 @@ tp2-grupo20/
 - Cada perfil muestra: bio, habilidades, películas y discos favoritos, proyectos
 - Datos centralizados en `data/membersData.js`
 
-![Perfiles](/public/img/preview-perfil-sol.png)
+![Perfiles](public/img/preview-perfil-sol.png)
 **[Ver sección en vivo: Perfil de Sol ](https://tp2-grupo20.vercel.app/perfil/sol)**
 
 ### Libro de Hechizos (`pages/LibroDeHechizos.jsx`)
@@ -142,7 +142,7 @@ tp2-grupo20/
 - Fichas desplegables con instrucciones de varita
 - Estado "sin resultados" con botón de restablecer
 
-![Hechizos](/public/img/preview-hechizos.png)
+![Hechizos](public/img/preview-hechizos.png)
 **[Ver sección en vivo: Libro de Hechizos](https://tp2-grupo20.vercel.app/hechizos)**
 
 ### Estudiantes (`pages/Estudiantes.jsx`)
@@ -154,7 +154,7 @@ tp2-grupo20/
 - Filtro por casa (Gryffindor, Slytherin, Ravenclaw, Hufflepuff)
 - Grilla con borde superior de color según la casa
 
-![Estudiantes](/public/img/preview-estudiantes.png)
+![Estudiantes](public/img/preview-estudiantes.png)
 **[Ver sección en vivo: Estudiantes](https://tp2-grupo20.vercel.app/estudiantes)**
 
 ### Bitácora (`pages/Bitacora.jsx`)
@@ -181,7 +181,7 @@ tp2-grupo20/
 - Persistencia en localStorage
 - Aplicable a todas las secciones
 
-## ![ModoOscuro](/public/img/preview-modo-oscuro.png)
+## ![ModoOscuro](public/img/preview-modo-oscuro.png)
 
 ## 🤖 Uso de IA
 
